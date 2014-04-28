@@ -1,0 +1,27 @@
+@function breakpoint-names($list)
+  $result: ()
+
+  @each $breakpoint in $list
+    $result: append($result, nth($breakpoint, 1), comma)
+
+  @return $result
+
+@function breakpoint-media-queries($list)
+  $result: ()
+
+  @for $i from 1 through length($list)
+    $breakpoint: nth($list, $i)
+    $name: nth($breakpoint, 1)
+    $query: null
+
+    @if length($breakpoint) == 1
+      $query: "(max-width: #{nth(nth($list, $i + 1), 2) - 1px})"
+    @else if $i == length($list) or length(nth($list, $i + 1)) == 1
+      $query: "(min-width: #{nth($breakpoint, 2)})"
+    @else
+      $query: "(min-width: #{nth($breakpoint, 2)}) and (max-width: #{nth(nth($list, $i + 1), 2)})"
+
+    $result: append($result, ($name $query), comma)
+
+  @return $result
+

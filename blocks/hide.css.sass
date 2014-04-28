@@ -1,0 +1,8 @@
+@each $breakpoint in $breakpoints
+  $name: nth($breakpoint, 1)
+  $declaration: nth($breakpoint, 2)
+
+  @media only screen and #{$declaration}
+    .hide-on-#{$name}
+      display: none
+

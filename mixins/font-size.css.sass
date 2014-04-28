@@ -1,0 +1,15 @@
+= responsive-font-size($value)
+  +rem-rule(font-size, $value)
+
+= font-size($unit)
+  @if $unit == small
+    +responsive-font-size(15px)
+  @else if $unit == regular
+    +responsive-font-size(16px)
+  @else if $unit == gamma
+    +responsive-font-size(19px)
+  @else if $unit == beta
+    +responsive-font-size(25px)
+  @else if $unit == alpha
+    +responsive-font-size(40px)
+

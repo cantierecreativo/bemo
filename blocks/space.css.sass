@@ -1,0 +1,13 @@
+@for $amount from 1 to 6
+  @each $rule in margin-bottom margin-top padding-bottom padding-top
+    .space--#{$rule}-#{$amount}
+      +vertical-space-rule($rule, $amount)
+
+  .space--vertical-margin-#{$amount}
+    +margin-top($amount)
+    +margin-bottom($amount)
+
+  .space--vertical-padding-#{$amount}
+    +margin-top($amount)
+    +margin-bottom($amount)
+

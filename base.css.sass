@@ -1,0 +1,58 @@
+html
+  +rem-html-reset(0.9)
+
+  +at-breakpoint(non-portable)
+    +rem-html-reset(1)
+
+body
+  +body-font-family
+  +font-size(0)
+  line-height: 1.5
+  color: $base-body-color
+  min-height: 100%
+
+a
+  color: $primary-color
+  text-decoration: underline
+
+ul, ol
+  padding-left: 0
+  margin: 0
+
+li
+  list-style-type: none
+
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dd, p, figure, pre, table,
+fieldset, hr, form
+  margin: 0
+
+h1, h2, h3, h4, h5, h6
+  font-size: inherit
+  font-family: inherit
+  font-weight: inherit
+
+label
+  display: block
+
+#{$all-text-inputs}, textarea
+  display: block
+  +box-sizing(border-box)
+  width: 100%
+  padding: 10px
+  border: 1px solid $border-color
+  outline: 0
+
+  &[disabled]
+    opacity: 0.9
+
+#{$all-text-inputs-hover}, textarea:hover
+  border-color: darken($border-color, 10%)
+
+#{$all-text-inputs-focus}, textarea:focus
+  border-color: $primary-color
+
+input[type="checkbox"]
+  display: inline-block
+  margin-right: 0.4em
+

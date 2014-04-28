@@ -1,0 +1,47 @@
+@mixin vertical-space-rule($rule, $value)
+  +rem-rule($rule, $value * $vertical-space-unit)
+
+@mixin margin-bottom($value)
+  +vertical-space-rule(margin-bottom, $value)
+
+@mixin margin-top($value)
+  +vertical-space-rule(margin-top, $value)
+
+@mixin vertical-margin($value)
+  +margin-top($value)
+  +margin-bottom($value)
+
+@mixin margin($value)
+  +vertical-space-rule(margin, $value)
+
+@mixin padding-bottom($value)
+  +vertical-space-rule(padding-bottom, $value)
+
+@mixin padding-top($value)
+  +vertical-space-rule(padding-top, $value)
+
+@mixin vertical-padding($value)
+  +padding-top($value)
+  +padding-bottom($value)
+
+@mixin padding($value)
+  +vertical-space-rule(padding, $value)
+
+@mixin line-height($value)
+  +vertical-space-rule(line-height, $value)
+
+@mixin height($value)
+  +vertical-space-rule(height, $value)
+
+@mixin top($value)
+  +vertical-space-rule(top, $value)
+
+@mixin left($value)
+  +vertical-space-rule(left, $value)
+
+@mixin right($value)
+  +vertical-space-rule(right, $value)
+
+@mixin bottom($value)
+  +vertical-space-rule(bottom, $value)
+
