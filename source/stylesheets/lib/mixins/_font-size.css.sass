@@ -1,15 +1,21 @@
-= responsive-font-size($value)
-  +rem-rule(font-size, $value)
+@mixin font-size($unit)
+  @if type-of($unit) == "number" and unit($unit) == "px"
+    +rem-rule(font-size, $unit)
 
-= font-size($unit)
-  @if $unit == small
-    +responsive-font-size(15px)
-  @else if $unit == regular
-    +responsive-font-size(16px)
-  @else if $unit == gamma
-    +responsive-font-size(19px)
-  @else if $unit == beta
-    +responsive-font-size(25px)
-  @else if $unit == hero
-    +responsive-font-size(40px)
+  @else if type-of($unit) == "string"
+    $size-found: false
+
+    @each $size in $all-font-sizes
+      $name: nth($size, 1)
+      $size: nth($size, 2)
+
+      @if $unit == $name and $size
+        $size-found: true
+        +rem-rule(font-size, $size)
+
+    @if $size-found == false
+      @warn "size ‘#{$unit}’ does not exist"
+
+  @else
+    @warn "size ‘#{$unit}’ invalid"
 

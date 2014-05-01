@@ -1,0 +1,8 @@
+$base-font-size: 16px
+$heading-font-sizes: ('alpha' 30px, 'beta' 25px, 'gamma' 19px)
+$smallprint-font-sizes: ('smallprint' 14px, 'milli' 13px)
+
+// derived
+$all-font-sizes: join($heading-font-sizes, $smallprint-font-sizes, comma)
+$all-font-sizes: append($all-font-sizes, ('regular' $base-font-size), comma)
+

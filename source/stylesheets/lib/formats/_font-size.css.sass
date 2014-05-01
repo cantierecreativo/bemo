@@ -1,12 +1,15 @@
-.alpha
-  +font-size(alpha)
+@each $size in $heading-font-sizes
+  $name: nth($size, 1)
+  $size: nth($size, 2)
 
-.beta
-  +font-size(beta)
+  .#{$name}
+    +heading-font-family
+    +rem-rule(font-size, $size)
 
-.gamma
-  +font-size(gamma)
+@each $size in $smallprint-font-sizes
+  $name: nth($size, 1)
+  $size: nth($size, 2)
 
-.small
-  +font-size(small)
+  .#{$name}
+    +rem-rule(font-size, $size)
 

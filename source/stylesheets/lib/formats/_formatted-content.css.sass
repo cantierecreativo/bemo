@@ -4,6 +4,18 @@
   fieldset, hr, form
     +margin-bottom(1)
 
+    &:last-child
+      margin-bottom: 0
+
+  ul, ol
+    padding-left: 30px
+
+  ul li
+    list-style-type: disc
+
+  ol li
+    list-style-type: decimal
+
   h1, h2, h3, h4, h5, h6
     +heading-font-family
     +margin-top(2)
@@ -11,12 +23,14 @@
     &:first-child
       margin-top: 0
 
-  h3
-    +font-size(alpha)
+  @for $i from 1 through 6
+    h#{$i}
+      $index: $i
 
-  h4
-    +font-size(beta)
+      @if $i > length($heading-font-sizes)
+        $index: length($heading-font-sizes)
 
-  h5
-    +font-size(gamma)
+      $font-size: nth($heading-font-sizes, $index)
+      $size: nth($font-size, 2)
+      +rem-rule(font-size, $size)
 
