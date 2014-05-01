@@ -498,20 +498,36 @@ hr {
   border-bottom-style: solid; }
 
 /* Formats */
-/* line 4, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_font-size.css.sass */
+/* line 5, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_font-size.css.sass */
+.alpha {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  font-size: 1.875rem; }
+
+/* line 5, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_font-size.css.sass */
 .beta {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: bold;
   font-size: 25px;
   font-size: 1.5625rem; }
 
-/* line 7, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_font-size.css.sass */
+/* line 5, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_font-size.css.sass */
 .gamma {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: bold;
   font-size: 19px;
   font-size: 1.1875rem; }
 
-/* line 10, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_font-size.css.sass */
-.small {
-  font-size: 15px;
-  font-size: 0.9375rem; }
+/* line 13, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_font-size.css.sass */
+.smallprint {
+  font-size: 14px;
+  font-size: 0.875rem; }
+
+/* line 13, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_font-size.css.sass */
+.milli {
+  font-size: 13px;
+  font-size: 0.8125rem; }
 
 /* line 2, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
 .formatted-content h1, .formatted-content h2, .formatted-content h3, .formatted-content h4, .formatted-content h5, .formatted-content h6, .formatted-content hgroup,
@@ -519,21 +535,51 @@ hr {
 .formatted-content fieldset, .formatted-content hr, .formatted-content form {
   margin-bottom: 12px;
   margin-bottom: 0.75rem; }
-/* line 7, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
+  /* line 7, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
+  .formatted-content h1:last-child, .formatted-content h2:last-child, .formatted-content h3:last-child, .formatted-content h4:last-child, .formatted-content h5:last-child, .formatted-content h6:last-child, .formatted-content hgroup:last-child,
+  .formatted-content ul:last-child, .formatted-content ol:last-child, .formatted-content dd:last-child, .formatted-content p:last-child, .formatted-content figure:last-child, .formatted-content pre:last-child, .formatted-content table:last-child,
+  .formatted-content fieldset:last-child, .formatted-content hr:last-child, .formatted-content form:last-child {
+    margin-bottom: 0; }
+/* line 10, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
+.formatted-content ul, .formatted-content ol {
+  padding-left: 30px; }
+/* line 13, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
+.formatted-content ul li {
+  list-style-type: disc; }
+/* line 16, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
+.formatted-content ol li {
+  list-style-type: decimal; }
+/* line 19, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
 .formatted-content h1, .formatted-content h2, .formatted-content h3, .formatted-content h4, .formatted-content h5, .formatted-content h6 {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: bold;
   margin-top: 24px;
   margin-top: 1.5rem; }
-  /* line 11, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
+  /* line 23, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
   .formatted-content h1:first-child, .formatted-content h2:first-child, .formatted-content h3:first-child, .formatted-content h4:first-child, .formatted-content h5:first-child, .formatted-content h6:first-child {
     margin-top: 0; }
-/* line 17, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
-.formatted-content h4 {
+/* line 27, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
+.formatted-content h1 {
+  font-size: 30px;
+  font-size: 1.875rem; }
+/* line 27, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
+.formatted-content h2 {
   font-size: 25px;
   font-size: 1.5625rem; }
-/* line 20, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
+/* line 27, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
+.formatted-content h3 {
+  font-size: 19px;
+  font-size: 1.1875rem; }
+/* line 27, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
+.formatted-content h4 {
+  font-size: 19px;
+  font-size: 1.1875rem; }
+/* line 27, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
 .formatted-content h5 {
+  font-size: 19px;
+  font-size: 1.1875rem; }
+/* line 27, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/formats/_formatted-content.css.sass */
+.formatted-content h6 {
   font-size: 19px;
   font-size: 1.1875rem; }
 
