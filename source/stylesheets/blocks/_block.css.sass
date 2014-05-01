@@ -1,0 +1,37 @@
+.block
+
+.block__header
+  +font-size(beta)
+  +margin-bottom(3)
+
+.block__name
+  +monospaced-font-family
+  padding: 0.3em 1em
+  background-color: $primary-color
+  color: white
+  display: inline-block
+  margin-right: 1em
+  +font-size(gamma)
+
+.block__body
+  +margin-bottom(2)
+
+  &:last-child
+    margin-bottom: 0
+
+.variant__header
+  +font-size(gamma)
+  +margin-bottom(1)
+
+.variant__body
+  +padding(1)
+  background-color: $light-bg-color
+
++at-breakpoint(portable)
+  .block__header
+    text-align: center
+
+  .block__name
+    display: block
+    +margin-bottom(1)
+

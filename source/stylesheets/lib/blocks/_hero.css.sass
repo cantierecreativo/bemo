@@ -1,0 +1,38 @@
+.hero
+  background-repeat: no-repeat
+  background-position: center center
+  +background-size(cover)
+  color: white
+  position: relative
+
+  a
+    color: white
+
+.hero__body
+  display: table
+  width: 100%
+  text-align: center
+
+.hero__body__inner
+  display: table-cell
+  vertical-align: middle
+  height: 400px
+
+.hero__heading
+  +heading-font-family
+  +font-size(hero)
+
+.hero__text
+  +margin-top(2)
+  +font-size(gamma)
+
+.hero--primary
+  background-color: $primary-color
+
++at-breakpoint(non-portable)
+  .hero__heading,
+  .hero__text
+    width: 60%
+    margin-left: auto
+    margin-right: auto
+

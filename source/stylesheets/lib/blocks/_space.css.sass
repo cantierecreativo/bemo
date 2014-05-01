@@ -1,4 +1,4 @@
-@for $amount from 1 to 6
+@each $amount in 1, 2, 3, 5, 8
   @each $rule in margin-bottom margin-top padding-bottom padding-top
     .space--#{$rule}-#{$amount}
       +vertical-space-rule($rule, $amount)
