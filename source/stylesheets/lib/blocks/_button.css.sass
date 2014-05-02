@@ -1,0 +1,45 @@
+.button
+  padding: 0.7em 1em
+  text-decoration: none
+  border-width: 0
+  display: inline-block
+  vertical-align: middle
+  white-space: nowrap
+  font-family: inherit
+  cursor: pointer
+  line-height: inherit
+  background-color: $inactive-color
+  color: $base-body-color
+  +box-sizing(border-box)
+  +transition(opacity 0.2s ease-in-out)
+
+  &:hover
+    opacity: 0.7
+
+.button--small
+  padding: 0.4em 0.6em
+
+.button--large
+  padding: 0.8em 1.5em
+
+.button--huge
+  padding: 1em 1.5em
+
+.button--primary,
+.button--notice,
+.button--alert
+  color: white
+
+.button--primary
+  background-color: $primary-color
+
+.button--notice
+  background-color: $notice-color
+
+.button--alert
+  background-color: $alert-color
+
+.button--rev
+  background-color: white
+  color: $primary-color
+

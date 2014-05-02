@@ -1,12 +1,9 @@
 .hero
   background-repeat: no-repeat
   background-position: center center
+  background-color: $light-bg-color
   +background-size(cover)
-  color: white
   position: relative
-
-  a
-    color: white
 
 .hero__body
   display: table
@@ -20,14 +17,21 @@
 
 .hero__heading
   +heading-font-family
-  +font-size(40px)
+  +font-size(50px)
+  line-height: 1.2
 
 .hero__text
   +margin-top(2)
-  +font-size(gamma)
+
+.hero__actions
+  +margin-top(2)
 
 .hero--primary
   background-color: $primary-color
+  color: white
+
+  .hero__text a
+    color: white
 
 +at-breakpoint(non-portable)
   .hero__heading,

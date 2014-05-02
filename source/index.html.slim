@@ -2,12 +2,14 @@
 title: Pattern Library
 ---
 
-.hero.hero--primary
+.hero
   .wrap
     .hero__body: .hero__body__inner
       .hero__heading Stylesheets
       .hero__text
         p Non-intrusive, reusable BEM components
+      p.hero__actions
+        = link_to "Browse on Github", "http://github.com/stefanoverna/stylesheets", class: 'button button--primary button--huge gamma'
 
 .wrap
 
@@ -102,7 +104,7 @@ title: Pattern Library
               .variant__header: code= ".#{name}"
               .variant__body
                   .space class=name
-                    .blurb Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod
+                    .blurb= lorem.sentence
         .grid__item.non-portable--one-half
           - %w(1 2 3 5 8).each do |amount|
             - name = "space--vertical-margin-#{amount}"
@@ -110,7 +112,7 @@ title: Pattern Library
               .variant__header: code= ".#{name}"
               .variant__body
                   .space class=name
-                    .blurb Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod
+                    .blurb= lorem.sentence
 
   hr
 
@@ -141,7 +143,45 @@ title: Pattern Library
         .block__body: .variant
           .variant__header: code .#{size}
           .variant__body
-            h6 class=size Lorem ipsum dolor sit amet, consectetur
+            h6 class=size
+              = lorem.sentence
+
+  hr
+
+  .space--vertical-margin-8
+    section.block
+      h6.block__header
+        code.block__name .form
+        | Formatted forms
+
+      .block__body: .variant: .variant__body
+        form.form
+          fieldset
+            legend Contact informations
+            .form__field.form__field--invalid
+              label.form__label Email
+              input.form__input--large type="email" placeholder="foo@bar.com"
+              .form__error Invalid email
+            .form__field
+              label.form__label Password
+              input type="password" placeholder="Insert your password"
+              .form__hint Password must be at least 6 chars long
+
+          hr
+
+          fieldset
+            legend Contact informations
+
+            .form__field
+              label.form__label First name
+              input type="text" placeholder="John"
+
+            .form__field
+              label.form__label Last name
+              input type="text" placeholder="Doe"
+
+          .form__field
+            input.button.button--primary.button--large type="submit" value="Create Contact"
 
   hr
 
@@ -153,16 +193,39 @@ title: Pattern Library
 
       .block__body: .variant: .variant__body
         .formatted-content
-          h1 Lorem ipsum dolor sit amet, consectetur adipisicing elit
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          h2 Lorem ipsum dolor sit amet, consectetur adipisicing elit
+          h1= lorem.sentence
+          p= lorem.paragraph
+          h2= lorem.sentence
           ul
-            li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod
-            li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod
-          h3 Lorem ipsum dolor sit amet, consectetur adipisicing elit
+            li= lorem.paragraph
+            li= lorem.paragraph
+          h3= lorem.sentence
           ol
-            li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod
-            li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod
+            li= lorem.paragraph
+            li= lorem.paragraph
+          table
+            thead
+              tr
+                th #
+                th Make
+                th Model
+                th Year
+            tbody
+              tr
+                td 1
+                td Honda
+                td Accord
+                td 2009
+              tr
+                td 2
+                td Toyota
+                td Camry
+                td 2012
+              tr
+                td 3
+                td Hyundai
+                td Elantra
+                td 2010
 
   hr
 
@@ -194,7 +257,134 @@ title: Pattern Library
           .hero__sticky
             p.blurb Sticky area
           .hero__body: .hero__body__inner
-            .hero__heading Lorem ipsum dolor sit amet, consectetur adipisicing
+            .hero__heading= lorem.words(6).capitalize
             .hero__text
-              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              p= lorem.words(20).capitalize
+            p.hero__actions
+              a.button.button--rev href="#" Foo
+              '
+              a.button.button--rev href="#" Bar
+
+  hr
+
+  .space--vertical-margin-8
+    section.block
+      h6.block__header
+        code.block__name .button
+        | Buttons
+
+      .block__body
+        .variant
+          .variant__header: code .button
+          .variant__body
+            a.button href="#" Link
+            ' 
+            button.button Button
+            ' 
+            input.button type="submit" value="Submit"
+
+      - %w(small large huge primary notice alert rev).each do |modifier|
+        .block__body
+          .variant
+            .variant__header: code .button--#{modifier}
+            .variant__body
+              a.button class="button--#{modifier}" href="#" Button
+
+  hr
+
+  .space--vertical-margin-8
+    section.block
+      h6.block__header Pills
+
+      .block__body
+        .variant
+          .variant__header: code .pill
+          .variant__body
+            p
+              ' Lorem ipsum 
+              span.pill dolor sit
+              '
+              | amet, consectetur adipisicing elit, sed eiusmod
+
+      - %w(tin primary notice alert).each do |modifier|
+        .block__body
+          .variant
+            .variant__header: code .pill--#{modifier}
+            .variant__body
+              p
+                ' Lorem ipsum 
+                span.pill class="pill--#{modifier}" dolor sit
+                '
+                | amet, consectetur adipisicing elit, sed eiusmod
+
+  hr
+
+  .space--vertical-margin-8
+    section.block
+      h6.block__header
+        code.block__name .table
+        | Formatted table
+
+      .block__body: .variant: .variant__body
+        table.table
+          thead
+            tr
+              th #
+              th Make
+              th Model
+              th Year
+          tbody
+            tr
+              td 1
+              td Honda
+              td Accord
+              td 2009
+            tr
+              td 2
+              td Toyota
+              td Camry
+              td 2012
+            tr
+              td 3
+              td Hyundai
+              td Elantra
+              td 2010
+
+  hr
+
+  .space--vertical-margin-8
+    section.block
+      h6.block__header
+        code.block__name .flag
+        | Place any image- and text-like content side-by-side
+
+      .block__body: .variant: .variant__body
+        .flag
+          .flag__image= image_tag lorem.image('100x100')
+          .flag__body
+            p= lorem.paragraph
+
+      .block__body: .variant
+        .variant__header: code .flag--top
+        .variant__body
+          .flag.flag--top
+            .flag__image= image_tag lorem.image('100x100')
+            .flag__body
+              p= lorem.paragraph
+
+      .block__body: .variant
+        .variant__header: code .flag--bottom
+        .variant__body
+          .flag.flag--bottom
+            .flag__image= image_tag lorem.image('100x100')
+            .flag__body
+              p= lorem.paragraph
+
+      .block__body: .variant
+        .variant__header: code .flag--rev
+        .variant__body
+          .flag.flag--rev
+            .flag__body
+              p= lorem.paragraph
+            .flag__image= image_tag lorem.image('100x100')
 

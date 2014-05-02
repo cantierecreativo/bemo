@@ -1,0 +1,17 @@
+.table
+  width: 100%
+  table-layout: fixed
+  border: 1px solid $border-color
+  background-color: white
+
+  thead
+    background-color: $light-bg-color
+    border: 1px solid $border-color
+
+  td, th
+    text-align: left
+    +padding(1)
+
+  tr:nth-child(2n)
+    background-color: $light-bg-color
+

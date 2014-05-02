@@ -32,9 +32,6 @@ h1, h2, h3, h4, h5, h6
   font-family: inherit
   font-weight: inherit
 
-label
-  display: block
-
 #{$all-text-inputs}, textarea
   display: block
   +box-sizing(border-box)
@@ -42,6 +39,7 @@ label
   padding: 10px
   border: 1px solid $border-color
   outline: 0
+  +transition(border 0.2s ease-in-out)
 
   &[disabled]
     opacity: 0.9
@@ -64,4 +62,10 @@ hr
   border: none
   border-bottom-width: 1px
   border-bottom-style: solid
+
+table
+  table-layout: fixed
+
+th, td
+  text-align: left
 
