@@ -261,9 +261,9 @@ title: Pattern Library
             .hero__text
               p= lorem.words(20).capitalize
             p.hero__actions
-              a.button.button--rev href="#" Foo
-              '
-              a.button.button--rev href="#" Bar
+              .nav
+                .nav__item: a.button.button--rev href="#" Foo
+                .nav__item: a.button.button--rev href="#" Bar
 
   hr
 
@@ -283,7 +283,7 @@ title: Pattern Library
             ' 
             input.button type="submit" value="Submit"
 
-      - %w(small large huge primary notice alert rev).each do |modifier|
+      - %w(fill small large huge primary notice alert rev).each do |modifier|
         .block__body
           .variant
             .variant__header: code .button--#{modifier}
@@ -387,4 +387,27 @@ title: Pattern Library
             .flag__body
               p= lorem.paragraph
             .flag__image= image_tag lorem.image('100x100')
+
+  hr
+
+  .space--vertical-margin-8
+    section.block
+      h6.block__header
+        code.block__name .nav
+        | Navigation
+
+      .block__body: .variant: .variant__body
+        ul.nav
+          li.nav__item= link_to "Terms of Service", "#"
+          li.nav__item= link_to "Privacy Policy", "#"
+          li.nav__item= link_to "Support", "#"
+
+      - %w(center fill csv dots breadcrumb).each do |modifier|
+        .block__body: .variant
+          .variant__header: code .nav--#{modifier}
+          .variant__body
+            ul.nav class="nav--#{modifier}"
+              li.nav__item= link_to "Terms of Service", "#"
+              li.nav__item= link_to "Privacy Policy", "#"
+              li.nav__item= link_to "Support", "#"
 
