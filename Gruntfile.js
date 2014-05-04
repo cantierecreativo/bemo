@@ -45,6 +45,23 @@ module.exports = function(grunt) {
         }
       }
     },
+    sassdown: {
+      default: {
+        options: {
+          assets: [
+            'build/stylesheets/lib/application.css',
+            'test/example/assets/js/*.js',
+          ],
+        },
+        files: [{
+          expand: true,
+          cwd: 'source/stylesheets/lib/blocks',
+          src: ['**/*.{scss,sass}'],
+          dest: 'styleguide/'
+        }]
+      }
+
+    },
     moveIconsSassFile: {}
   });
 
@@ -57,6 +74,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-webfont');
   grunt.loadNpmTasks('grunt-spritesmith');
+  grunt.loadNpmTasks('sassdown');
 
   grunt.registerTask('default', ['webfont', 'moveIconsSassFile', 'sprite']);
 };
