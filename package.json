@@ -1,0 +1,10 @@
+{
+  "name": "stylesheets",
+  "version": "0.0.1",
+  "description": "Stylesheets",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-webfont": "*"
+  }
+}
+

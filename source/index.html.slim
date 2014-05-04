@@ -402,6 +402,18 @@ title: Pattern Library
           li.nav__item= link_to "Privacy Policy", "#"
           li.nav__item= link_to "Support", "#"
 
+      .block__body: .variant
+        .variant__header: code .nav--pagination
+        .variant__body
+          ul.nav.nav--pagination
+            li.nav__item.nav__item--first First
+            li.nav__item.nav__item--prev Previous
+            li.nav__item.nav__item--current 1
+            - 5.times do |i|
+              li.nav__item= link_to i+2, "#"
+            li.nav__item.nav__item--next= link_to "Next", "#"
+            li.nav__item.nav__item--last= link_to "Last", "#"
+
       - %w(center fill csv dots breadcrumb).each do |modifier|
         .block__body: .variant
           .variant__header: code .nav--#{modifier}
@@ -410,4 +422,26 @@ title: Pattern Library
               li.nav__item= link_to "Terms of Service", "#"
               li.nav__item= link_to "Privacy Policy", "#"
               li.nav__item= link_to "Support", "#"
+
+  hr
+
+  .space--vertical-margin-8
+    section.block
+      h6.block__header
+        code.block__name .i
+        | Font icons
+
+      .block__body: .variant: .variant__body
+        p
+          i.i--checkmark
+          '
+          i.i--cross
+        p
+          i.i--checkmark.i--large
+          '
+          i.i--cross.i--large
+        p
+          i.i--checkmark.i--huge
+          '
+          i.i--cross.i--huge
 

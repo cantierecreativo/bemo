@@ -29,6 +29,23 @@
   .nav--dots &:after
     content: "\00A0\2022\00A0"
 
-.nav--center
+  .nav--pagination &
+    +padding(1)
+
+    &:after
+      content: ""
+
+    a
+      display: inline-block
+      +margin(-1)
+      +padding(1)
+
+.nav--center, .nav--pagination
   text-align: center
+
+.nav__item--first a:before
+  content: "\00AB\00A0"
+
+.nav__item--last a:after
+  content: "\00A0\00BB"
 

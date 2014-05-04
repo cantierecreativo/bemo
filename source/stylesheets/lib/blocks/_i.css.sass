@@ -1,0 +1,31 @@
+.i
+  display: inline-block
+
+  &:before
+    font-family: 'icons'
+    display: inline-block
+    font-weight: normal
+    font-style: normal
+    text-transform: none
+    line-height: 1
+    speak: none
+    text-align: center
+    text-decoration: none !important
+    -webkit-font-smoothing: antialiased
+
+.i--large:before
+  font-size: 1.2em
+
+.i--huge:before
+  font-size: 1.7em
+
+@each $icon-glyph in $icon-glyphs
+  $name: nth($icon-glyph, 1)
+  $glyph: nth($icon-glyph, 2)
+
+  .i--#{$name}
+    @extend .i
+
+    &:before
+      content: $glyph
+
