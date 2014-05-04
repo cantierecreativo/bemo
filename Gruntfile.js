@@ -45,7 +45,18 @@ module.exports = function(grunt) {
         }
       }
     },
-    moveIconsSassFile: {}
+    moveIconsSassFile: {},
+    kss: {
+      options: {
+        includeType: 'css',
+        includePath: 'build/stylesheets/lib/application.css',
+      },
+      dist: {
+        files: {
+          'styleguide': ['source/stylesheets/lib/']
+        }
+      }
+    }
   });
 
   grunt.registerTask('moveIconsSassFile', 'Fix generated name', function() {
@@ -57,6 +68,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-webfont');
   grunt.loadNpmTasks('grunt-spritesmith');
+  grunt.loadNpmTasks('grunt-kss');
 
   grunt.registerTask('default', ['webfont', 'moveIconsSassFile', 'sprite']);
 };

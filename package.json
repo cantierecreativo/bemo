@@ -6,7 +6,8 @@
     "grunt": "*",
     "grunt-webfont": "*",
     "grunt-spritesmith": "*",
-    "lodash": "*"
+    "lodash": "*",
+    "grunt-kss": "*"
   }
 }
 
