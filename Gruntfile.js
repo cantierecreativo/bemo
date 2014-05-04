@@ -1,18 +1,27 @@
 var fs = require('fs');
 var path = require('path');
 
-var svgPath = "source/fonts/svg/*.svg";
-var destFontPath = "source/fonts/";
-var destSassPath = "source/stylesheets/lib/variables/_icon-glyphs.css.sass";
+var config = {
+  icons: {
+    src:      "source/fonts/svg/*.svg",
+    fontDest: "source/fonts/",
+    sassDest: "source/stylesheets/lib/variables/_icon-glyphs.css.sass"
+  },
+  sprites: {
+    src: "source/images/sprites/*.png",
+    imageDest: "source/images/sprites.png",
+    sassDest: "source/stylesheets/lib/variables/_sprites.css.sass"
+  }
+};
 
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     webfont: {
       icons: {
-        src: svgPath,
-        dest: destFontPath,
-        destCss: path.dirname(destSassPath),
+        src: config.icons.src,
+        dest: config.icons.fontDest,
+        destCss: path.dirname(config.icons.sassDest),
         options: {
           hashes: false,
           relativeFontPath: '',
@@ -23,17 +32,27 @@ module.exports = function(grunt) {
         },
       }
     },
-    fixname: {}
+    sprite: {
+      all: {
+        src: config.sprites.src,
+        destImg: config.sprites.imageDest,
+        destCSS: config.sprites.sassDest,
+        cssTemplate: './.sprites-template.css',
+      }
+    },
+    moveIconsSassFile: {}
   });
 
-  grunt.registerTask('fixname', 'Fix generated name', function() {
+  grunt.registerTask('moveIconsSassFile', 'Fix generated name', function() {
     fs.rename(
-      path.join(path.dirname(destSassPath), 'icons.css'),
-      destSassPath
+      path.join(path.dirname(config.icons.sassDest), 'icons.css'),
+      config.icons.sassDest
     );
   });
 
   grunt.loadNpmTasks('grunt-webfont');
-  grunt.registerTask('default', ['webfont', 'fixname']);
+  grunt.loadNpmTasks('grunt-spritesmith');
+
+  grunt.registerTask('default', ['webfont', 'moveIconsSassFile', 'sprite']);
 };
 

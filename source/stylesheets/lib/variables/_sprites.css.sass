@@ -1,0 +1,42 @@
+$star-x: 0px
+$star-y: 0px
+$star-offset-x: 0px
+$star-offset-y: 0px
+$star-width: 266px
+$star-height: 266px
+$star-total-width: 266px
+$star-total-height: 532px
+$star-image: '../../../images/sprites.png'
+$star: 0px 0px 0px 0px 266px 266px 266px 532px '../../../images/sprites.png'
+$stripes-x: 0px
+$stripes-y: 266px
+$stripes-offset-x: 0px
+$stripes-offset-y: -266px
+$stripes-width: 266px
+$stripes-height: 266px
+$stripes-total-width: 266px
+$stripes-total-height: 532px
+$stripes-image: '../../../images/sprites.png'
+$stripes: 0px 266px 0px -266px 266px 266px 266px 532px '../../../images/sprites.png'
+
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+

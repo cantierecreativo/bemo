@@ -21,7 +21,7 @@
     @else
       $query: "(min-width: #{nth($breakpoint, 2)}) and (max-width: #{nth(nth($list, $i + 1), 2)})"
 
-    $result: append($result, ($name $query), comma)
+    $result: map-merge($result, $name $query)
 
   @return $result
 

@@ -19,9 +19,8 @@
 .i--huge:before
   font-size: 1.7em
 
-@each $icon-glyph in $icon-glyphs
-  $name: nth($icon-glyph, 1)
-  $glyph: nth($icon-glyph, 2)
+@each $name in map-keys($icon-glyphs)
+  $glyph: map-get($icon-glyphs, $name)
 
   .i--#{$name}
     @extend .i

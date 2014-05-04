@@ -1,16 +1,8 @@
 @mixin at-breakpoint($media-query)
-  $breakpoint-found: false
+  @if map-has-key($breakpoint-media-queries, $media-query)
+    @media only screen and #{map-get($breakpoint-media-queries, $media-query)}
+      @content
 
-  @each $breakpoint in $breakpoint-media-queries
-    $name: nth($breakpoint, 1)
-    $declaration: nth($breakpoint, 2)
-
-    @if $media-query == $name and $declaration
-      $breakpoint-found: true
-
-      @media only screen and #{$declaration}
-        @content
-
-  @if $breakpoint-found == false
+  @else
     @warn "Breakpoint ‘#{$media-query}’ does not exist"
 

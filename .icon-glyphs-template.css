@@ -1,6 +1,6 @@
 $icon-glyphs: ()
 
 <% glyphs.forEach(function(name, index) {
-%>$icon-glyphs: append($icon-glyphs, ("<%= name %>" "\<%= codepoints[index] %>"), comma)
+%>$icon-glyphs: map-merge($icon-glyphs, <%= name %> "\<%= codepoints[index] %>")
 <% }); %>
 

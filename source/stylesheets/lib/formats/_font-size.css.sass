@@ -1,14 +1,12 @@
-@each $size in $heading-font-sizes
-  $name: nth($size, 1)
-  $size: nth($size, 2)
+@each $name in map-keys($heading-font-sizes)
+  $size: map-get($heading-font-sizes, $name)
 
   .#{$name}
     +heading-font-family
     +rem-rule(font-size, $size)
 
-@each $size in $smallprint-font-sizes
-  $name: nth($size, 1)
-  $size: nth($size, 2)
+@each $name in map-keys($smallprint-font-sizes)
+  $size: map-get($smallprint-font-sizes, $name)
 
   .#{$name}
     +rem-rule(font-size, $size)

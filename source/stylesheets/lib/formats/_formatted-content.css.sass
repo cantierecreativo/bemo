@@ -30,8 +30,7 @@
       @if $i > length($heading-font-sizes)
         $index: length($heading-font-sizes)
 
-      $font-size: nth($heading-font-sizes, $index)
-      $size: nth($font-size, 2)
+      $size: nth(nth($heading-font-sizes, $index), 2)
       +rem-rule(font-size, $size)
 
   table

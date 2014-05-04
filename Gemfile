@@ -6,5 +6,6 @@ gem 'middleman', github: 'middleman/middleman', branch: 'v3-stable' # http://goo
 gem 'middleman-deploy'
 gem 'rails-assets-csswizardry-grids'
 gem 'rails-assets-normalize-scss'
+gem 'rails-assets-sass-list-maps'
 gem 'slim'
 

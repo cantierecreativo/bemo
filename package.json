@@ -4,7 +4,8 @@
   "description": "Stylesheets",
   "devDependencies": {
     "grunt": "*",
-    "grunt-webfont": "*"
+    "grunt-webfont": "*",
+    "grunt-spritesmith": "*"
   }
 }
 
