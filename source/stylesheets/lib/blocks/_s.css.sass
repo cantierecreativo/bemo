@@ -1,0 +1,15 @@
+.s
+  background-image: image-url('sprites.png')
+  background-repeat: no-repeat
+  display: inline-block
+  +hide-text
+
+@each $name in map-keys($sprites)
+  $data: map-get($sprites, $name)
+
+  .s--#{$name}
+    @extend .s
+    background-position: map-get($data, offset-x) map-get($data, offset-y)
+    height: map-get($data, height)
+    width: map-get($data, width)
+

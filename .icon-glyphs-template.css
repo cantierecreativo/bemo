@@ -1,3 +1,5 @@
+// Generated automatically via Grunt, do not edit manually!
+
 $icon-glyphs: ()
 
 <% glyphs.forEach(function(name, index) {

@@ -5,7 +5,8 @@
   "devDependencies": {
     "grunt": "*",
     "grunt-webfont": "*",
-    "grunt-spritesmith": "*"
+    "grunt-spritesmith": "*",
+    "lodash": "*"
   }
 }
 
