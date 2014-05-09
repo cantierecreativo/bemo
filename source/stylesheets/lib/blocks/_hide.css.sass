@@ -1,7 +1,5 @@
-@each $name in map-keys($breakpoints)
-  $declaration: map-get($breakpoints, $name)
-
-  @media only screen and #{$declaration}
-    .hide--on-#{$name}
+@each $name in $breakpoint-names
+  .hide--on-#{$name}
+    +at-breakpoint($name)
       display: none
 

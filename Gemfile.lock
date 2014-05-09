@@ -91,7 +91,6 @@ GEM
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
-    rails-assets-csswizardry-grids (2.2.0)
     rails-assets-normalize-scss (3.0.1)
     rails-assets-sass-list-maps (0.9.9)
     rb-fsevent (0.9.4)
@@ -131,7 +130,6 @@ DEPENDENCIES
   bourbon
   middleman!
   middleman-deploy
-  rails-assets-csswizardry-grids
   rails-assets-normalize-scss
   rails-assets-sass-list-maps
   slim
