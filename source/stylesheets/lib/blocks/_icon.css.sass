@@ -1,4 +1,4 @@
-.i
+.icon
   display: inline-block
 
   &:before
@@ -13,17 +13,19 @@
     text-decoration: none !important
     -webkit-font-smoothing: antialiased
 
-.i--large:before
+.icon--large:before
+  @extend .icon
   font-size: 1.2em
 
-.i--huge:before
+.icon--huge:before
+  @extend .icon
   font-size: 1.7em
 
 @each $name in map-keys($icon-glyphs)
   $glyph: map-get($icon-glyphs, $name)
 
-  .i--#{$name}
-    @extend .i
+  .icon--#{$name}
+    @extend .icon
 
     &:before
       content: $glyph

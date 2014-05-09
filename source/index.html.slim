@@ -103,7 +103,7 @@ title: Pattern Library
             .block__body: .variant
               .variant__header: code= ".#{name}"
               .variant__body
-                  .space class=name
+                  div class=name
                     .blurb= lorem.sentence
         .grid__item.non-portable--one-half
           - %w(1 2 3 5 8).each do |amount|
@@ -111,7 +111,7 @@ title: Pattern Library
             .block__body: .variant
               .variant__header: code= ".#{name}"
               .variant__body
-                  .space class=name
+                  div class=name
                     .blurb= lorem.sentence
 
   hr
@@ -240,7 +240,7 @@ title: Pattern Library
         .block__body: .variant
           .variant__header: code= ".#{name}"
           .variant__body
-            .flash class=name
+            div class=name
               | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod
 
   hr
@@ -253,7 +253,7 @@ title: Pattern Library
 
       .block__body: .variant: .variant__body
 
-        .hero.hero--primary
+        .hero--primary
           .hero__sticky
             p.blurb Sticky area
           .hero__body: .hero__body__inner
@@ -288,7 +288,7 @@ title: Pattern Library
           .variant
             .variant__header: code .button--#{modifier}
             .variant__body
-              a.button class="button--#{modifier}" href="#" Button
+              a class="button--#{modifier}" href="#" Button
 
   hr
 
@@ -313,7 +313,7 @@ title: Pattern Library
             .variant__body
               p
                 ' Lorem ipsum 
-                span.pill class="pill--#{modifier}" dolor sit
+                span class="pill--#{modifier}" dolor sit
                 '
                 | amet, consectetur adipisicing elit, sed eiusmod
 
@@ -364,26 +364,20 @@ title: Pattern Library
           .flag__body
             p= lorem.paragraph
 
-      .block__body: .variant
-        .variant__header: code .flag--top
-        .variant__body
-          .flag.flag--top
-            .flag__image= image_tag lorem.image('100x100')
-            .flag__body
-              p= lorem.paragraph
-
-      .block__body: .variant
-        .variant__header: code .flag--bottom
-        .variant__body
-          .flag.flag--bottom
-            .flag__image= image_tag lorem.image('100x100')
-            .flag__body
-              p= lorem.paragraph
+      - %w(top bottom).each do |modifier|
+        - name = "flag--#{modifier}"
+        .block__body: .variant
+          .variant__header: code .#{name}
+          .variant__body
+            div class=name
+              .flag__image= image_tag lorem.image('100x100')
+              .flag__body
+                p= lorem.paragraph
 
       .block__body: .variant
         .variant__header: code .flag--rev
         .variant__body
-          .flag.flag--rev
+          .flag--rev
             .flag__body
               p= lorem.paragraph
             .flag__image= image_tag lorem.image('100x100')
@@ -405,7 +399,7 @@ title: Pattern Library
       .block__body: .variant
         .variant__header: code .nav--pagination
         .variant__body
-          ul.nav.nav--pagination
+          ul.nav--pagination
             li.nav__item.nav__item--first First
             li.nav__item.nav__item--prev Previous
             li.nav__item.nav__item--current 1
@@ -418,7 +412,7 @@ title: Pattern Library
         .block__body: .variant
           .variant__header: code .nav--#{modifier}
           .variant__body
-            ul.nav class="nav--#{modifier}"
+            ul class="nav--#{modifier}"
               li.nav__item= link_to "Terms of Service", "#"
               li.nav__item= link_to "Privacy Policy", "#"
               li.nav__item= link_to "Support", "#"
@@ -428,33 +422,56 @@ title: Pattern Library
   .space--vertical-margin-8
     section.block
       h6.block__header
-        code.block__name .i
+        code.block__name .icon
         | Font icons
 
       .block__body: .variant: .variant__body
         p
-          i.i--checkmark
+          i.icon--checkmark
           '
-          i.i--cross
+          i.icon--cross
         p
-          i.i--checkmark.i--large
+          i.icon--checkmark.icon--large
           '
-          i.i--cross.i--large
+          i.icon--cross.icon--large
         p
-          i.i--checkmark.i--huge
+          i.icon--checkmark.icon--huge
           '
-          i.i--cross.i--huge
+          i.icon--cross.icon--huge
 
   hr
 
   .space--vertical-margin-8
     section.block
       h6.block__header
-        code.block__name .s
+        code.block__name .sprite
         | Sprites
 
       .block__body: .variant: .variant__body
         .nav
-          .nav__item: .s--stripes
-          .nav__item: .s--star
+          .nav__item: .sprite--stripes
+          .nav__item: .sprite--star
+
+  hr
+
+  .space--vertical-margin-8
+    section.block
+      h6.block__header
+        code.block__name .canvas
+        | Off-canvas menu
+
+      .block__body: .variant: .variant__body style="height: 300px"
+
+        .canvas.is-shifted
+          .canvas__aside
+            ul style="padding: 30px"
+              li= link_to "Item"
+              li= link_to "Item"
+              li= link_to "Item"
+              li= link_to "Item"
+
+          .canvas__main
+            .formatted-content style="padding: 30px"
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 

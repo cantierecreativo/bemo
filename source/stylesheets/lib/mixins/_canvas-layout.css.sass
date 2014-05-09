@@ -1,0 +1,10 @@
+@mixin canvas-layout($width)
+  .canvas__aside
+    left: - $width
+    width: $width
+
+  .canvas.is-shifted
+    .canvas__aside,
+    .canvas__main
+      +transform(translateX($width))
+

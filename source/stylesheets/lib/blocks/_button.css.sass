@@ -19,20 +19,25 @@
     opacity: 0.7
 
 .button--small
+  @extend .button
   padding: 0.4em 0.6em
 
 .button--large
+  @extend .button
   padding: 0.8em 1.5em
 
 .button--huge
+  @extend .button
   padding: 1em 1.5em
 
 .button--fill
+  @extend .button
   display: block
 
 .button--primary,
 .button--notice,
 .button--alert
+  @extend .button
   color: white
 
 .button--primary
@@ -45,6 +50,7 @@
   background-color: $alert-color
 
 .button--rev
+  @extend .button
   background-color: white
   color: $primary-color
 
