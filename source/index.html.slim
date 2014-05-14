@@ -144,7 +144,7 @@ title: Pattern Library
 
       - %w(alpha beta gamma smallprint milli).each do |size|
         .block__body: .variant
-          .variant__header: code .#{size}
+          .variant__header: code.block__name .#{size}
           .variant__body
             h6 class=size
               = lorem.sentence
