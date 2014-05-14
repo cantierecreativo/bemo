@@ -198,6 +198,7 @@ title: Pattern Library
         .formatted-content
           h1= lorem.sentence
           p= lorem.paragraph
+          blockquote=lorem.paragraph
           h2= lorem.sentence
           ul
             li= lorem.paragraph
@@ -281,9 +282,9 @@ title: Pattern Library
           .variant__header: code .button
           .variant__body
             a.button href="#" Link
-            ' 
+            '
             button.button Button
-            ' 
+            '
             input.button type="submit" value="Submit"
 
       - %w(fill small large huge primary notice alert rev).each do |modifier|
@@ -304,7 +305,7 @@ title: Pattern Library
           .variant__header: code .pill
           .variant__body
             p
-              ' Lorem ipsum 
+              ' Lorem ipsum
               span.pill dolor sit
               '
               | amet, consectetur adipisicing elit, sed eiusmod
@@ -315,7 +316,7 @@ title: Pattern Library
             .variant__header: code .pill--#{modifier}
             .variant__body
               p
-                ' Lorem ipsum 
+                ' Lorem ipsum
                 span class="pill--#{modifier}" dolor sit
                 '
                 | amet, consectetur adipisicing elit, sed eiusmod
