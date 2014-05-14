@@ -9,8 +9,8 @@ var config = {
     sassDest:  "source/stylesheets/lib/variables/_icon-glyphs.css.sass"
   },
   sprites: {
-    src:       "source/images/sprites/*.png",
-    imageDest: "source/images/sprites.png",
+    src:       "source/images/sprites/",
+    imageDest: "source/images/sprites-{{density}}.png",
     sassDest:  "source/stylesheets/lib/variables/_sprites.css.scss"
   }
 };
@@ -34,9 +34,18 @@ module.exports = function(grunt) {
       }
     },
     sprite: {
-      all: {
-        src: config.sprites.src,
-        destImg: config.sprites.imageDest,
+      retina: {
+        padding: 3,
+        algorithm: 'binary-tree',
+        src: path.join(config.sprites.src, "*.png"),
+        destImg: config.sprites.imageDest.replace('{{density}}', '2x'),
+        destCSS: config.sprites.sassDest + ".tmp"
+      },
+      non_retina: {
+        padding: 3,
+        algorithm: 'binary-tree',
+        src: path.join(config.sprites.src, "1x", "*.png"),
+        destImg: config.sprites.imageDest.replace('{{density}}', '1x'),
         destCSS: config.sprites.sassDest,
         cssTemplate: function(context) {
           var templatePath = path.join(__dirname, '.sprites-template.css');
@@ -45,6 +54,23 @@ module.exports = function(grunt) {
         }
       }
     },
+    image_resize: {
+      options: {
+        width: "50%"
+      },
+      resize: {
+        files: [{
+          expand: true,
+          cwd: config.sprites.src,
+          src: "*.png",
+          dest: path.join(config.sprites.src, "1x")
+        }]
+      }
+    },
+    clean: [ 
+      path.join(config.sprites.src, "1x"),
+      config.sprites.sassDest + ".tmp"
+    ],
     moveIconsSassFile: {}
   });
 
@@ -57,7 +83,9 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-webfont');
   grunt.loadNpmTasks('grunt-spritesmith');
+  grunt.loadNpmTasks('grunt-image-resize');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('default', ['webfont', 'moveIconsSassFile', 'sprite']);
+  grunt.registerTask('default', ['webfont', 'moveIconsSassFile', 'image_resize', 'sprite', 'clean']);
 };
 

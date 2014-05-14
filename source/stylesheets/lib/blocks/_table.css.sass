@@ -15,3 +15,34 @@
   tr:nth-child(2n)
     background-color: $light-bg-color
 
++at-breakpoint(portable)
+  .table
+    display: block
+    border-bottom-width: 0
+
+    thead, tbody, th, td, tr
+      display: block
+
+    thead
+      background-color: transparent
+      border-width: 0
+
+      tr
+        position: absolute
+        top: -9999px
+        left: -9999px
+
+    tr
+      border-width: 0
+
+    td
+      border-bottom: 1px solid $border-color
+      white-space: normal
+      text-align: left
+
+      &:before
+        color: $light-body-color
+        +font-size(milli)
+        content: attr(data-title)
+        display: block
+

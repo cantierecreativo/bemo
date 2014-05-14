@@ -1,34 +1,43 @@
-.flag
-  display: table
-  width: 100%
++at-breakpoint(portable)
+  .flag__image
+    +margin-bottom(1)
 
-.flag--rev,
-.flag--top,
-.flag--bottom
-  @extend .flag
+    .flag--rev &
+      margin-bottom: 0
+      +margin-top(1)
 
-.flag__image,
-.flag__body
-  display: table-cell
-  vertical-align: middle
++at-breakpoint(non-portable)
+  .flag
+    display: table
+    width: 100%
 
-  .flag--top &
-    vertical-align: top
+  .flag--rev,
+  .flag--top,
+  .flag--bottom
+    @extend .flag
 
-  .flag--bottom &
-    vertical-align: bottom
+  .flag__image,
+  .flag__body
+    display: table-cell
+    vertical-align: middle
 
-.flag__image
-  padding-right: $grid-gutter
+    .flag--top &
+      vertical-align: top
 
-  > img
-    display: block
-    max-width: none
+    .flag--bottom &
+      vertical-align: bottom
 
-  .flag--rev &
-    padding-right: 0
-    padding-left: $grid-gutter
+  .flag__image
+    padding-right: $grid-gutter
 
-.flag__body
-  width: 100%
+    > img
+      display: block
+      max-width: none
+
+    .flag--rev &
+      padding-right: 0
+      padding-left: $grid-gutter
+
+  .flag__body
+    width: 100%
 

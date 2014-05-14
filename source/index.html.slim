@@ -24,7 +24,7 @@ title: Pattern Library
         .variant__body
           .grid
             - 12.times do |i|
-              .grid__item.width--1-12
+              .grid__item.width--3-12.non-portable--1-12
                 p.blurb #{i+1}
 
       .block__body: .variant
@@ -32,15 +32,7 @@ title: Pattern Library
         .variant__body
           .grid
             - 10.times do |i|
-              .grid__item.width--1-10
-                p.blurb #{i+1}
-
-      .block__body: .variant
-        .variant__header Responsive
-        .variant__body
-          .grid
-            - 12.times do |i|
-              .grid__item.width--3-12.non-portable--1-12
+              .grid__item.width--5-10.non-portable--1-10
                 p.blurb #{i+1}
 
       .block__body: .variant
@@ -74,8 +66,8 @@ title: Pattern Library
           .variant__header: code .grid--#{mod}
           .variant__body
             div class="grid--#{mod}"
-              - 4.times do |i|
-                .grid__item.width--3-12
+              - 2.times do |i|
+                .grid__item.width--5-10
                   p.blurb Lorem
 
       - %w(bottom middle).each do |mod|
@@ -87,7 +79,7 @@ title: Pattern Library
                 .grid__item.width--3-12
                   p.blurb
                     - (i+1).times do
-                      | Lorem
+                      | Foo
                       br
 
       - %w(center right).each do |mod|
@@ -168,7 +160,7 @@ title: Pattern Library
       .block__body: .variant: .variant__body
         form.form
           fieldset
-            legend Contact informations
+            legend Signup
             .form__field.form__field--invalid
               label.form__label Email
               input.form__input--large type="email" placeholder="foo@bar.com"
@@ -334,7 +326,7 @@ title: Pattern Library
     section.block
       h6.block__header
         code.block__name .table
-        | Formatted table
+        | Formatted, responsive table
 
       .block__body: .variant: .variant__body
         table.table
@@ -344,22 +336,26 @@ title: Pattern Library
               th Make
               th Model
               th Year
+              th Owner
           tbody
             tr
-              td 1
-              td Honda
-              td Accord
-              td 2009
+              td data-title="#"     1
+              td data-title="Make"  Honda
+              td data-title="Model" Accord
+              td data-title="Year"  2009
+              td data-title="Owner" Paul Roelm
             tr
-              td 2
-              td Toyota
-              td Camry
-              td 2012
+              td data-title="#"     2
+              td data-title="Make"  Toyota
+              td data-title="Model" Camry
+              td data-title="Year"  2012
+              td data-title="Owner" Jack Born
             tr
-              td 3
-              td Hyundai
-              td Elantra
-              td 2010
+              td data-title="#"     3
+              td data-title="Make"  Hyundai
+              td data-title="Model" Elantra
+              td data-title="Year"  2010
+              td data-title="Owner" Mark Fried
 
   hr
 
@@ -406,6 +402,7 @@ title: Pattern Library
           li.nav__item= link_to "Terms of Service", "#"
           li.nav__item= link_to "Privacy Policy", "#"
           li.nav__item= link_to "Support", "#"
+          li.nav__item= link_to "About", "#"
 
       .block__body: .variant
         .variant__header: code .nav--pagination
@@ -427,6 +424,7 @@ title: Pattern Library
               li.nav__item= link_to "Terms of Service", "#"
               li.nav__item= link_to "Privacy Policy", "#"
               li.nav__item= link_to "Support", "#"
+              li.nav__item= link_to "About", "#"
 
   hr
 
@@ -456,12 +454,20 @@ title: Pattern Library
     section.block
       h6.block__header
         code.block__name .sprite
-        | Sprites
+        | Retina-ready, resizable PNG sprites
 
       .block__body: .variant: .variant__body
         .nav
-          .nav__item: .sprite--stripes
-          .nav__item: .sprite--star
+          .nav__item: .sprite--one
+          .nav__item: .sprite--two
+        .nav
+          .nav__item: .sprite--one style="width: 43px; height: 125px"
+          .nav__item: .sprite--two style="width: 74px; height: 125px"
+
+      .block__body: .variant
+        .variant__header: code .sprite--center
+        .variant__body
+          .sprite--three.sprite--center
 
   hr
 
