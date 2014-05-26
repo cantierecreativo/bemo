@@ -1,11 +1,6 @@
-## Gemfile
+## Rails installation
 
 ```
-source 'http://rubygems.org'
-source 'https://rails-assets.org'
-
-gem 'bourbon'
-gem 'rails-assets-normalize-scss'
-gem 'rails-assets-sass-list-maps'
+ruby -e "$(curl -fsSL https://raw.github.com/stefanoverna/stylesheets/master/install)"
 ```
 
