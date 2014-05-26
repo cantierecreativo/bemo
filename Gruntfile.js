@@ -2,16 +2,18 @@ var fs = require('fs');
 var path = require('path');
 var _ = require('lodash');
 
+var prefix = "app/assets/";
+
 var config = {
   icons: {
-    src:       "source/fonts/svg/*.svg",
-    fontDest:  "source/fonts/",
-    sassDest:  "source/stylesheets/lib/variables/_icon-glyphs.css.sass"
+    src:       path.join(prefix, "fonts/svg/*.svg"),
+    fontDest:  path.join(prefix, "fonts/"),
+    sassDest:  path.join(prefix, "stylesheets/lib/variables/_icon-glyphs.css.sass)")
   },
   sprites: {
-    src:       "source/images/sprites/",
-    imageDest: "source/images/sprites-{{density}}.png",
-    sassDest:  "source/stylesheets/lib/variables/_sprites.css.scss"
+    src:       path.join(prefix, "images/sprites/"),
+    imageDest: path.join(prefix, "images/sprites-{{density}}.png"),
+    sassDest:  path.join(prefix, "stylesheets/lib/variables/_sprites.css.scss")
   }
 };
 
