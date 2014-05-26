@@ -1,5 +1,11 @@
+// |<--- palm --->|<--- lap --->|<--- small-desk --->|<--- big-desk --->|
+//                |<-------------------- gte-lap ---------------------->|
+//                              |<------- desk / gte-small-desk ------->|
+// |<--- portable / lte-lap --->|
+// |<-------------- lte-small-desk ----------------->|
+
 // define breakpoints
-$breakpoint-widths: ('palm', 'lap' 480px, 'desk' 1024px, 'wide' 1500px, 'portable', 'non-portable' 1024px)
+$breakpoint-widths: ('palm', 'lap' 480px, 'small-desk' 1024px, 'big-desk' 1500px, 'portable', 'desk' 1024px)
 
 // derived variables
 $breakpoint-names: breakpoint-names($breakpoint-widths)

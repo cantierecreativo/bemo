@@ -24,7 +24,7 @@ title: Pattern Library
         .variant__body
           .grid
             - 12.times do |i|
-              .grid__item.width--3-12.non-portable--1-12
+              .grid__item.width--3-12.desk--1-12
                 p.blurb #{i+1}
 
       .block__body: .variant
@@ -32,7 +32,7 @@ title: Pattern Library
         .variant__body
           .grid
             - 10.times do |i|
-              .grid__item.width--5-10.non-portable--1-10
+              .grid__item.width--5-10.desk--1-10
                 p.blurb #{i+1}
 
       .block__body: .variant
@@ -48,9 +48,9 @@ title: Pattern Library
         .variant__header Responsive shiftable columns
         .variant__body
           .grid
-            .grid__item.width--3-12.push-3-12.non-portable--push-0
+            .grid__item.width--3-12.push-3-12.desk--push-0
               p.blurb First
-            .grid__item.width--3-12.pull-3-12.non-portable--pull-0
+            .grid__item.width--3-12.pull-3-12.desk--pull-0
               p.blurb Last
 
       .block__body: .variant
@@ -100,7 +100,7 @@ title: Pattern Library
         | Vertical spacing
 
       .grid
-        .grid__item.non-portable--6-12
+        .grid__item.desk--6-12
           - %w(margin-bottom margin-top vertical-margin padding-bottom padding-top vertical-padding).each do |modifier|
             - name = "space--#{modifier}-3"
             .block__body: .variant
@@ -108,7 +108,7 @@ title: Pattern Library
               .variant__body
                   div class=name
                     .blurb= lorem.sentence
-        .grid__item.non-portable--6-12
+        .grid__item.desk--6-12
           - %w(1 2 3 5 8).each do |amount|
             - name = "space--vertical-margin-#{amount}"
             .block__body: .variant
@@ -133,7 +133,7 @@ title: Pattern Library
         .hide--on-lap
           p.blurb Will be hidden on laps
 
-        .hide--on-non-portable
+        .hide--on-desk
           p.blurb Will be hidden on desktops
 
   hr

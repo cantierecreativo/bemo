@@ -7,7 +7,7 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
 compass_config do |config|
-  config.output_style = :compressed
+  # config.output_style = :compressed
 end
 
 activate :deploy do |deploy|

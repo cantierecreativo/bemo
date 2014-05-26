@@ -1,27 +1,29 @@
-@function breakpoint-names($list)
-  $result: ()
-
-  @each $breakpoint in $list
-    $result: append($result, nth($breakpoint, 1), comma)
-
-  @return $result
-
 @function breakpoint-media-queries($list)
   $result: ()
 
   @for $i from 1 through length($list)
     $breakpoint: nth($list, $i)
     $name: nth($breakpoint, 1)
-    $query: null
+    $is-lowest-query: length($breakpoint) == 1
+    $is-highest-query: $i == length($list) or length(nth($list, $i + 1)) == 1
 
-    @if length($breakpoint) == 1
+    @if $is-lowest-query
       $query: "(max-width: #{nth(nth($list, $i + 1), 2) - 1px})"
-    @else if $i == length($list) or length(nth($list, $i + 1)) == 1
+      $result: map-merge($result, $name $query)
+    @else if $is-highest-query
       $query: "(min-width: #{nth($breakpoint, 2)})"
+      $result: map-merge($result, $name $query)
     @else
-      $query: "(min-width: #{nth($breakpoint, 2)}) and (max-width: #{nth(nth($list, $i + 1), 2)})"
+      $lte-query: "(max-width: #{nth(nth($list, $i + 1), 2)})"
+      $gte-query: "(min-width: #{nth($breakpoint, 2)})"
+      $query: "#{$gte-query} and #{$lte-query}"
 
-    $result: map-merge($result, $name $query)
+      $result: map-merge($result, "lte-#{$name}" $lte-query)
+      $result: map-merge($result, $name $query)
+      $result: map-merge($result, "gte-#{$name}" $gte-query)
 
   @return $result
+
+@function breakpoint-names($list)
+  @return map-keys(breakpoint-media-queries($list))
 
