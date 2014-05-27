@@ -31,7 +31,7 @@ module.exports = function(grunt) {
           htmlDemo: false,
           font: 'icons',
           template: './.icon-glyphs-template.css',
-          types: ['eot', 'woff', 'ttf']
+          types: ['eot', 'woff', 'ttf', 'svg']
         },
       }
     },
