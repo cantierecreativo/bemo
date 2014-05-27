@@ -1,0 +1,20 @@
+@mixin setup-sprite($name)
+  $data: map-get($sprites, $name)
+
+  $x: 0%
+  $y: 0%
+
+  @if map-get($data, total-width) > map-get($data, width)
+    $x: percentage(map-get($data, x) / (map-get($data, total-width) - map-get($data, width)))
+
+  @if map-get($data, total-height) > map-get($data, height)
+    $y: percentage(map-get($data, y) / (map-get($data, total-height) - map-get($data, height)))
+
+  background-position: $x $y
+  background-size: percentage(map-get($data, total-width) / map-get($data, width)) auto
+
+@mixin sprite-size($name, $scale: 1.0)
+  $data: map-get($sprites, $name)
+  height: map-get($data, height) * $scale
+  width: map-get($data, width) * $scale
+
