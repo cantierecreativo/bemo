@@ -4,6 +4,7 @@
   "description": "Stylesheets",
   "devDependencies": {
     "grunt": "*",
+    "grunt-cli": "*",
     "grunt-webfont": "*",
     "grunt-spritesmith": "*",
     "grunt-image-resize": "*",
