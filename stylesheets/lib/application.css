@@ -1857,47 +1857,52 @@ th, td {
   margin-bottom: 6rem; }
 
 /* line 1, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/blocks/_sprite.css.sass */
-.sprite, .sprite--one, .sprite--three, .sprite--two {
+.sprite, .sprite--one, .sprite--three, .sprite--two, .sprite--smaller-two {
   background-image: url("../../images/sprites-1x.png");
   background-repeat: no-repeat;
   display: inline-block;
   overflow: hidden; }
   /* line 4, /Users/stefanoverna/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bourbon-3.2.1/app/assets/stylesheets/addons/_hide-text.scss */
-  .sprite:before, .sprite--one:before, .sprite--three:before, .sprite--two:before {
+  .sprite:before, .sprite--one:before, .sprite--three:before, .sprite--two:before, .sprite--smaller-two:before {
     content: "";
     display: block;
     width: 0;
     height: 100%; }
   @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
     /* line 1, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/blocks/_sprite.css.sass */
-    .sprite, .sprite--one, .sprite--three, .sprite--two {
+    .sprite, .sprite--one, .sprite--three, .sprite--two, .sprite--smaller-two {
       background-image: url("../../images/sprites-2x.png"); } }
 
-/* line 10, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/blocks/_sprite.css.sass */
+/* line 11, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/blocks/_sprite.css.sass */
+.sprite--one {
+  background-position: 0% 0%;
+  background-size: 562.35294% auto;
+  height: 250px;
+  width: 85px; }
+
+/* line 11, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/blocks/_sprite.css.sass */
+.sprite--three {
+  background-position: 36.82008% 0%;
+  background-size: 200% auto;
+  height: 250px;
+  width: 239px; }
+
+/* line 11, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/blocks/_sprite.css.sass */
+.sprite--two, .sprite--smaller-two {
+  background-position: 100% 0%;
+  background-size: 322.97297% auto;
+  height: 250px;
+  width: 148px; }
+
+/* line 16, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/blocks/_sprite.css.sass */
+.sprite--smaller-two {
+  height: 125px;
+  width: 74px; }
+
+/* line 20, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/blocks/_sprite.css.sass */
 .sprite--center {
   display: block;
   margin: 0 auto; }
-
-/* line 17, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/blocks/_sprite.css.sass */
-.sprite--one {
-  background-position: 0% 0%;
-  height: 250px;
-  width: 85px;
-  background-size: 562.35294% auto; }
-
-/* line 17, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/blocks/_sprite.css.sass */
-.sprite--three {
-  background-position: 36.82008% 0%;
-  height: 250px;
-  width: 239px;
-  background-size: 200% auto; }
-
-/* line 17, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/blocks/_sprite.css.sass */
-.sprite--two {
-  background-position: 100% 0%;
-  height: 250px;
-  width: 148px;
-  background-size: 322.97297% auto; }
 
 /* line 1, /Users/stefanoverna/code/github/stylesheets/source/stylesheets/lib/blocks/_table.css.sass */
 .table, .formatted-content table {
