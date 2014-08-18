@@ -1,0 +1,12 @@
+{
+  "name": "XXX",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-webfont": "*",
+    "grunt-spritesmith": "*",
+    "grunt-image-resize": "*",
+    "lodash": "*"
+  }
+}
+

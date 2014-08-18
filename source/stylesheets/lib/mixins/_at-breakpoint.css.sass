@@ -1,8 +1,0 @@
-@mixin at-breakpoint($media-query)
-  @if map-has-key($breakpoint-media-queries, $media-query)
-    @media only screen and #{map-get($breakpoint-media-queries, $media-query)}
-      @content
-
-  @else
-    @warn "Breakpoint ‘#{$media-query}’ does not exist"
-

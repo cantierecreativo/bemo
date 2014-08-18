@@ -1,2 +1,7 @@
 build/
+temp/
+docs/node_modules/
+docs/bower_components/
+docs/.grunt/
+grunt-bemo/node_modules
 

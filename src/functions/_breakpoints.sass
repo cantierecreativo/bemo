@@ -1,0 +1,55 @@
+@function breakpoint-media-queries($list)
+  $result: ()
+
+  @for $i from 1 through length($list)
+    $breakpoint: nth($list, $i)
+    $name: nth($breakpoint, 1)
+    $is-lowest-query: length($breakpoint) == 1
+    $is-highest-query: $i == length($list) or length(nth($list, $i + 1)) == 1
+
+    @if $is-lowest-query
+      $query: "screen and (max-width: #{nth(nth($list, $i + 1), 2) - 1px})"
+      $result: map-merge($result, $name $query)
+    @else if $is-highest-query
+      $query: "screen and (min-width: #{nth($breakpoint, 2)})"
+      $result: map-merge($result, $name $query)
+    @else
+      $lte-query: "(max-width: #{nth(nth($list, $i + 1), 2)})"
+      $gte-query: "(min-width: #{nth($breakpoint, 2)})"
+      $query: "screen and #{$gte-query} and #{$lte-query}"
+
+      $result: map-merge($result, "lte-#{$name}" "screen and #{$lte-query}")
+      $result: map-merge($result, $name $query)
+      $result: map-merge($result, "gte-#{$name}" "screen and #{$gte-query}")
+
+  @return $result
+
+@function breakpoint-inverse-media-queries($list)
+  $result: ()
+
+  @for $i from 1 through length($list)
+    $breakpoint: nth($list, $i)
+    $name: nth($breakpoint, 1)
+    $is-lowest-query: length($breakpoint) == 1
+    $is-highest-query: $i == length($list) or length(nth($list, $i + 1)) == 1
+
+    @if $is-lowest-query
+      $query: "screen and (min-width: #{nth(nth($list, $i + 1), 2)})"
+      $result: map-merge($result, $name $query)
+    @else if $is-highest-query
+      $query: "screen and (max-width: #{nth($breakpoint, 2) - 1px})"
+      $result: map-merge($result, $name $query)
+    @else
+      $lte-query: "(min-width: #{nth(nth($list, $i + 1), 2) + 1px})"
+      $gte-query: "(max-width: #{nth($breakpoint, 2) - 1px})"
+      $query: "screen and #{$gte-query}, screen and #{$lte-query}"
+
+      $result: map-merge($result, "lte-#{$name}" "screen and #{$lte-query}")
+      $result: map-merge($result, $name $query)
+      $result: map-merge($result, "gte-#{$name}" "screen and #{$gte-query}")
+
+  @return $result
+
+@function breakpoint-names($list)
+  @return map-keys(breakpoint-media-queries($list))
+

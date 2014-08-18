@@ -1,0 +1,57 @@
+.button
+  padding: 0.7em 1em
+  text-decoration: none
+  border-width: 0
+  display: inline-block
+  vertical-align: middle
+  white-space: nowrap
+  font-family: inherit
+  cursor: pointer
+  line-height: inherit
+  background-color: $inactive-color
+  color: $base-body-color
+  -webkit-appearance: none
+  border-radius: 0
+  +box-sizing(border-box)
+  +transition(opacity 0.2s ease-out)
+
+  .no-touch &:hover
+    opacity: 0.7
+
+.button--small
+  @extend .button
+  padding: 0.4em 0.6em
+
+.button--large
+  @extend .button
+  padding: 0.8em 1.5em
+
+.button--huge
+  @extend .button
+  padding: 1em 1.5em
+
+.button--expand
+  @extend .button
+  text-align: center
+  display: block
+
+.button--primary,
+.button--notice,
+.button--alert
+  @extend .button
+  color: white
+
+.button--primary
+  background-color: $primary-color
+
+.button--notice
+  background-color: $notice-color
+
+.button--alert
+  background-color: $alert-color
+
+.button--rev
+  @extend .button
+  background-color: white
+  color: $primary-color
+

@@ -1,0 +1,22 @@
+.sprite
+  background-image: image-url('sprites-1x.png')
+  background-repeat: no-repeat
+  display: inline-block
+  +hide-text
+
+  +hidpi(1.5)
+    background-image: image-url('sprites-2x.png')
+
+@each $name in map-keys($sprites)
+  .sprite--#{$name}
+    @extend .sprite
+    +setup-sprite($name)
+    +sprite-size($name)
+
+.sprite--center
+  display: block
+  margin: 0 auto
+
+.sprite--one.is-half-size
+  +sprite-size(one, .5)
+

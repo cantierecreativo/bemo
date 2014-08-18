@@ -1,0 +1,5 @@
+@each $name in $breakpoint-names
+  .visible--on-#{$name}
+    +except-at-breakpoint($name)
+      display: none
+

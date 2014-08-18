@@ -1,0 +1,28 @@
+.canvas
+  position: relative
+
+  &.is-shifted
+    +position(absolute, 0px 0px 0px 0px)
+    overflow: hidden
+
+.canvas__main
+  +transition(transform 0.5s ease-out)
+
+.canvas__aside
+  z-index: 2
+  overflow-y: auto
+  background-color: $light-bg-color
+  position: absolute
+  box-shadow: 0 0 0 transparent
+  top: 0
+  bottom: 0
+  +transition(transform 0.5s ease-out, box-shadow 0.5s ease-out)
+
+  .canvas.is-shifted &
+    box-shadow: 3px 0 5px rgba(#000, 0.2)
+
++canvas-layout(290px)
+
++at-breakpoint(lap)
+  +canvas-layout(400px)
+

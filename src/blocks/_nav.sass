@@ -1,0 +1,59 @@
+%nav-item
+  display: inline-block
+  vertical-align: middle
+
+.nav__item
+  @extend %nav-item
+
+  &:before
+    content: "\00A0"
+    text-decoration: none
+    display: inline-block
+    color: $base-body-color
+
+  &:first-child:before
+    display: none
+
+  &.is-active
+    text-decoration: none
+    color: $base-body-color
+
+.nav--dots
+  .nav__item:before
+    content: "\00A0\2022\00A0"
+
+.nav--breadcrumbs
+  .nav__item:before
+    content: "\00A0\00bb\00A0"
+
+.nav--pagination
+  .nav__item.is-current
+    text-decoration: none
+    color: $base-body-color
+
+  .nav__item--dots,
+  .nav__item--prev,
+  .nav__item--next,
+  .nav__item--first,
+  .nav__item--last
+    @extend %nav-item
+
+  .nav__item,
+  .nav__item--dots,
+  .nav__item--prev,
+  .nav__item--next,
+  .nav__item--first,
+  .nav__item--last
+    padding: 0.4em
+
++at-breakpoint(desk)
+  .nav--expand
+    display: table
+    width: 100%
+    table-layout: fixed
+
+    .nav__item
+      display: table-cell
+      margin: 0
+      white-space: nowrap
+
