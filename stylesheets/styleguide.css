@@ -1,0 +1,63 @@
+.block {
+  margin-top: 90px;
+}
+.block:last-child {
+  margin-bottom: 90px;
+}
+
+.block__header,
+.variant__header {
+  font-size: 16px;
+  font-weight: bold;
+  display: table;
+  width: 100%;
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 9px;
+}
+.block__header .code,
+.variant__header .code {
+  text-align: right;
+}
+.block__header .code,
+.block__header .heading,
+.variant__header .code,
+.variant__header .heading {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.block__header {
+  font-size: 25px;
+}
+
+.block__variant {
+  padding-top: 60px;
+}
+
+.block__example,
+.variant__body,
+.block__variables {
+  padding-top: 30px;
+}
+
+.blurb, .blurb--with-margin {
+  padding: 5px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-image: -webkit-linear-gradient(-225deg, rgba(255, 255, 255, 0.3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg,rgba(255, 255, 255, 0.3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 75%, transparent);
+  background-size: 20px 20px;
+}
+.blurb .blurb, .blurb--with-margin .blurb, .blurb .blurb--with-margin, .blurb--with-margin .blurb--with-margin {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.blurb--with-margin {
+  margin-bottom: 5px;
+}
+
+pre {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  font-size: 13px;
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>
+Created by FontForge 20120731 at Mon Aug 18 22:26:50 2014
+ By Stefano Verna
+Created by Stefano Verna with FontForge 2.0 (http://fontforge.sf.net)
+</metadata>
+<defs>
+<font id="icons" horiz-adv-x="187" >
+  <font-face 
+    font-family="icons"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 6 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="-0.363636 0 341.818 371.565"
+    underline-thickness="25"
+    underline-position="-52"
+    unicode-range="U+F101-F102"
+  />
+<missing-glyph 
+d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
+    <glyph glyph-name=".notdef" 
+d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="170" 
+ />
+    <glyph glyph-name="uniF101" unicode="&#xf101;" horiz-adv-x="342" 
+d="M127 13q-17 0 -28 14l-92 121q-9 12 -7 26.5t14 23.5t26.5 7t23.5 -14l60 -80l152 243q7 13 21.5 16.5t27.5 -4.5q13 -7 16 -21.5t-5 -27.5l-179 -287q-9 -15 -28 -17h-2z" />
+    <glyph glyph-name="uniF102" unicode="&#xf102;" horiz-adv-x="241" 
+d="M232 111q9 -9 9 -21.5t-9 -21.5t-22 -9t-22 9l-68 77l-68 -77q-9 -9 -21.5 -9t-21.5 9t-9 21.5t9 21.5l71 81l-71 81q-9 9 -9 21.5t9 21.5t21.5 9t21.5 -9l68 -77l68 77q9 9 22 9t22 -9t9 -21.5t-9 -21.5l-71 -81z" />
+  </font>
+</defs></svg>
