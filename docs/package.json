@@ -10,7 +10,6 @@
     "grunt-contrib-sass": "*",
     "grunt-contrib-clean": "*",
     "grunt-build-control": "*",
-    "grunt-contrib-copy": "*",
     "grunt-contrib-connect": "*",
     "grunt-contrib-watch": "*",
     "grunt-gh-pages": "*",
@@ -21,8 +20,8 @@
   "paths": {
     "temp": "../temp",
     "build": "../build",
-    "templates": "../installer/templates",
-    "source": "../src"
+    "templates": "../grunt-bemo/templates",
+    "source": "../grunt-bemo/bemo"
   }
 }
 

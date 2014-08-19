@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "devDependencies": {
     "grunt": "*",
+    "grunt-bemo": "*",
     "grunt-webfont": "*",
     "grunt-spritesmith": "*",
-    "grunt-image-resize": "*",
-    "lodash": "*"
+    "grunt-image-resize": "*"
   }
 }
 

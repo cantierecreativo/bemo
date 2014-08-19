@@ -1,0 +1,21 @@
++block("Off-canvas menu", ".canvas")
+  +example
+    div(style='position: relative; height: 300px; overflow: hidden;')
+      .canvas
+        .canvas__aside
+          div(style='padding: 30px;')
+            
+            ul
+              li: a(href='#') Item 1
+              li: a(href='#') Item 2
+              li: a(href='#') Item 3
+              li: a(href='#') Item 4
+
+            .space--top-2
+              a.button--small(href="#" data-class-toggle="is-shifted" data-element=".canvas") Close menu
+
+        .canvas__main
+          .formatted-content(style='padding: 30px;')
+            +lorem(2)
+            a.button(href="#" data-class-toggle="is-shifted" data-element=".canvas") Toggle menu
+

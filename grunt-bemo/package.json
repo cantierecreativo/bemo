@@ -27,7 +27,10 @@
     "grunt": "~0.4.5"
   },
   "dependencies": {
-    "lodash": "*"
+    "lodash": "*",
+    "colors": "*",
+    "node-fs-extra": "*",
+    "readline-sync": "*"
   },
   "keywords": [
     "gruntplugin"

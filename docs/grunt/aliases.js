@@ -1,6 +1,6 @@
 module.exports = {
   'buildSass': [
-    'copy:sourcesToTemp',
+    'bemo-scaffold',
     'bemo',
     'bower:install',
     'sass'
@@ -23,12 +23,12 @@ module.exports = {
     'connect:serveWithoutKeepalive',
     'watch'
   ],
-  'default': [
-    'build'
-  ],
   'deploy': [
     'build',
     'gh-pages'
+  ],
+  'default': [
+    'build'
   ]
 }
 

@@ -1,0 +1,24 @@
++block("Flag block", ".flag")
+
+  mixin flag-content
+    .flag__image
+      img(src='http://placehold.it/100x100')
+    .flag__body
+      p Quam at in repellendus voluptas. Aliquid qui consequuntur harum mollitia debitis voluptatem aut est rem sed natus. Quisquam sint voluptatum itaque libero quo et culpa et assumenda aut sunt ratione rerum. Magni maiores occaecati in voluptatem qui a non quidem enim dolore rerum quibusdam facilis fugit.
+
+  +example
+    .flag
+      +flag-content
+
+  +example("Aligned at top", ".flag--top")
+    .flag--top
+      +flag-content
+
+  +example("Aligned at bottom", ".flag--bottom")
+    .flag--bottom
+      +flag-content
+
+  +example("Reversed order", ".flag--rev")
+    .flag--rev
+      +flag-content
+

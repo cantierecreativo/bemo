@@ -1,18 +1,15 @@
 var _ = require('lodash');
 var path = require('path');
-var fs = require('fs');
+var fs = require('node-fs-extra');
 
 module.exports = function(grunt) {
 
   grunt.registerTask('bemoCleanTempSprites', function() {
     var config = grunt.config.get('bemo').sprites;
+    var dir = path.join(config.src, "1x");
 
-    fs.unlinkSync(config.sassDest + ".tmp");
-    var dir = path.join(path.dirname(config.src), "1x");
-    fs.readdirSync(dir).forEach(function(file, index) {
-      fs.unlinkSync(path.join(dir, file));
-    });
-    fs.rmdirSync(dir);
+    fs.removeSync(dir);
+    fs.removeSync(config.sassDest + ".tmp");
   });
 
   grunt.registerTask('bemo-sprites', function() {
@@ -26,9 +23,9 @@ module.exports = function(grunt) {
         options: { width: "50%" },
         files: [{
           expand: true,
-          cwd: path.dirname(config.src),
+          cwd: config.src,
           src: "*.png",
-          dest: path.join(path.dirname(config.src), "1x")
+          dest: path.join(config.src, "1x")
         }]
       }
     });
@@ -37,14 +34,14 @@ module.exports = function(grunt) {
       bemoRetina: {
         padding: 6,
         algorithm: 'binary-tree',
-        src: config.src,
+        src: path.join(config.src, '*.png'),
         destImg: config.imageDest.replace('{{density}}', '2x'),
         destCSS: config.sassDest + ".tmp"
       },
       bemoNonRetina: {
         padding: 3,
         algorithm: 'binary-tree',
-        src: path.join(path.dirname(config.src), "1x", "*.png"),
+        src: path.join(config.src, "1x", "*.png"),
         destImg: config.imageDest.replace('{{density}}', '1x'),
         destCSS: config.sassDest,
         cssTemplate: function(context) {

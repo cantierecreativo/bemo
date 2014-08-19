@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 
     grunt.config.set('webfont', {
       bemo: {
-        src: config.src,
+        src: path.join(config.src, '*.svg'),
         dest: config.fontDest,
         destCss: path.dirname(config.sassDest),
         options: {

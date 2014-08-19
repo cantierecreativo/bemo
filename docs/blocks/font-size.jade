@@ -1,0 +1,12 @@
++block("Font size helpers", "")
+
+  +variables
+    pre.
+      $base-font-size: 16px
+      $heading-font-sizes: ('alpha' 30px, 'beta' 25px, 'gamma' 19px)
+      $smallprint-font-sizes: ('smallprint' 14px, 'milli' 13px)
+
+  each fontSize in ['alpha', 'beta', 'gamma', 'regular', 'smallprint', 'milli']
+    +example(titleize(fontSize), "." + fontSize)
+      h6(class=fontSize) Eveniet libero et consequatur sit voluptatibus dignissimos
+

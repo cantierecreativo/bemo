@@ -1,0 +1,43 @@
++block("Navigation", ".nav")
+
+  +example
+    ul.nav
+      a.nav__item(href='#') Terms of Service
+      a.nav__item.is-active(href='#') Privacy Policy
+      a.nav__item(href='#') Support
+      a.nav__item(href='#') About
+
+  +example("Dots separated list", ".nav--dots")
+    ul.nav--dots
+      a.nav__item(href='#') Terms of Service
+      a.nav__item.is-active(href='#') Privacy Policy
+      a.nav__item(href='#') Support
+      a.nav__item(href='#') About
+
+  +example("Breadcrumbs", ".nav--breadcrumbs")
+    ul.nav--breadcrumbs
+      a.nav__item(href='#') Women
+      a.nav__item(href='#') Clothing
+      a.nav__item.is-active(href='#') Shirts
+
+  +example("Pagination", ".nav--pagination")
+    nav.nav--pagination
+      a.nav__item--first(href="#") «
+      a.nav__item--prev(href="#") ‹
+      span.nav__item--dots ...
+      a.nav__item(href="#") 11
+      a.nav__item(href="#") 12
+      a.nav__item.is-current(href="#") 13
+      a.nav__item(href="#") 14
+      a.nav__item(href="#") 15
+      span.nav__item--dots ...
+      a.nav__item--next(href="#") ›
+      a.nav__item--last(href="#") »
+
+  +example("Fill the entire width", ".nav--expand")
+    ul.nav--expand.align--center
+      a.nav__item(href='#') Terms of Service
+      a.nav__item(href='#') Privacy Policy
+      a.nav__item(href='#') Support
+      a.nav__item(href='#') About
+

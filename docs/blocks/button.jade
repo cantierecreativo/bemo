@@ -1,0 +1,28 @@
++block("Buttons", ".button")
+
+  +example("Works with links, buttons and inputs")
+    a.button(href='#') Link
+    | &nbsp;
+    button.button Button
+    | &nbsp;
+    input.button(type='submit', value='Submit')
+
+  +example("Fill the entire width", ".button--expand")
+    a.button--expand(href='#') Button
+
+  +example("Different sizes", ".button--(small|large|huge)")
+    a.button--small(href='#') Button
+    | &nbsp;
+    a.button--large(href='#') Button
+    | &nbsp;
+    a.button--huge(href='#') Button
+
+  +example("Different colors", ".button--(primary|notice|alert|rev)")
+    a.button--primary(href='#') Button
+    | &nbsp;
+    a.button--notice(href='#') Button
+    | &nbsp;
+    a.button--alert(href='#') Button
+    | &nbsp;
+    a.button--rev(href='#') Button
+

@@ -1,0 +1,30 @@
++block("Formatted, responsive tables", ".table")
+  +example
+    table.table
+      thead
+        tr
+          th #
+          th Make
+          th Model
+          th Year
+          th Owner
+      tbody
+        tr
+          td(data-title='#')     1
+          td(data-title='Make')  Honda
+          td(data-title='Model') Accord
+          td(data-title='Year')  2009
+          td(data-title='Owner') Paul Roelm
+        tr
+          td(data-title='#')     2
+          td(data-title='Make')  Toyota
+          td(data-title='Model') Camry
+          td(data-title='Year')  2012
+          td(data-title='Owner') Jack Born
+        tr
+          td(data-title='#')     3
+          td(data-title='Make')  Hyundai
+          td(data-title='Model') Elantra
+          td(data-title='Year')  2010
+          td(data-title='Owner') Mark Fried
+

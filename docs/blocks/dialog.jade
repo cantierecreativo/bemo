@@ -1,0 +1,13 @@
++block("Modal dialog", ".dialog")
+
+  +example
+    a.button(href="#" data-class-toggle="is-active" data-element=".dialog") Click to open dialog
+
+    #second-dialog.dialog
+      .dialog__frame
+        a.dialog__close(href="#" data-class-toggle="is-active" data-element=".dialog") Close
+        .dialog__body
+          .formatted-content
+            h6.beta Placeholder text
+            +lorem(5)
+

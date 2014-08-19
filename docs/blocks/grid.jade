@@ -1,0 +1,86 @@
++block("Grid layout", ".grid")
+
+  +variables
+    pre.
+      $grid-gutter: 24px
+      $grid-push: true
+      $grid-pull: true
+      $grid-cols: 12
+      $grid-breakpoints: desk
+
+  mixin some-grid-items
+    each col in loop(4)
+      .grid__item.width--3-12
+        .blurb= col
+
+  mixin grid-items-with-different-heights
+    each col in loop(4)
+      .grid__item.width--3-12
+        .blurb
+          each line in loop(col)
+            p Foo
+
+  +example("Non responsive columns", ".width--x-y")
+    .grid
+      each col in loop(6)
+        .grid__item.width--2-12
+          .blurb= col
+
+  +example("Responsive columns", ".breakpoint--x-y")
+    .grid
+      each col in loop(12)
+        .grid__item.width--4-12.desk--1-12
+          .blurb--with-margin= col
+
+  +example("Shiftable columns", ".(push|pull)--x-y")
+    .grid
+      .grid__item.width--3-12.push-3-12
+        .blurb First
+      .grid__item.width--3-12.pull-3-12
+        .blurb Last
+
+  +example("Responsive shiftable columns", ".breakpoint--(push|pull)-x-y")
+    .grid
+      .grid__item.width--3-12.push-3-12.desk--push-0
+        .blurb First
+      .grid__item.width--3-12.pull-3-12.desk--pull-0
+        .blurb Last
+
+  +example("Reverse ordering", ".grid--rev")
+    .grid--rev
+      +some-grid-items
+
+  +example("Half gutter", ".grid--narrow")
+    .grid--narrow
+      +some-grid-items
+
+  +example("Double gutter", ".grid--wide")
+    .grid--wide
+      +some-grid-items
+
+  +example("Aligned to bottom", ".grid--bottom")
+    .grid--bottom
+      +grid-items-with-different-heights
+
+  +example("Vertically centered", ".grid--middle")
+    .grid--middle
+      +grid-items-with-different-heights
+
+  +example("Horizontally centered", ".grid--center")
+    .grid--center
+      .grid__item.width--3-12
+        p.blurb One
+      .grid__item.width--3-12
+        p.blurb Two
+      .grid__item.width--3-12
+        p.blurb Three
+
+  +example("Right alignment", ".grid--right")
+    .grid--right
+      .grid__item.width--3-12
+        p.blurb One
+      .grid__item.width--3-12
+        p.blurb Two
+      .grid__item.width--3-12
+        p.blurb Three
+

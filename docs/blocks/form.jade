@@ -1,0 +1,18 @@
++block("Formatted forms", ".form")
+
+  +example
+    form.form
+      fieldset
+        legend Signup
+        .form__field.form__field--invalid
+          label.form__label Email
+          input.form__input--large(placeholder='foo@bar.com', type='email')
+          .form__error Invalid email
+        .form__field
+          label.form__label Password
+          input(placeholder='Insert your password', type='password')
+          .form__hint Password must be at least 6 chars long
+
+        .form__actions
+          input.button.button--primary.button--large(type='submit', value='Create Contact')
+
