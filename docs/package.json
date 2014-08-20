@@ -1,11 +1,8 @@
 {
   "name": "bemo-docs",
   "version": "0.0.1",
-  "devDependencies": {
+  "dependencies": {
     "grunt": "*",
-    "grunt-webfont": "*",
-    "grunt-spritesmith": "*",
-    "grunt-image-resize": "*",
     "grunt-contrib-jade": "*",
     "grunt-contrib-sass": "*",
     "grunt-contrib-clean": "*",
