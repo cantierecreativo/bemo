@@ -15,10 +15,10 @@
     "grunt-bemo": "*"
   },
   "paths": {
-    "temp": "../temp",
-    "build": "../build",
-    "templates": "../grunt-bemo/templates",
-    "source": "../grunt-bemo/bemo"
+    "temp": "temp",
+    "build": "build",
+    "templates": "../templates",
+    "source": "../bemo"
   }
 }
 
