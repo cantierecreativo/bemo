@@ -4,17 +4,17 @@ module.exports = function(grunt) {
   grunt.initConfig({
     "bemo": {
       "scaffold": {
-        "sass":       "app/stylesheets"
+        "sass":       "app/assets/stylesheets"
       },
       "webfonts": {
-        "src":        "app/fonts/svg",
-        "fontDest":   "app/fonts",
-        "sassDest":   "app/stylesheets/variables/_icon-glyphs.sass"
+        "src":        "app/assets/fonts/svg",
+        "fontDest":   "app/assets/fonts",
+        "sassDest":   "app/assets/stylesheets/variables/_icon-glyphs.sass"
       },
       "sprites": {
-        "src":        "app/images/sprites",
-        "imageDest":  "app/images/sprites-{{density}}.png",
-        "sassDest":   "app/stylesheets/variables/_sprites.css.scss"
+        "src":        "app/assets/images/sprites",
+        "imageDest":  "app/assets/images/sprites-{{density}}.png",
+        "sassDest":   "app/assets/stylesheets/variables/_sprites.css.scss"
       }
     }
   });

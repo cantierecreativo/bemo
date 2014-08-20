@@ -1,0 +1,106 @@
+#!/usr/bin/env ruby
+
+class String
+  def green
+    escape 32
+  end
+
+  def yellow
+    escape 33
+  end
+
+  def reset
+    escape 0
+  end
+
+  def underline
+    escape 4
+  end
+
+  def escape(n)
+    if STDOUT.tty?
+      "\033[#{n}m#{self}\033[0m"
+    else
+      self
+    end
+  end
+end
+
+def system(*args)
+  abort "Command failed: #{args}" unless Kernel.system(*args)
+end
+
+def copy(url, dest)
+  system 'curl', '-sSL', url, '-o', dest
+  puts '✓'.green + ' Written ' + dest.underline
+  puts
+end
+
+def ask(question)
+  print "#{'?'.yellow} #{question} [y/n] "
+  answer = gets.strip.downcase
+  answer == 'y' || answer == 'yes'
+end
+
+def copy_if_missing(url, dest)
+  if File.exist?(dest)
+    if ask("Can I overwrite #{dest.underline}?")
+      copy(url, dest)
+    else
+      abort "Aborted."
+    end
+  else
+    copy(url, dest)
+  end
+end
+
+def add_if_missing(dest, content, options = {})
+  lines = File.readlines(dest).map(&:strip)
+  return if lines.include?(content)
+
+  if options[:after_line]
+    index = lines.index(options[:after_line])
+    if index
+      lines.insert(index + 1, content)
+    else
+      lines << content
+    end
+  else
+    lines << content
+  end
+
+  File.open(dest, 'w') do |f|
+    f.puts lines.join("\n")
+  end
+end
+
+copy_if_missing 'https://github.com/stefanoverna/bemo/raw/master/installer/templates/Gruntfile.js', 'Gruntfile.js'
+copy_if_missing 'https://github.com/stefanoverna/bemo/raw/master/installer/templates/package.json', 'package.json'
+
+if File.exist?('.gitignore')
+  add_if_missing '.gitignore', 'node_modules/*'
+
+  puts '✓'.green + ' Edited ' + '.gitignore'.underline
+end
+
+if File.exist?('Gemfile')
+  add_if_missing 'Gemfile', "source 'https://rails-assets.org'", after_line: "source 'https://rubygems.org'"
+  add_if_missing 'Gemfile', "\ngem 'rails-assets-normalize-scss'"
+  add_if_missing 'Gemfile', "gem 'rails-assets-sass-list-maps'"
+  add_if_missing 'Gemfile', "gem 'bourbon'"
+
+  puts '✓'.green + ' Added required gems to ' + 'Gemfile'.underline
+end
+
+puts <<DOCS
+
+#{'Hurray!'.green} Grunt has been successfully setup! Here's the next steps:
+
+1. Run #{'npm install'.underline}
+2. Run #{'bundle install'.underline}
+3. Edit #{'Gruntfile'.underline} config to fit your project needs
+4. Run #{'grunt bemo-scaffold'.underline} to copy bemo assets files over your project
+5. Run #{'grunt bemo'.underline} everytime you need to refresh sprites or SVG
+
+DOCS
+
