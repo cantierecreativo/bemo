@@ -2,19 +2,19 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-bemo');
 
   grunt.initConfig({
-    bemo: {
-      scaffold: {
-        sass:     "stylesheets"
+    "bemo": {
+      "scaffold": {
+        "sass":       "app/stylesheets"
       },
-      webfonts: {
-        src:      "fonts/svg",
-        fontDest: "fonts",
-        sassDest: "stylesheets/variables/_icon-glyphs.sass"
+      "webfonts": {
+        "src":        "app/fonts/svg",
+        "fontDest":   "app/fonts",
+        "sassDest":   "app/stylesheets/variables/_icon-glyphs.sass"
       },
-      sprites: {
-        src:       "images/sprites",
-        imageDest: "images/sprites-{{density}}.png",
-        sassDest:  "stylesheets/variables/_sprites.css.scss"
+      "sprites": {
+        "src":        "app/images/sprites",
+        "imageDest":  "app/images/sprites-{{density}}.png",
+        "sassDest":   "app/stylesheets/variables/_sprites.css.scss"
       }
     }
   });
