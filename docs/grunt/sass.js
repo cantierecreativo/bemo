@@ -4,8 +4,8 @@ module.exports = {
     loadPath: [ './bower_components' ],
     style: 'expanded',
     noCache: true,
-    bundleExec: true,
-    trace: true
+    bundleExec: true
+    // trace: true
   },
   compile: {
     files: {

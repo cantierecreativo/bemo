@@ -9,6 +9,7 @@
     "grunt-build-control": "*",
     "grunt-contrib-connect": "*",
     "grunt-contrib-watch": "*",
+    "grunt-contrib-copy": "*",
     "grunt-gh-pages": "*",
     "load-grunt-config": "*",
     "grunt-bower-task": "*",

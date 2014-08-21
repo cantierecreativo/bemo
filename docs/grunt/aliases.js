@@ -1,6 +1,7 @@
 module.exports = {
   'buildSass': [
     'bemo-scaffold',
+    'copy:replaceApplicationSass',
     'bemo',
     'bower:install',
     'sass'
