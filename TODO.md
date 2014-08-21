@@ -1,2 +1,2 @@
-* Write docs (http://a2labs.github.io/barekit/)
+* bemo-scaffold: rename .sass to .css.sass?
 

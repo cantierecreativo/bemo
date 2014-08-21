@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       sprites: {
         src:        "app/assets/images/sprites",
         imageDest:  "app/assets/images/sprites-{{density}}.png",
-        sassDest:   "app/assets/stylesheets/variables/_sprites.css.scss"
+        sassDest:   "app/assets/stylesheets/variables/_sprites.scss"
       }
     }
   });
