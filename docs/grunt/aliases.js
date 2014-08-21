@@ -26,6 +26,7 @@ module.exports = {
   ],
   'deploy': [
     'build',
+    'cdnify:fixGhPages',
     'gh-pages'
   ],
   'default': [
