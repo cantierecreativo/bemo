@@ -414,8 +414,8 @@ th {
   font-family: "icons";
   font-weight: normal;
   font-style: normal;
-  src: url("/fonts/icons.eot");
-  src: url("/fonts/icons.eot?#iefix") format("embedded-opentype"), url("/fonts/icons.woff") format("woff"), url("/fonts/icons.ttf") format("truetype"), url("/fonts/icons.svg#icons") format("svg");
+  src: url("/bemo/fonts/icons.eot");
+  src: url("/bemo/fonts/icons.eot?#iefix") format("embedded-opentype"), url("/bemo/fonts/icons.woff") format("woff"), url("/bemo/fonts/icons.ttf") format("truetype"), url("/bemo/fonts/icons.svg#icons") format("svg");
 }
 html, body {
   height: 100%;
@@ -1711,7 +1711,7 @@ img {
 }
 
 .sprite, .sprite--one, .sprite--three, .sprite--two {
-  background-image: url("/images/sprites-1x.png");
+  background-image: url("/bemo/images/sprites-1x.png");
   background-repeat: no-repeat;
   display: inline-block;
   overflow: hidden;
@@ -1724,7 +1724,7 @@ img {
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
   .sprite, .sprite--one, .sprite--three, .sprite--two {
-    background-image: url("/images/sprites-2x.png");
+    background-image: url("/bemo/images/sprites-2x.png");
   }
 }
 
