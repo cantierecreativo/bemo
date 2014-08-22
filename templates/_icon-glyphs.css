@@ -1,8 +1,7 @@
 // Generated automatically via Grunt, do not edit manually!
 
-$icon-glyphs: ()
-
+$icon-glyphs: (
 <% glyphs.forEach(function(name, index) {
-%>$icon-glyphs: map-merge($icon-glyphs, <%= name %> "\<%= codepoints[index] %>")
-<% }); %>
+%>  <%= name %> "\<%= codepoints[index] %>"<%= index < glyphs.length - 1 ? "," : "" %>
+<% }); %>)
 

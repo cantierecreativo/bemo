@@ -6,7 +6,7 @@ module.exports = {
   webfonts: {
     src:      "<%= package.paths.temp %>/fonts/svg",
     fontDest: "<%= package.paths.build %>/fonts/",
-    sassDest: "<%= package.paths.temp %>/stylesheets/variables/_icon-glyphs.sass"
+    sassDest: "<%= package.paths.temp %>/stylesheets/variables/_icon-glyphs.scss"
   },
   sprites: {
     src:       "<%= package.paths.temp %>/images/sprites",

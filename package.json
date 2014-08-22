@@ -1,7 +1,7 @@
 {
   "name": "grunt-bemo",
-  "description": "The best Grunt plugin ever.",
-  "version": "0.1.0",
+  "description": "Tasks for the Bemo project starter",
+  "version": "0.1.1",
   "homepage": "https://github.com/stefanoverna/bemo",
   "author": {
     "name": "Stefano Verna",

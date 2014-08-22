@@ -117,7 +117,36 @@ Hurray! You should now be able to run the `grunt bemo` task!
 ### 'bemo' task
 
 Every time a new SVG icon or sprite image is added to the project, you'll need to run the `grunt bemo` task
-to generate the new assets, and refresh some Sass files.
+to generate the new assets, and refresh two Sass files:
+
+#### variables/_sprites.scss
+
+```scss
+$sprite-size: (
+  width   478px,
+  height  250px
+);
+
+$sprite-images: (
+  first-sprite (
+    x             0px,
+    y             0px,
+    width         85px,
+    height        250px
+  ),
+  [...]
+);
+```
+
+#### variables/_sprites.scss
+
+```scss
+$icon-glyphs: (
+  checkmark "\f102",
+  cross "\f103",
+  [...]
+);
+```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
