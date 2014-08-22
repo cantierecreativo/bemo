@@ -446,7 +446,7 @@ a {
   text-decoration: underline;
 }
 
-ul, ol {
+ul, ol, blockquote {
   padding-left: 0;
   margin: 0;
 }
@@ -637,16 +637,16 @@ img {
 
 .formatted-content h1, .formatted-content h2, .formatted-content h3, .formatted-content h4, .formatted-content h5, .formatted-content h6, .formatted-content hgroup,
 .formatted-content ul, .formatted-content ol, .formatted-content dd, .formatted-content p, .formatted-content figure, .formatted-content pre, .formatted-content table,
-.formatted-content fieldset, .formatted-content hr, .formatted-content form {
+.formatted-content fieldset, .formatted-content hr, .formatted-content form, .formatted-content blockquote {
   margin-bottom: 12px;
   margin-bottom: 0.75rem;
 }
 .formatted-content h1:last-child, .formatted-content h2:last-child, .formatted-content h3:last-child, .formatted-content h4:last-child, .formatted-content h5:last-child, .formatted-content h6:last-child, .formatted-content hgroup:last-child,
 .formatted-content ul:last-child, .formatted-content ol:last-child, .formatted-content dd:last-child, .formatted-content p:last-child, .formatted-content figure:last-child, .formatted-content pre:last-child, .formatted-content table:last-child,
-.formatted-content fieldset:last-child, .formatted-content hr:last-child, .formatted-content form:last-child {
+.formatted-content fieldset:last-child, .formatted-content hr:last-child, .formatted-content form:last-child, .formatted-content blockquote:last-child {
   margin-bottom: 0;
 }
-.formatted-content ul, .formatted-content ol {
+.formatted-content ul, .formatted-content ol, .formatted-content blockquote {
   padding-left: 30px;
 }
 .formatted-content ul li {
