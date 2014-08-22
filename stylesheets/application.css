@@ -691,6 +691,9 @@ img {
 .formatted-content table {
   width: 100%;
 }
+.formatted-content blockquote {
+  font-style: italic;
+}
 
 .go:after {
   content: "\00A0\00BB";
