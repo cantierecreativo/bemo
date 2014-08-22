@@ -1,13 +1,13 @@
 .formatted-content
   h1, h2, h3, h4, h5, h6, hgroup,
   ul, ol, dd, p, figure, pre, table,
-  fieldset, hr, form
+  fieldset, hr, form, blockquote
     +margin-bottom(1)
 
     &:last-child
       margin-bottom: 0
 
-  ul, ol
+  ul, ol, blockquote
     padding-left: 30px
 
   ul li
@@ -36,4 +36,7 @@
   table
     width: 100%
     @extend .table
+
+  blockquote
+    font-style: italic
 
