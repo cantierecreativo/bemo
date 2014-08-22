@@ -1,12 +1,42 @@
-# bemo
+# Bemo
 
-Bemo is a BEM SASS project starter meant to be a starting point and structural 
+Bemo is a Sass-based project starter meant to be a starting point and structural 
 guide rather than a full framework. It's bare enough to not interfere with your 
 custom styles or scripts, but yet has enough functioning modules to jumpstart 
 a project in no time.
 
-Bemo also features some Grunt tasks to easily generate a custom icon webfont
-from a set of SVGs and retina-ready sprites.
+Bemo strictly follows the [BEM naming methodology](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/),
+and is heavily inspired by the [inuit.css framework](https://github.com/csswizardry/inuit.css/).
+
+Bemo is accompanied by a Grunt task that easily lets you generate:
+
+1. custom icon webfonts starting from a set of SVGs
+2. retina-ready, resizable sprites
+
+## Structure
+
+A Bemo project will look like this:
+
+```
+.
+├── fonts
+│   └── svg
+│ 
+├── images
+│   └── sprites
+│ 
+└── stylesheets
+    ├── blocks
+    ├── formats
+    ├── functions
+    ├── keyframes
+    ├── mixins
+    ├── variables
+    └── application.sass
+```
+
+The fulcrum of the whole tree lies in the `stylesheets/blocks` directory,
+which will contain all the blocks that compose your frontend styling.
 
 ## Demo
 
@@ -67,11 +97,27 @@ grunt.initConfig({
 
 ### 'bemo-scaffold' task
 
-TBW :)
+Once configured, you can easily scaffold the skeleton of you Bemo project with the `grunt bemo-scaffold`,
+which will copy all of the files for you.
+
+```
+> grunt bemo-scaffold
+
+Running "bemo-scaffold" task
+
+Bemo scaffolder
+
+✓ Created the dir app/assets/stylesheets
+✓ Created the dir app/assets/fonts/svg
+✓ Created the dir app/assets/images/sprites
+
+Hurray! You should now be able to run the `grunt bemo` task!
+```
 
 ### 'bemo' task
 
-TBW :)
+Every time a new SVG icon or sprite image is added to the project, you'll need to run the `grunt bemo` task
+to generate the new assets, and refresh some Sass files.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
