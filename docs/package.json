@@ -14,7 +14,8 @@
     "grunt-cdnify": "*",
     "load-grunt-config": "*",
     "grunt-bower-task": "*",
-    "grunt-bemo": "*"
+    "grunt-bemo": "*",
+    "marked": "*"
   },
   "paths": {
     "temp": "temp",

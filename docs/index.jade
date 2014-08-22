@@ -3,7 +3,7 @@ html
   head
     meta(charset='utf-8')
     meta(content='IE=edge,chrome=1', http-equiv='X-UA-Compatible')
-    title Pattern Library
+    title Bemo
     meta(content='width=device-width,minimum-scale=1,maximum-scale=1', name='viewport')
     link(href='/stylesheets/application.css', rel='stylesheet', type='text/css')
     link(href='/stylesheets/styleguide.css', rel='stylesheet', type='text/css')
@@ -31,13 +31,14 @@ html
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
     mixin block(title, cssClass)
-      section.block
-        .wrap: h6.block__header
-          span.heading #{title}
-          if cssClass
-            span.code: code #{cssClass}
-        .block__body
-          block
+      .space--both-5
+        section.block
+          .wrap: h6.block__header
+            span.heading #{title}
+            if cssClass
+              span.code: code #{cssClass}
+          .block__body
+            block
 
     mixin variables
       .block__variables: .wrap
@@ -63,11 +64,27 @@ html
       .wrap
         .hero__body
           .hero__body__inner
-            .hero__heading Stylesheets
+            .hero__heading Bemo
             .hero__text
-              p Non-intrusive, reusable BEM components
+              p.gamma A non-intrusive, Sass-based BEM project starter
             p.hero__actions
-              a.button.button--primary.button--huge.gamma(href='http://github.com/stefanoverna/stylesheets') Browse on Github
+              a.button.button--primary.button--huge.gamma(href='http://github.com/stefanoverna/bemo') Browse on Github
+
+    .space--both-5: .wrap: .intro
+      .formatted-content
+        :markdown
+          Bemo is a Sass-based project starter meant to be a starting point and structural 
+          guide rather than a full framework. It's bare enough to not interfere with your 
+          custom styles or scripts, but yet has enough functioning modules to jumpstart 
+          a project in no time.
+
+          Bemo strictly follows the [BEM naming methodology](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/),
+          and is heavily inspired by the [inuit.css framework](https://github.com/csswizardry/inuit.css/).
+
+          Bemo is accompanied by a Grunt task that easily lets you generate:
+
+          1. custom icon webfonts starting from a set of SVGs
+          2. retina-ready, resizable sprites
 
     .blocks
       include ./blocks/grid.jade
