@@ -1,27 +1,30 @@
 var path = require('path');
 var fs = require('fs');
+var utils = require('../lib/utils');
 
 module.exports = function(grunt) {
   grunt.registerTask('bemoRenameGlyphsSass', function() {
-
-    var config = grunt.config.get('bemo').webfonts;
-
     fs.rename(
-      path.join(path.dirname(config.sassDest), 'icons.css'),
-      config.sassDest
+      path.join(
+        path.dirname(utils.requireOption(grunt, 'webfonts.sassDest')),
+        'icons.css'
+      ),
+      utils.requireOption(grunt, 'webfonts.sassDest')
     );
   });
 
   grunt.registerTask('bemo-webfonts', function() {
     grunt.loadNpmTasks('grunt-webfont');
 
-    var config = grunt.config.get('bemo').webfonts;
+    var src = utils.requireOption(grunt, 'webfonts.src');
+    var fontDest = utils.requireOption(grunt, 'webfonts.fontDest');
+    var sassDest = utils.requireOption(grunt, 'webfonts.sassDest');
 
     grunt.config.set('webfont', {
       bemo: {
-        src: path.join(config.src, '*.svg'),
-        dest: config.fontDest,
-        destCss: path.dirname(config.sassDest),
+        src: path.join(src, '*.svg'),
+        dest: fontDest,
+        destCss: path.dirname(sassDest),
         options: {
           hashes: false,
           relativeFontPath: '',

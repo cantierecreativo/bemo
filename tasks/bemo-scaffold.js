@@ -3,6 +3,8 @@ var rl = require('readline-sync');
 var fs = require('node-fs-extra');
 var path = require('path');
 var glob = require('glob');
+var _ = require('lodash');
+var utils = require('../lib/utils');
 
 module.exports = function(grunt) {
   grunt.registerTask('bemo-scaffold', function() {
@@ -30,7 +32,7 @@ module.exports = function(grunt) {
         fs.removeSync(path);
         cleanDir();
       } else {
-        throw Error('Refused to clean dir!');
+        throw grunt.util.error('Refused to clean dir ' + path + ' !');
       }
     }
 
@@ -46,19 +48,34 @@ module.exports = function(grunt) {
     console.log("Bemo scaffolder".rainbow);
     console.log();
 
-    copyDirTo(path.resolve(__dirname, '../bemo'), config.scaffold.sassRoot, config.scaffold.force);
+    var sassRoot = utils.requireOption(grunt, 'scaffold.sassRoot');
+
+    copyDirTo(
+      path.resolve(__dirname, '../bemo'),
+      sassRoot,
+      config.scaffold.force
+    );
 
     if (config.scaffold.sassExt) {
-      var sassFiles = glob.sync(path.join(config.scaffold.sass, "**/*.sass"));
-      for (var i = 0; i < sassFiles.length; i++) {
-        var sassFile = sassFiles[i];
+      var sassFiles = glob.sync(path.join(sassRoot, "**/*.sass"));
+
+      _.each(sassFiles, function(sassFile) {
         var newPath = sassFile.replace(/\.sass$/, "." + config.scaffold.sassExt);
         fs.renameSync(sassFile, newPath);
-      }
+      });
     }
 
-    copyDirTo(path.resolve(__dirname, '../templates/svg'), config.webfonts.src, config.scaffold.force);
-    copyDirTo(path.resolve(__dirname, '../templates/sprites'), config.sprites.src, config.scaffold.force);
+    copyDirTo(
+      path.resolve(__dirname, '../templates/svg'),
+      utils.requireOption(grunt, 'webfonts.src'),
+      config.scaffold.force
+    );
+
+    copyDirTo(
+      path.resolve(__dirname, '../templates/sprites'),
+      utils.requireOption(grunt, 'sprites.src'),
+      config.scaffold.force
+    );
 
     console.log();
     console.log("Hurray!".rainbow + " You should now be able to run the " + "grunt bemo".underline + " task!");

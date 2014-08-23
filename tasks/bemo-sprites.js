@@ -1,31 +1,37 @@
-var _ = require('lodash');
 var path = require('path');
 var fs = require('node-fs-extra');
+var utils = require('../lib/utils');
 
 module.exports = function(grunt) {
 
   grunt.registerTask('bemoCleanTempSprites', function() {
-    var config = grunt.config.get('bemo').sprites;
-    var dir = path.join(config.src, "1x");
+    var dir = path.join(
+      utils.requireOption(grunt, 'sprites.src'),
+      "1x"
+    );
 
     fs.removeSync(dir);
-    fs.removeSync(config.sassDest + ".tmp");
+    fs.removeSync(
+      utils.requireOption(grunt, 'sprites.sassDest') + ".tmp"
+    );
   });
 
   grunt.registerTask('bemo-sprites', function() {
     grunt.loadNpmTasks('grunt-image-resize');
     grunt.loadNpmTasks('grunt-spritesmith');
 
-    var config = grunt.config.get('bemo').sprites;
+    var src = utils.requireOption(grunt, 'sprites.src');
+    var imageDest = utils.requireOption(grunt, 'sprites.imageDest');
+    var sassDest = utils.requireOption(grunt, 'sprites.sassDest');
 
     grunt.config.set('image_resize', {
       bemo: {
         options: { width: "50%" },
         files: [{
           expand: true,
-          cwd: config.src,
+          cwd: src,
           src: "*.png",
-          dest: path.join(config.src, "1x")
+          dest: path.join(src, "1x")
         }]
       }
     });
@@ -34,19 +40,19 @@ module.exports = function(grunt) {
       bemoRetina: {
         padding: 6,
         algorithm: 'binary-tree',
-        src: path.join(config.src, '*.png'),
-        destImg: config.imageDest.replace('{{density}}', '2x'),
-        destCSS: config.sassDest + ".tmp"
+        src: path.join(src, '*.png'),
+        destImg: imageDest.replace('{{density}}', '2x'),
+        destCSS: sassDest + ".tmp"
       },
       bemoNonRetina: {
         padding: 3,
         algorithm: 'binary-tree',
-        src: path.join(config.src, "1x", "*.png"),
-        destImg: config.imageDest.replace('{{density}}', '1x'),
-        destCSS: config.sassDest,
+        src: path.join(src, "1x", "*.png"),
+        destImg: imageDest.replace('{{density}}', '1x'),
+        destCSS: sassDest,
         cssTemplate: function(context) {
           var template = fs.readFileSync(path.resolve(__dirname, '../templates/_sprites.css'), 'utf8');
-          return _.template(template, context);
+          return grunt.template.process(template, { data: context });
         }
       }
     });
