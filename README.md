@@ -71,7 +71,7 @@ In your project's Gruntfile, add a section named `bemo` to the data object passe
 grunt.initConfig({
   bemo: {
     scaffold: {
-      sass:       "app/assets/stylesheets"
+      sassRoot:   "app/assets/stylesheets"
     },
     webfonts: {
       src:        "app/assets/fonts/svg",
@@ -87,7 +87,8 @@ grunt.initConfig({
 });
 ```
 
-* `scaffold.sass`: The path to your project stylesheets
+* `scaffold.sassRoot`: The path to your project stylesheets
+* `scaffold.sassExt`: The extension to give to the Sass files (default: `sass`)
 * `webfonts.src`: The path containing your 512x512px SVGs
 * `webfonts.fontDest`: The path where the custom webfont will be created
 * `webfonts.sassDest`: The path where the SASS file containing infos about the icons will be created

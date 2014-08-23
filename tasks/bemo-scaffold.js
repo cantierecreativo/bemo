@@ -2,6 +2,7 @@ var colors = require('colors');
 var rl = require('readline-sync');
 var fs = require('node-fs-extra');
 var path = require('path');
+var glob = require('glob');
 
 module.exports = function(grunt) {
   grunt.registerTask('bemo-scaffold', function() {
@@ -45,7 +46,17 @@ module.exports = function(grunt) {
     console.log("Bemo scaffolder".rainbow);
     console.log();
 
-    copyDirTo(path.resolve(__dirname, '../bemo'), config.scaffold.sass, config.scaffold.force);
+    copyDirTo(path.resolve(__dirname, '../bemo'), config.scaffold.sassRoot, config.scaffold.force);
+
+    if (config.scaffold.sassExt) {
+      var sassFiles = glob.sync(path.join(config.scaffold.sass, "**/*.sass"));
+      for (var i = 0; i < sassFiles.length; i++) {
+        var sassFile = sassFiles[i];
+        var newPath = sassFile.replace(/\.sass$/, "." + config.scaffold.sassExt);
+        fs.renameSync(sassFile, newPath);
+      }
+    }
+
     copyDirTo(path.resolve(__dirname, '../templates/svg'), config.webfonts.src, config.scaffold.force);
     copyDirTo(path.resolve(__dirname, '../templates/sprites'), config.sprites.src, config.scaffold.force);
 

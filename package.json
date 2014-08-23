@@ -33,7 +33,8 @@
     "lodash": "*",
     "colors": "*",
     "node-fs-extra": "*",
-    "readline-sync": "*"
+    "readline-sync": "*",
+    "glob": "*"
   },
   "keywords": [
     "grunt",

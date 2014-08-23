@@ -4,7 +4,8 @@ module.exports = function(grunt) {
   grunt.initConfig({
     bemo: {
       scaffold: {
-        sass:       "app/assets/stylesheets"
+        sassRoot:   "app/assets/stylesheets",
+        sassExt:    "css.sass",
       },
       webfonts: {
         src:        "app/assets/fonts/svg",
