@@ -15,7 +15,7 @@
  * 3. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
  *  `em` units.
  */
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -1515,6 +1515,70 @@ img {
     font-size: 3.125rem;
   }
 }
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .hidden--on-palm {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hidden--on-lte-lap {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hidden--on-lap {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hidden--on-gte-lap {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .hidden--on-lte-small-desk {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1500px) {
+  .hidden--on-small-desk {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hidden--on-gte-small-desk {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .hidden--on-big-desk {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hidden--on-portable {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hidden--on-desk {
+    display: none;
+  }
+}
+
 .icon, .icon--large, .icon--huge, .icon--checkmark, .icon--cross {
   display: inline-block;
 }
