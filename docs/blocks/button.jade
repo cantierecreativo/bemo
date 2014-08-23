@@ -1,11 +1,15 @@
 +block("Buttons", ".button")
 
-  +example("Works with links, buttons and inputs")
+  +example("Works with links, buttons and labels")
     a.button(href='#') Link
     | &nbsp;
     button.button Button
     | &nbsp;
     input.button(type='submit', value='Submit')
+    | &nbsp;
+    label.button
+      input.hidden(type='file')
+      span Upload file...
 
   +example("Fill the entire width", ".button--expand")
     a.button--expand(href='#') Button

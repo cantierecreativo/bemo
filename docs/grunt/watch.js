@@ -3,7 +3,7 @@ module.exports = {
     spawn: false
   },
   styleguide: {
-    files: [ 'index.jade' ],
+    files: [ 'index.jade', 'blocks/**/*.jade' ],
     tasks: [ 'buildStyleguide' ]
   },
   styleguideSass: {
