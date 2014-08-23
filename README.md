@@ -89,6 +89,7 @@ grunt.initConfig({
 
 * `scaffold.sassRoot`: The path to your project stylesheets
 * `scaffold.sassExt`: The extension to give to the Sass files (default: `sass`)
+* `scaffold.force`: Forces the overwriting of existing files
 * `webfonts.src`: The path containing your 512x512px SVGs
 * `webfonts.fontDest`: The path where the custom webfont will be created
 * `webfonts.sassDest`: The path where the SASS file containing infos about the icons will be created
@@ -139,7 +140,7 @@ $sprite-images: (
 );
 ```
 
-#### variables/_sprites.scss
+#### variables/_icon-glyphs.scss
 
 ```scss
 $icon-glyphs: (
