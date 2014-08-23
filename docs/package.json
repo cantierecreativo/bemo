@@ -20,7 +20,7 @@
   "paths": {
     "temp": "temp",
     "build": "build",
-    "templates": "../templates",
+    "templates": "templates",
     "source": "../bemo"
   }
 }

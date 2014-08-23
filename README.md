@@ -42,7 +42,7 @@ which will contain all the blocks that compose your frontend styling.
 
 A preview of the BEM blocks available with Bemo is available here: http://stefanoverna.github.io/bemo/
 
-## Super-quick setup for the lazy ones
+## Rails one-liner setup (for the lazy ones)
 
 Just type this into you project folder, and it will setup Grunt for you:
 
