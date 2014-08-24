@@ -2,21 +2,13 @@
 .variant__header {
   font-size: 16px;
   font-weight: bold;
-  display: table;
-  width: 100%;
   border-bottom: 1px solid #ececec;
   padding-bottom: 9px;
+  text-align: center;
 }
 .block__header .code,
 .variant__header .code {
-  text-align: right;
-}
-.block__header .code,
-.block__header .heading,
-.variant__header .code,
-.variant__header .heading {
-  display: table-cell;
-  vertical-align: middle;
+  display: block;
 }
 
 .block__header {
@@ -31,6 +23,13 @@
 .variant__body,
 .block__variables {
   padding-top: 30px;
+}
+
+.block__variables__title {
+  font-weight: bold;
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 9px;
+  text-align: center;
 }
 
 .blurb, .blurb--with-margin {
@@ -53,4 +52,28 @@ pre {
   background-color: rgba(0, 0, 0, 0.1);
   padding: 15px;
   font-size: 13px;
+}
+
+@media screen and (min-width: 400px) {
+  .block__header,
+  .variant__header {
+    display: table;
+    width: 100%;
+    text-align: left;
+  }
+  .block__header .code,
+  .variant__header .code {
+    text-align: right;
+  }
+  .block__header .code,
+  .block__header .heading,
+  .variant__header .code,
+  .variant__header .heading {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .block__variables__title {
+    text-align: left;
+  }
 }
