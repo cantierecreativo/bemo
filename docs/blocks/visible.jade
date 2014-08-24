@@ -1,10 +1,10 @@
 +block("Selective visibility", ".visible")
 
-  +example("Visibility based on breakpoint", ".visible--on-breakpoint")
+  +example("Visibility based on breakpoint", ".visible--on-$breakpoint")
     each query in ["palm", "lap", "small-desk", "big-desk"]
       .blurb--with-margin(class="visible--on-"+query): code= ".visible--on-"+query
 
-  +example("Also the inverse is available", ".hidden--on-breakpoint")
+  +example("Also the inverse is available", ".hidden--on-$breakpoint")
     each query in ["palm", "lap", "small-desk", "big-desk"]
       .blurb--with-margin(class="hidden--on-"+query): code= ".hidden--on-"+query
 

@@ -150,6 +150,15 @@ $icon-glyphs: (
 );
 ```
 
+## Dependencies
+
+Bemo depends on the following Sass libraries:
+
+* [bourbon](http://bourbon.io/)
+* [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
+* [sass-list-maps](https://github.com/lunelson/sass-list-maps) (not required if Sass version >= 3.3)
+
 ## Contributing
+
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 

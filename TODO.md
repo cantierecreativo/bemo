@@ -1,2 +1,2 @@
-* add support for checkboxes and radios
+* add bower integration?
 

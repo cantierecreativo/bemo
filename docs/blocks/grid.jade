@@ -20,26 +20,26 @@
           each line in loop(col)
             p Foo
 
-  +example("Non responsive columns", ".width--x-y")
+  +example("Non responsive columns", ".width--$width-$cols")
     .grid
       each col in loop(6)
         .grid__item.width--2-12
           .blurb= col
 
-  +example("Responsive columns", ".breakpoint--x-y")
+  +example("Responsive columns", ".$breakpoint--$width-$cols")
     .grid
       each col in loop(12)
         .grid__item.width--4-12.desk--1-12
           .blurb--with-margin= col
 
-  +example("Shiftable columns", ".(push|pull)--x-y")
+  +example("Shiftable columns", ".(push|pull)--$width-$cols")
     .grid
       .grid__item.width--3-12.push-3-12
         .blurb First
       .grid__item.width--3-12.pull-3-12
         .blurb Last
 
-  +example("Responsive shiftable columns", ".breakpoint--(push|pull)-x-y")
+  +example("Responsive shiftable columns", ".$breakpoint--(push|pull)-$width-$cols")
     .grid
       .grid__item.width--3-12.push-3-12.desk--push-0
         .blurb First

@@ -4,7 +4,7 @@
     .wrap
       .blurb: code= ".wrap"
 
-  +example("Wrap based on breakpoint", ".wrap--on-breakpoint", true)
+  +example("Wrap based on breakpoint", ".wrap--on-$breakpoint", true)
     each query in ["palm", "lap", "small-desk", "big-desk"]
       div(class="wrap--on-"+query)
         .blurb--with-margin: code= ".wrap--on-"+query

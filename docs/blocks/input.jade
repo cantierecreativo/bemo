@@ -1,0 +1,28 @@
++block("Radio and checkbox inputs", ".input")
+  +example
+    p
+      label.input--checkbox
+        input(type="checkbox" checked)
+        span.input__label Check this checkbox
+
+    p
+      label.input--radio
+        input(type="radio" name="radioctrl")
+        span.input__label Toggle this radio
+
+    p
+      label.input--radio
+        input(type="radio" name="radioctrl")
+        span.input__label Or this one
+
+  +example("Disabled state")
+    p
+      label.input--checkbox
+        input(type="checkbox" checked disabled)
+        span.input__label Check this checkbox
+
+    p
+      label.input--radio
+        input(type="radio" checked disabled)
+        span.input__label Toggle this radio
+

@@ -6,7 +6,7 @@
       $space-amounts: 1 2 3 5 8
 
   each type in ['top', 'bottom', 'both']
-    +example(titleize(type), ".space--" + type + "-x")
+    +example(titleize(type), ".space--" + type + "-$amount")
       .blurb
         div(class="space--"+type+"-3")
           .blurb Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

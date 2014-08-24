@@ -1,6 +1,10 @@
 @charset 'utf-8'
 @import 'bourbon/dist/bourbon'
 
+@mixin l
+  @media screen and (min-width: 400px)
+    @content
+
 @mixin striped-bg($foreground-color, $background-color, $angle: -45deg, $size: 20px)
   +linear-gradient($angle, $foreground-color 25%, transparent 25%, transparent 50%, $foreground-color 50%, $foreground-color 75%, transparent 75%, transparent, $fallback: $background-color)
   background-size: $size $size
@@ -9,18 +13,12 @@
 .variant__header
   font-size: 16px
   font-weight: bold
-  display: table
-  width: 100%
   border-bottom: 1px solid #ececec
   padding-bottom: 9px
+  text-align: center
 
   .code
-    text-align: right
-
-  .code,
-  .heading
-    display: table-cell
-    vertical-align: middle
+    display: block
 
 .block__header
   font-size: 25px
@@ -32,6 +30,12 @@
 .variant__body,
 .block__variables
   padding-top: 30px
+
+.block__variables__title
+  font-weight: bold
+  border-bottom: 1px solid #ececec
+  padding-bottom: 9px
+  text-align: center
 
 .blurb
   padding: 5px
@@ -49,4 +53,22 @@ pre
   background-color: rgba(black, 0.1)
   padding: 15px
   font-size: 13px
+
++l
+  .block__header,
+  .variant__header
+    display: table
+    width: 100%
+    text-align: left
+
+    .code
+      text-align: right
+
+    .code,
+    .heading
+      display: table-cell
+      vertical-align: middle
+
+  .block__variables__title
+    text-align: left
 
