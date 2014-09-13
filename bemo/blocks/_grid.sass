@@ -84,8 +84,8 @@
   [class*="pull-"]
     position: relative
 
-  +shift-setup(right, "pull-")
-  +shift-setup(left, "push-")
+  +shift-setup(right, "pull--")
+  +shift-setup(left, "push--")
 
   @each $name in $grid-breakpoints
     +at-breakpoint($name)
