@@ -1,0 +1,3 @@
+@mixin inline-block($vertical)
+  display: inline-block
+  vertical-align: $vertical
