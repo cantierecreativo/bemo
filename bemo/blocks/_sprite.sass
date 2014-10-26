@@ -13,10 +13,9 @@
     +setup-sprite($name)
     +sprite-size($name)
 
+  .sprite--#{$name}.is-half-size
+    +sprite-size($name, .5)
+
 .sprite--center
   display: block
   margin: 0 auto
-
-.sprite--one.is-half-size
-  +sprite-size(one, .5)
-
