@@ -1,0 +1,16 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $file-formats: eot woff ttf svg)
+  @font-face
+    font-family: $font-family
+    font-weight: $weight
+    font-style: $style
+    @if contains($file-formats, eot)
+      src: font-url('#{$file-path}.eot') format('embedded-opentype')
+
+    $src: null
+    $formats-map: (eot: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'), woff2: font-url('#{$file-path}.woff2') format('woff2'), woff: font-url('#{$file-path}.woff') format('woff'), ttf: font-url('#{$file-path}.ttf') format('ttf'), svg: font-url('#{$file-path}.svg##{$font-family}') format('svg'))
+    @each $format, $file-path in $formats-map
+      @if contains($file-formats, $format)
+        $src: append($src, $file-path, comma)
+
+    src: $src
+
