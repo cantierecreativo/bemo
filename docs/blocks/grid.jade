@@ -10,40 +10,40 @@
 
   mixin some-grid-items
     each col in loop(4)
-      .grid__item.width--3-12
+      .grid__item.width-3-12
         .blurb= col
 
   mixin grid-items-with-different-heights
     each col in loop(4)
-      .grid__item.width--3-12
+      .grid__item.width-3-12
         .blurb
           each line in loop(col)
             p Foo
 
-  +example("Non responsive columns", ".width--$width-$cols")
+  +example("Non responsive columns", ".width-$width-$cols")
     .grid
       each col in loop(6)
-        .grid__item.width--2-12
+        .grid__item.width-2-12
           .blurb= col
 
-  +example("Responsive columns", ".$breakpoint--$width-$cols")
+  +example("Responsive columns", ".$breakpoint-$width-$cols")
     .grid
       each col in loop(12)
-        .grid__item.width--4-12.desk--1-12
+        .grid__item.width-4-12.desk-1-12
           .blurb--with-margin= col
 
-  +example("Shiftable columns", ".(push|pull)--$width-$cols")
+  +example("Shiftable columns", ".(push|pull)-$width-$cols")
     .grid
-      .grid__item.width--3-12.push-3-12
+      .grid__item.width-3-12.push-3-12
         .blurb First
-      .grid__item.width--3-12.pull-3-12
+      .grid__item.width-3-12.pull-3-12
         .blurb Last
 
-  +example("Responsive shiftable columns", ".$breakpoint--(push|pull)-$width-$cols")
+  +example("Responsive shiftable columns", ".$breakpoint-(push|pull)-$width-$cols")
     .grid
-      .grid__item.width--3-12.push-3-12.desk--push-0
+      .grid__item.width-3-12.push-3-12.desk-push-0
         .blurb First
-      .grid__item.width--3-12.pull-3-12.desk--pull-0
+      .grid__item.width-3-12.pull-3-12.desk-pull-0
         .blurb Last
 
   +example("Reverse ordering", ".grid--rev")
@@ -68,19 +68,19 @@
 
   +example("Horizontally centered", ".grid--center")
     .grid--center
-      .grid__item.width--3-12
+      .grid__item.width-3-12
         p.blurb One
-      .grid__item.width--3-12
+      .grid__item.width-3-12
         p.blurb Two
-      .grid__item.width--3-12
+      .grid__item.width-3-12
         p.blurb Three
 
   +example("Right alignment", ".grid--right")
     .grid--right
-      .grid__item.width--3-12
+      .grid__item.width-3-12
         p.blurb One
-      .grid__item.width--3-12
+      .grid__item.width-3-12
         p.blurb Two
-      .grid__item.width--3-12
+      .grid__item.width-3-12
         p.blurb Three
 

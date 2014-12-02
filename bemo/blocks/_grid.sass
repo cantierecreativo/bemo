@@ -17,6 +17,7 @@
   @each $total in $grid-cols
     @for $size from 1 to $total
       .#{$namespace}#{$size}-#{$total}
+        position: relative
         #{$rule}: round-decimals($size / $total * 100%)
 
 .grid
@@ -73,22 +74,21 @@
   > .grid__item
     padding-left: $grid-gutter * 2
 
-+width-setup("width--")
++width-setup("width-")
 
 @each $name in $grid-breakpoints
   +at-breakpoint($name)
-    +width-setup("#{$name}--")
+    +width-setup("#{$name}-")
 
 @if length($grid-breakpoints) > 0
   [class*="push-"],
   [class*="pull-"]
-    position: relative
 
-  +shift-setup(right, "pull--")
-  +shift-setup(left, "push--")
+  +shift-setup(right, "pull-")
+  +shift-setup(left, "push-")
 
   @each $name in $grid-breakpoints
     +at-breakpoint($name)
-      +shift-setup(left, "#{$name}--push-")
-      +shift-setup(right, "#{$name}--pull-")
+      +shift-setup(left, "#{$name}-push-")
+      +shift-setup(right, "#{$name}-pull-")
 
