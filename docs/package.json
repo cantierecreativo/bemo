@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "devDependencies": {
     "grunt": "*",
+    "grunt-autoprefixer": "^2.0.0",
     "grunt-bemo": "file:..",
     "grunt-bower-task": "*",
     "grunt-build-control": "*",

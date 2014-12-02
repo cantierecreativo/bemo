@@ -5,7 +5,8 @@ module.exports = {
     'replace:replaceApplicationSass',
     'bemo',
     'bower:install',
-    'sass'
+    'sass',
+    'autoprefixer'
   ],
   'buildStyleguide': [
     'jade:compile'
