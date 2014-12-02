@@ -125,16 +125,16 @@ to generate the new assets, and refresh two Sass files:
 
 ```scss
 $sprite-size: (
-  width   478px,
-  height  250px
+  width:   478px,
+  height:  250px
 );
 
 $sprite-images: (
-  first-sprite (
-    x             0px,
-    y             0px,
-    width         85px,
-    height        250px
+  first-sprite: (
+    x:             0px,
+    y:             0px,
+    width:         85px,
+    height:        250px
   ),
   [...]
 );
@@ -144,8 +144,8 @@ $sprite-images: (
 
 ```scss
 $icon-glyphs: (
-  checkmark "\f102",
-  cross "\f103",
+  checkmark: "\f102",
+  cross: "\f103",
   [...]
 );
 ```
@@ -154,9 +154,7 @@ $icon-glyphs: (
 
 Bemo depends on the following Sass libraries:
 
-* [bourbon](http://bourbon.io/)
 * [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
-* [sass-list-maps](https://github.com/lunelson/sass-list-maps) (not required if Sass version >= 3.3)
 
 ## Contributing
 

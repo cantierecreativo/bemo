@@ -3,18 +3,19 @@
   "version": "0.0.1",
   "devDependencies": {
     "grunt": "*",
-    "grunt-contrib-jade": "*",
-    "grunt-contrib-sass": "*",
-    "grunt-contrib-clean": "*",
-    "grunt-build-control": "*",
-    "grunt-contrib-connect": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-contrib-copy": "*",
-    "grunt-gh-pages": "*",
-    "grunt-cdnify": "*",
-    "load-grunt-config": "*",
+    "grunt-bemo": "file:..",
     "grunt-bower-task": "*",
-    "grunt-bemo": "*",
+    "grunt-build-control": "*",
+    "grunt-cdnify": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-jade": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-gh-pages": "*",
+    "grunt-replace": "^0.8.0",
+    "grunt-sass": "git://github.com/viewone/grunt-sass#59079cd942c631a6f5ad76b7fd757f41d6eca730",
+    "load-grunt-config": "*",
     "marked": "*"
   },
   "paths": {
@@ -24,4 +25,3 @@
     "source": "../bemo"
   }
 }
-

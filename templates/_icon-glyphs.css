@@ -2,6 +2,6 @@
 
 $icon-glyphs: (
 <% glyphs.forEach(function(name, index) {
-%>  <%= name %> "\<%= codepoints[index] %>"<%= index < glyphs.length - 1 ? "," : "" %>
-<% }); %>)
+%>  <%= name %>: "\<%= codepoints[index] %>"<%= index < glyphs.length - 1 ? "," : "" %>
+<% }); %>);
 

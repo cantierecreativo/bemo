@@ -1,8 +1,8 @@
-$base-font-size: 16px
-$heading-font-sizes: ('alpha' 30px, 'beta' 25px, 'gamma' 19px)
-$smallprint-font-sizes: ('smallprint' 14px, 'milli' 13px)
+$base-font-size: 15px
+$heading-font-sizes: ('alpha': 30px, 'beta': 25px, 'gamma': 19px)
+$smallprint-font-sizes: ('smallprint': 13px, 'milli': 12px, 'micro': 11px)
 
 // derived
-$all-font-sizes: join($heading-font-sizes, $smallprint-font-sizes, comma)
-$all-font-sizes: append($all-font-sizes, ('regular' $base-font-size), comma)
+$all-font-sizes: map-merge($heading-font-sizes, $smallprint-font-sizes)
+$all-font-sizes: map-merge($all-font-sizes, ('regular': $base-font-size))
 

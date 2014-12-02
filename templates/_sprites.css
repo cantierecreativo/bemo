@@ -2,20 +2,20 @@
 
 $sprite-size: (
 <% if (items.length > 0) {
-%>  width   <%= items[0].px.total_width %>,
-  height  <%= items[0].px.total_height %>
+%>  width:   <%= items[0].px.total_width %>,
+  height:  <%= items[0].px.total_height %>
 <% } else {
-%>  width 0px
-  height 0px
+%>  width: 0px
+  height: 0px
 <% } %>);
 
 $sprite-images: (
 <% items.forEach(function(item, index) {
-%>  <%= item.name %> (
-    x             <%= item.px.x %>,
-    y             <%= item.px.y %>,
-    width         <%= item.px.width %>,
-    height        <%= item.px.height %>
+%>  <%= item.name %>: (
+    x:             <%= item.px.x %>,
+    y:             <%= item.px.y %>,
+    width:         <%= item.px.width %>,
+    height:        <%= item.px.height %>
   )<%= index < items.length - 1 ? "," : "" %>
 <% }); %>);
 

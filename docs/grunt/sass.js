@@ -1,11 +1,7 @@
 module.exports = {
   options: {
-    require: [ 'sass-globbing' ],
-    loadPath: [ './bower_components' ],
-    style: 'expanded',
-    noCache: true,
-    bundleExec: true
-    // trace: true
+    includePaths: [ './bower_components' ],
+    outputStyle: 'nested'
   },
   compile: {
     files: {

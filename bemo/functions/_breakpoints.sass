@@ -9,18 +9,18 @@
 
     @if $is-lowest-query
       $query: "screen and (max-width: #{nth(nth($list, $i + 1), 2) - 1px})"
-      $result: map-merge($result, $name $query)
+      $result: map-merge($result, ($name: $query))
     @else if $is-highest-query
       $query: "screen and (min-width: #{nth($breakpoint, 2)})"
-      $result: map-merge($result, $name $query)
+      $result: map-merge($result, ($name: $query))
     @else
       $lte-query: "(max-width: #{nth(nth($list, $i + 1), 2)})"
       $gte-query: "(min-width: #{nth($breakpoint, 2)})"
       $query: "screen and #{$gte-query} and #{$lte-query}"
 
-      $result: map-merge($result, "lte-#{$name}" "screen and #{$lte-query}")
-      $result: map-merge($result, $name $query)
-      $result: map-merge($result, "gte-#{$name}" "screen and #{$gte-query}")
+      $result: map-merge($result, ("lte-#{$name}": "screen and #{$lte-query}"))
+      $result: map-merge($result, ($name: $query))
+      $result: map-merge($result, ("gte-#{$name}": "screen and #{$gte-query}"))
 
   @return $result
 
@@ -35,18 +35,18 @@
 
     @if $is-lowest-query
       $query: "screen and (min-width: #{nth(nth($list, $i + 1), 2)})"
-      $result: map-merge($result, $name $query)
+      $result: map-merge($result, ($name: $query))
     @else if $is-highest-query
       $query: "screen and (max-width: #{nth($breakpoint, 2) - 1px})"
-      $result: map-merge($result, $name $query)
+      $result: map-merge($result, ($name: $query))
     @else
       $lte-query: "(min-width: #{nth(nth($list, $i + 1), 2) + 1px})"
       $gte-query: "(max-width: #{nth($breakpoint, 2) - 1px})"
       $query: "screen and #{$gte-query}, screen and #{$lte-query}"
 
-      $result: map-merge($result, "lte-#{$name}" "screen and #{$lte-query}")
-      $result: map-merge($result, $name $query)
-      $result: map-merge($result, "gte-#{$name}" "screen and #{$gte-query}")
+      $result: map-merge($result, ("lte-#{$name}": "screen and #{$lte-query}"))
+      $result: map-merge($result, ($name: $query))
+      $result: map-merge($result, ("gte-#{$name}": "screen and #{$gte-query}"))
 
   @return $result
 
