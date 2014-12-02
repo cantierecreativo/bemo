@@ -27,9 +27,12 @@ Mandatory ASCII art:
 ```
 
 
-### Normalize `.grid__item` width setter classes syntax
+### Normalize `.grid__item` width classes syntax
 
 [view commit](http://github.com/stefanoverna/bemo/commit/ac13a7b3749c4e5d74ed62b585cfd06d1fe8adda)
+
+Since these classes are not BEM modifiers, let's make it clear and drop the
+double hypen:
 
 * `.width--3-12` becomes `.width-3-12`
 * `.desk--3-12` becomes `.desk-3-12`
@@ -42,12 +45,12 @@ Mandatory ASCII art:
 
 Autoprefixer is the way to go regarding vendor prefixes! We don't need CSS3 mixins any more!
 
+* Add `+inline-block` helper mixin
 * Import some useful helper functions and mixins from Bourbon, most notably:
   - `+clearfix`
   - `+size`
   - `+position`
   - `+triangle`
-* Add `+inline-block` helper mixin
 
 ### Make it compatible with node-sass 1.2.3 (libsass)
 
@@ -56,6 +59,10 @@ Autoprefixer is the way to go regarding vendor prefixes! We don't need CSS3 mixi
 * Drop `sass-list-maps` polyfill, use native Sass 3.3 hashes
 * Remove globbing from `application.sass` (Rails apps will change it manually)
 
+PS. In order to use Sass 3.3+, Rails apps need to replace `sass-rails` gem
+with `sass`.
+
 # v1.0.8
 
 * Last release without a changelog
+
