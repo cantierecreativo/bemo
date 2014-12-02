@@ -86,8 +86,6 @@ end
 if File.exist?('Gemfile')
   add_if_missing 'Gemfile', "source 'https://rails-assets.org'", after_line: "source 'https://rubygems.org'"
   add_if_missing 'Gemfile', "\ngem 'rails-assets-normalize-scss'"
-  add_if_missing 'Gemfile', "gem 'rails-assets-sass-list-maps'"
-  add_if_missing 'Gemfile', "gem 'bourbon'"
 
   puts '✓'.green + ' Added required gems to ' + 'Gemfile'.underline
 end
