@@ -1,36 +1,26 @@
-.block__header,
-.variant__header {
+.block__header, .variant__header {
   font-size: 16px;
   font-weight: bold;
   border-bottom: 1px solid #ececec;
   padding-bottom: 9px;
-  text-align: center;
-}
-.block__header .code,
-.variant__header .code {
-  display: block;
-}
+  text-align: center; }
+  .block__header .code, .variant__header .code {
+    display: block; }
 
 .block__header {
-  font-size: 25px;
-}
+  font-size: 25px; }
 
 .block__variant {
-  padding-top: 60px;
-}
+  padding-top: 60px; }
 
-.block__example,
-.variant__body,
-.block__variables {
-  padding-top: 30px;
-}
+.block__example, .variant__body, .block__variables {
+  padding-top: 30px; }
 
 .block__variables__title {
   font-weight: bold;
   border-bottom: 1px solid #ececec;
   padding-bottom: 9px;
-  text-align: center;
-}
+  text-align: center; }
 
 .blurb, .blurb--with-margin {
   padding: 5px;
@@ -38,42 +28,29 @@
   background-color: rgba(0, 0, 0, 0.1);
   background-image: -webkit-linear-gradient(-225deg, rgba(255, 255, 255, 0.3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 75%, transparent);
   background-image: linear-gradient(-45deg,rgba(255, 255, 255, 0.3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 75%, transparent);
-  background-size: 20px 20px;
-}
-.blurb .blurb, .blurb--with-margin .blurb, .blurb .blurb--with-margin, .blurb--with-margin .blurb--with-margin {
-  background: rgba(0, 0, 0, 0.1);
-}
+  background-size: 20px 20px; }
+  .blurb .blurb, .blurb--with-margin .blurb, .blurb .blurb--with-margin, .blurb--with-margin .blurb--with-margin {
+    background: rgba(0, 0, 0, 0.1); }
 
 .blurb--with-margin {
-  margin-bottom: 5px;
-}
+  margin-bottom: 5px; }
 
 pre {
   background-color: rgba(0, 0, 0, 0.1);
   padding: 15px;
-  font-size: 13px;
-}
+  font-size: 13px; }
 
 @media screen and (min-width: 400px) {
-  .block__header,
-  .variant__header {
+  .block__header, .variant__header {
     display: table;
     width: 100%;
-    text-align: left;
-  }
-  .block__header .code,
-  .variant__header .code {
-    text-align: right;
-  }
-  .block__header .code,
-  .block__header .heading,
-  .variant__header .code,
-  .variant__header .heading {
-    display: table-cell;
-    vertical-align: middle;
-  }
+    text-align: left; }
+    .block__header .code, .variant__header .code {
+      text-align: right; }
+    .block__header .code, .block__header .heading, .variant__header .code, .variant__header .heading {
+      display: table-cell;
+      vertical-align: middle; }
 
   .block__variables__title {
-    text-align: left;
-  }
-}
+    text-align: left; }
+ }
