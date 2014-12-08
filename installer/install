@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# coding: utf-8
 
 class String
   def green
@@ -74,6 +75,15 @@ def add_if_missing(dest, content, options = {})
   end
 end
 
+def remove_if_present(dest, regexp)
+  lines = File.readlines(dest).map(&:strip)
+  lines.delete_if { |line| line =~ regexp }
+
+  File.open(dest, 'w') do |f|
+    f.puts lines.join("\n")
+  end
+end
+
 copy_if_missing 'https://github.com/stefanoverna/bemo/raw/master/installer/templates/Gruntfile.js', 'Gruntfile.js'
 copy_if_missing 'https://github.com/stefanoverna/bemo/raw/master/installer/templates/package.json', 'package.json'
 
@@ -86,6 +96,8 @@ end
 if File.exist?('Gemfile')
   add_if_missing 'Gemfile', "source 'https://rails-assets.org'", after_line: "source 'https://rubygems.org'"
   add_if_missing 'Gemfile', "\ngem 'rails-assets-normalize-scss'"
+  add_if_missing 'Gemfile', "\ngem 'sass'"
+  remove_if_present 'Gemfile', /^gem\s+('|")sass-rails('|").*$/
 
   puts '✓'.green + ' Added required gems to ' + 'Gemfile'.underline
 end
