@@ -39,4 +39,11 @@
 
   blockquote
     font-style: italic
+    font-family: $georgia
+    position: relative
+    color: $light-body-color
+
+    &:before
+      @extend .icon--quotes:before
+      +position(absolute, 0 null null 0)
 
