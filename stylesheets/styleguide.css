@@ -1,6 +1,18 @@
 .bemo-logo {
   font-size: 80px; }
 
+.icon-frame {
+  border: 1px solid #d7d7d7;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px; }
+  .icon-frame i {
+    vertical-align: middle; }
+
 .blurb, .blurb--with-margin {
   padding: 10px 5px;
   text-align: center;
