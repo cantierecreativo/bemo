@@ -1,3 +1,27 @@
+# v1.0.10
+
+### Major changes to BEMO default style blocks!
+
+Default styles sucked, now they don't.
+
+* [`f4587bf`](http://github.com/stefanoverna/bemo/commit/f4587bf) Optimize legibility
+* [`5a3f991`](http://github.com/stefanoverna/bemo/commit/5a3f991) Change default color of links
+* [`9cbd1ec`](http://github.com/stefanoverna/bemo/commit/9cbd1ec) Fix outline
+* [`e16b9e6`](http://github.com/stefanoverna/bemo/commit/e16b9e6) Change fields focus default color
+* [`3a8f81f`](http://github.com/stefanoverna/bemo/commit/3a8f81f) Style legend
+* [`c136485`](http://github.com/stefanoverna/bemo/commit/c136485) Export wrap width into global variable
+* [`1de6945`](http://github.com/stefanoverna/bemo/commit/1de6945) Change buttons default style
+* [`2620e8b`](http://github.com/stefanoverna/bemo/commit/2620e8b) Change flash default styling
+* [`0287119`](http://github.com/stefanoverna/bemo/commit/0287119) Small tweaks to .hero style
+* [`07071f6`](http://github.com/stefanoverna/bemo/commit/07071f6) Better .nav-breadcrumbs
+* [`e1b503f`](http://github.com/stefanoverna/bemo/commit/e1b503f) Rename $space-amounts to $vertical-space-amounts
+* [`447e01b`](http://github.com/stefanoverna/bemo/commit/447e01b) Better responsive .table
+* [`e4fa832`](http://github.com/stefanoverna/bemo/commit/e4fa832) Change color palette
+* [`01af4f6`](http://github.com/stefanoverna/bemo/commit/01af4f6) Change default heading styles
+* [`30bdbdb`](http://github.com/stefanoverna/bemo/commit/30bdbdb) Add new icons (Material Design Icons by Google)
+* [`36a8e8e`](http://github.com/stefanoverna/bemo/commit/36a8e8e) Make .input use icons
+* [`9bbcdbf`](http://github.com/stefanoverna/bemo/commit/9bbcdbf) Minor changes
+
 # v1.0.9
 
 ### Change breakpoint names to facilitate mobile-first approach
