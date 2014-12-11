@@ -16,12 +16,12 @@
 .blurb, .blurb--with-margin {
   padding: 10px 5px;
   text-align: center;
-  background: #f9f9f9;
+  background: #e7e7e7;
   font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
   font-weight: normal;
   color: #939393; }
   .blurb .blurb, .blurb--with-margin .blurb, .blurb .blurb--with-margin, .blurb--with-margin .blurb--with-margin {
-    background: #e0e0e0;
+    background: #d5d5d5;
     color: #797979; }
   .hero .blurb, .hero .blurb--with-margin, .hero--primary .blurb, .hero--primary .blurb--with-margin {
     background: rgba(0, 0, 0, 0.1); }
