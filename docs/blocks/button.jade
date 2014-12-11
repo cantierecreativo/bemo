@@ -1,6 +1,6 @@
 +block("Buttons", ".button")
 
-  +example("Works with links, buttons and labels")
+  +example("Work on links, buttons and labels")
     a.button(href='#') Link
     | &nbsp;
     button.button Button
@@ -14,14 +14,14 @@
   +example("Fill the entire width", ".button--expand")
     a.button--expand(href='#') Button
 
-  +example("Different sizes", ".button--(small|large|huge)")
+  +example("Sizes", ".button--small, .button--large, .button--huge")
     a.button--small(href='#') Button
     | &nbsp;
     a.button--large(href='#') Button
     | &nbsp;
     a.button--huge(href='#') Button
 
-  +example("Different colors", ".button--(primary|notice|alert|rev)")
+  +example("Colors", ".button--primary, .button--notice, .button--alert, .button--rev")
     a.button--primary(href='#') Button
     | &nbsp;
     a.button--notice(href='#') Button
@@ -29,4 +29,15 @@
     a.button--alert(href='#') Button
     | &nbsp;
     a.button--rev(href='#') Button
+
+  +example("Icons", false)
+    p.space--bottom-2
+      a.button--notice(href='#')
+        span Alright
+        i.icon--check
+
+    p
+      a.button--alert(href='#')
+        i.icon--cross
+        span Delete this
 

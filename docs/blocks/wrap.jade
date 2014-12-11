@@ -1,10 +1,10 @@
 +block("Maximum layout width", ".wrap")
 
-  +example(false, false, true)
+  +example("Example", false, true)
     .wrap
-      .blurb: code= ".wrap"
+      .blurb Hello, sexy.
 
-  +example("Wrap based on breakpoint", ".wrap--on-$breakpoint", true)
+  +example("Responsive version", ".wrap--on-$breakpoint", true)
     each query in ["eq-palm", "eq-lap", "eq-desk"]
       div(class="wrap--on-"+query)
         .blurb--with-margin: code= ".wrap--on-"+query

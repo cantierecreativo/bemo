@@ -1,12 +1,19 @@
-+block("Font size helpers", "")
++block("Font size helpers", ".alpha, .beta, .gamma, .smallprint, .milli")
 
   +variables
     pre.
-      $base-font-size: 16px
-      $heading-font-sizes: ('alpha' 30px, 'beta' 25px, 'gamma' 19px)
-      $smallprint-font-sizes: ('smallprint' 14px, 'milli' 13px)
+      $base-font-size: 15px
+      $heading-font-sizes: ('alpha': 30px, 'beta': 27px, 'gamma': 22px)
+      $smallprint-font-sizes: ('smallprint': 13px, 'milli': 12px)
 
-  each fontSize in ['alpha', 'beta', 'gamma', 'regular', 'smallprint', 'milli']
-    +example(titleize(fontSize), "." + fontSize)
-      h6(class=fontSize) Eveniet libero et consequatur sit voluptatibus dignissimos
+  +example("Example", false)
+    .space--bottom-1: p.alpha An important title
+    .space--bottom-1: p.beta Secondary title
+    .space--bottom-3: p.gamma Tertiary title
+
+    hr
+
+    .space--top-3: p.smallprint Lass aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris vitae nisl neque.
+    .space--top-1: p.milli Curabitur vitae odio massa. Etiam porta pretium nunc condimentum pharetra.
+
 

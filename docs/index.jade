@@ -15,50 +15,51 @@ html
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
     mixin block(title, cssClass)
-      .space--both-5
-        section.block
-          .wrap: h6.block__header
-            span.heading #{title}
-            if cssClass
-              span.code: code #{cssClass}
-          .block__body
-            block
+      .block
+        .wrap
+          if cssClass
+            p.block__code!= formatClass(cssClass)
+          h4.block__title #{title}
 
-    mixin variables
-      .block__variables: .wrap
-        .block__variables__title Sass variables
         block
 
-    mixin example(title, cssClass, dontWrap)
-      if title
-        .block__variant
-          .variant
-            .wrap: .variant__header
-              span.heading #{title}
-              if cssClass
-                span.code: code #{cssClass}
-            .variant__body
-              div(class=(dontWrap ? '' : 'wrap'))
-                block
-      else
-        .block__example
-          div(class=(dontWrap ? '' : 'wrap'))
-            block
+    mixin variables
+      .block__part: .block__part__inner
+        .wrap
+          h6.block__subtitle Options
 
-    .hero
+          block
+
+    mixin example(title, cssClass, dontWrap)
+      .block__part: .block__part__inner
+        .wrap
+          if cssClass
+            p.block__code!= formatClass(cssClass)
+          h6.block__subtitle #{title}
+
+        div(class=(dontWrap ? '' : 'wrap'))
+          block
+
+    .hero--primary
       .wrap
         .hero__body
           .hero__body__inner
-            .hero__heading Bemo
+            .hero__heading: .bemo-logo BEMO
             .hero__text
-              p.gamma A non-intrusive, Sass-based BEM project starter
+              p.gamma Start your next project with the right foot: a scalable frontend architecture.
             p.hero__actions
-              a.button.button--primary.button--huge.gamma(href='http://github.com/stefanoverna/bemo') Browse on Github
+              .nav
+                .nav__item: a.button.button--rev.button--huge(href='http://stefanoverna.github.io/bemo/stylesheets/application.css') Download
+                .nav__item: a.button.button--rev.button--huge(href='http://github.com/stefanoverna/bemo') 
+                  span Github
+                  i.icon--arrow-right
 
     .space--both-5: .wrap: .intro
       .formatted-content
         :markdown
-          Bemo is a Sass-based project starter meant to be a starting point and structural 
+          # What is is?
+
+          Glad you asked! BEMO is a Sass-based project starter meant to be a starting point and structural
           guide rather than a full framework. It's bare enough to not interfere with your 
           custom styles or scripts, but yet has enough functioning modules to jumpstart 
           a project in no time.
@@ -68,8 +69,8 @@ html
 
           Bemo is accompanied by a Grunt task that easily lets you generate:
 
-          1. custom icon webfonts starting from a set of SVGs
-          2. retina-ready, resizable sprites
+          1. Custom icon webfonts starting from a set of SVGs;
+          2. Retina-ready, resizable sprites.
 
     .blocks
       include ./blocks/grid.jade

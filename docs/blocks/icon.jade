@@ -1,13 +1,11 @@
 +block("Webfont icons", ".icon")
-  +example
+  +example("Default set")
     p
-      i.icon--checkmark: span Semantic content
-      i.icon--cross: span Semantic content
-  +example("Different sizes", ".icon--(large|huge)")
-    p
-      i.icon--checkmark.icon--large
-      i.icon--cross.icon--large
-    p
-      i.icon--checkmark.icon--huge
-      i.icon--cross.icon--huge
+      each glyph in [ "arrow-down", "arrow-left", "arrow-right", "arrow-up", "check", "checkbox-off", "checkbox-on", "cross", "hamburger", "mail", "quotes", "radio-off", "radio-on" ]
+        .icon-frame: i(class="icon--" + glyph + " icon--large")
 
+  +example("Different sizes", ".icon--large, .icon--huge")
+    p
+      .icon-frame: i.icon--cross
+      .icon-frame: i.icon--cross.icon--large
+      .icon-frame: i.icon--cross.icon--huge

@@ -2,11 +2,27 @@
 
   +variables
     pre.
+      0px            480px           1024x           1500px           ∞
+      |               |               |                |              |
+      |               |<-- lap -------------------------------------->|
+      |               |               |<-- desk --------------------->|
+      |               |               |                |<-- wall ---->|
+      |               |               |                |              |
+      |<-- eq-palm -->|               |                |              |
+      |               |<-- eq-lap --->|                |              |
+      |               |               |<-- eq-desk --->|              |
+      |               |               |                |              |
+      |<------------------ lte-lap -->|                |              |
+      |<---------------------------------- lte-desk -->|              |
+      |               |               |                |              |
+      0px            480x           1024px          1500px            ∞
+
+      $breakpoint-widths: ('palm': 0px, 'lap': 480px, 'desk': 1024px, 'wall': 1500px)
       $grid-gutter: 24px
       $grid-push: true
       $grid-pull: true
-      $grid-cols: 12
-      $grid-breakpoints: desk
+      $grid-tot: (12, 24)
+      $grid-breakpoints: (lap, desk, wall)
 
   mixin some-grid-items
     each col in loop(4)
@@ -18,28 +34,28 @@
       .grid__item.width-3-12
         .blurb
           each line in loop(col)
-            p Foo
+            p= line
 
-  +example("Non responsive columns", ".width-$width-$cols")
+  +example("Simple columns", ".width-${width}-${tot}")
     .grid
       each col in loop(6)
         .grid__item.width-2-12
           .blurb= col
 
-  +example("Responsive columns", ".$breakpoint-$width-$cols")
+  +example("Responsive columns", ".$breakpoint-${width}-${tot}")
     .grid
       each col in loop(12)
         .grid__item.width-4-12.desk-1-12
           .blurb--with-margin= col
 
-  +example("Shiftable columns", ".(push|pull)-$width-$cols")
+  +example("Shiftable columns", ".push-${width}-${tot}, .pull-${width}-${tot}")
     .grid
       .grid__item.width-3-12.push-3-12
         .blurb First
       .grid__item.width-3-12.pull-3-12
         .blurb Last
 
-  +example("Responsive shiftable columns", ".$breakpoint-(push|pull)-$width-$cols")
+  +example("Responsive shiftable columns", ".${breakpoint}-push-${width}-${tot}, .${breakpoint}-pull-${width}-${tot}")
     .grid
       .grid__item.width-3-12.push-3-12.desk-push-0
         .blurb First
@@ -69,18 +85,18 @@
   +example("Horizontally centered", ".grid--center")
     .grid--center
       .grid__item.width-3-12
-        p.blurb One
+        p.blurb 1
       .grid__item.width-3-12
-        p.blurb Two
+        p.blurb 2
       .grid__item.width-3-12
-        p.blurb Three
+        p.blurb 3
 
   +example("Right alignment", ".grid--right")
     .grid--right
       .grid__item.width-3-12
-        p.blurb One
+        p.blurb 1
       .grid__item.width-3-12
-        p.blurb Two
+        p.blurb 2
       .grid__item.width-3-12
-        p.blurb Three
+        p.blurb 3
 

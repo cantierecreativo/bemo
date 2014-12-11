@@ -1,47 +1,40 @@
-@import 'bourbon/dist/bourbon'
+@import "node_modules/grunt-bemo/bemo/variables/colors"
+@import "node_modules/grunt-bemo/bemo/variables/font-families"
+@import 'node_modules/grunt-bemo/bemo/variables/grid'
+@import 'node_modules/grunt-bemo/bemo/variables/wrap'
 
-@mixin l
-  @media screen and (min-width: 400px)
-    @content
+@import 'node_modules/grunt-bemo/bemo/mixins/font-families'
+@import 'node_modules/grunt-bemo/bemo/mixins/clearfix'
+@import 'node_modules/grunt-bemo/bemo/mixins/wrap'
 
-@mixin striped-bg($foreground-color, $background-color, $angle: -45deg, $size: 20px)
-  +linear-gradient($angle, $foreground-color 25%, transparent 25%, transparent 50%, $foreground-color 50%, $foreground-color 75%, transparent 75%, transparent, $fallback: $background-color)
-  background-size: $size $size
+.bemo-logo
+  font-size: 80px
 
-.block__header,
-.variant__header
-  font-size: 16px
-  font-weight: bold
-  border-bottom: 1px solid #ececec
-  padding-bottom: 9px
+.icon-frame
+  border: 1px solid $border-color
+  display: inline-block
+  margin-right: 5px
+  margin-bottom: 5px
+  width: 50px
+  height: 50px
   text-align: center
+  line-height: 50px
 
-  .code
-    display: block
-
-.block__header
-  font-size: 25px
-
-.block__variant
-  padding-top: 60px
-
-.block__example,
-.variant__body,
-.block__variables
-  padding-top: 30px
-
-.block__variables__title
-  font-weight: bold
-  border-bottom: 1px solid #ececec
-  padding-bottom: 9px
-  text-align: center
+  i
+    vertical-align: middle
 
 .blurb
-  padding: 5px
+  padding: 10px 5px
   text-align: center
-  +striped-bg(rgba(white, 0.3), rgba(black, 0.1))
+  background: darken($light-bg-color, 7%)
+  +monospaced-font-family
+  color: darken($light-bg-color, 40%)
 
   .blurb
+    background: darken($light-bg-color, 14%)
+    color: darken($light-bg-color, 50%)
+
+  .hero &, .hero--primary &
     background: rgba(black, 0.1)
 
 .blurb--with-margin
@@ -49,25 +42,54 @@
   margin-bottom: 5px
 
 pre
-  background-color: rgba(black, 0.1)
+  background-color: $light-bg-color
   padding: 15px
   font-size: 13px
+  +monospaced-font-family
 
-+l
-  .block__header,
-  .variant__header
-    display: table
-    width: 100%
-    text-align: left
+.block
+  padding: 70px 0 10px
+  border-top: 4px solid $border-color
 
-    .code
-      text-align: right
+  &:last-child
+    border-bottom: 4px solid $border-color
 
-    .code,
-    .heading
-      display: table-cell
-      vertical-align: middle
+.block__title
+  +heading-font-family
+  font-weight: bold
+  font-size: 35px
 
-  .block__variables__title
-    text-align: left
+.block__subtitle
+  +heading-font-family
+  font-size: 20px
+  text-transform: uppercase
+  font-variant: small-caps
+  letter-spacing: 0.06em
+  margin-bottom: 40px
+
+.block__code
+  color: $light-body-color
+  font-size: 13px
+  margin-bottom: 10px
+  +monospaced-font-family
+
+  span
+    background-color: $light-bg-color
+    padding: 0.2em 0.3em
+
+.block__part
+  padding-top: 60px
+
+  &:after
+    content: ""
+    height: 1px
+    +wrap
+    background-color: $border-color
+    display: block
+
+  &:last-child:after
+    display: none
+
+.block__part__inner
+  padding-bottom: 60px
 

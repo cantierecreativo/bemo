@@ -3,11 +3,11 @@
   +variables
     pre.
       $vertical-space-unit: 12px
-      $space-amounts: 1 2 3 5 8
+      $vertical-space-amounts: ( 1, 2, 3, 5, 8 )
 
-  each type in ['top', 'bottom', 'both']
-    +example(titleize(type), ".space--" + type + "-$amount")
+  each label, type in {'top': 'Top spacing', 'bottom': 'Bottom spacing', 'both': 'Both ways'}
+    +example(label, ".space--" + type + "-${amount}")
       .blurb
         div(class="space--"+type+"-3")
-          .blurb Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          .blurb Mind the gap!
 

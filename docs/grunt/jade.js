@@ -14,6 +14,11 @@ module.exports = {
         titleize: function(className) {
           var title = className.replace(/\-/, ' ');
           return title[0].toUpperCase() + title.substring(1);
+        },
+        formatClass: function(className) {
+          return className.replace(/\$\{([^}]+)}/g, function(a, b) { 
+            return "<span>" + b + "</span>"; 
+          });
         }
       }
     },

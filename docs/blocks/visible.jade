@@ -1,10 +1,10 @@
 +block("Selective visibility", ".visible")
 
-  +example("Visibility based on breakpoint", ".visible--on-$breakpoint")
+  +example("Example", ".visible--on-${breakpoint}")
     each query in ["eq-palm", "eq-lap", "eq-desk"]
-      .blurb--with-margin(class="visible--on-"+query): code= ".visible--on-"+query
+      .blurb--with-margin(class="visible--on-"+query)= ".visible--on-"+query
 
-  +example("Also the inverse is available", ".hidden--on-$breakpoint")
+  +example("Selective invisibility", ".hidden--on-${breakpoint}")
     each query in ["eq-palm", "eq-lap", "eq-desk"]
-      .blurb--with-margin(class="hidden--on-"+query): code= ".hidden--on-"+query
+      .blurb--with-margin(class="hidden--on-"+query)= ".hidden--on-"+query
 
