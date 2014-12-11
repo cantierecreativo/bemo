@@ -43,7 +43,6 @@ h1, h2, h3, h4, h5, h6
   width: 100%
   padding: 10px
   border: 1px solid $border-color
-  outline: 0
   -webkit-appearance: none
   border-radius: 0
   background-image: none
@@ -52,6 +51,9 @@ h1, h2, h3, h4, h5, h6
 
   &[disabled]
     opacity: 0.9
+
+*:focus
+  outline: 0
 
 input[type=number]::-ms-tooltip
   display: none
