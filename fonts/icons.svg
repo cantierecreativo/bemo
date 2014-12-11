@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <metadata>
-Created by FontForge 20141022 at Wed Dec  3 00:22:20 2014
+Created by FontForge 20141022 at Thu Dec 11 01:20:42 2014
  By Stefano Verna
 Copyright (c) 2014, Stefano Verna
 </metadata>
@@ -16,10 +16,10 @@ Copyright (c) 2014, Stefano Verna
     panose-1="2 0 5 3 0 0 0 0 0 0"
     ascent="448"
     descent="-64"
-    bbox="-0.363636 0 341.818 371.565"
+    bbox="0 0 512 352"
     underline-thickness="25"
     underline-position="-52"
-    unicode-range="U+F101-F102"
+    unicode-range="U+F101-F103"
   />
 <missing-glyph 
 d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
@@ -29,9 +29,12 @@ d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
  />
     <glyph glyph-name="nonmarkingreturn" horiz-adv-x="170" 
  />
-    <glyph glyph-name="uniF101" unicode="&#xf101;" horiz-adv-x="342" 
-d="M127 13q-17 0 -28 14l-92 121q-9 12 -7 26.5t14 23.5t26.5 7t23.5 -14l60 -80l152 243q7 13 21.5 16.5t27.5 -4.5q13 -7 16 -21.5t-5 -27.5l-179 -287q-9 -15 -28 -17h-2z" />
-    <glyph glyph-name="uniF102" unicode="&#xf102;" horiz-adv-x="241" 
-d="M232 111q9 -9 9 -21.5t-9 -21.5t-22 -9t-22 9l-68 77l-68 -77q-9 -9 -21.5 -9t-21.5 9t-9 21.5t9 21.5l71 81l-71 81q-9 9 -9 21.5t9 21.5t21.5 9t21.5 -9l68 -77l68 77q9 9 22 9t22 -9t9 -21.5t-9 -21.5l-71 -81z" />
+    <glyph glyph-name="uniF101" unicode="&#xf101;" horiz-adv-x="375" 
+d="M119 103l226 226l30 -30l-256 -256l-119 119l30 30z" />
+    <glyph glyph-name="uniF102" unicode="&#xf102;" horiz-adv-x="299" 
+d="M299 311l-119 -119l119 -119l-31 -30l-119 119l-119 -119l-30 30l119 119l-119 119l30 30l119 -119l119 119z" />
+    <glyph glyph-name="uniF103" unicode="&#xf103;" horiz-adv-x="512" 
+d="M112 224q46 0 79 -33t33 -79t-33 -79t-79 -33t-79 33t-33 79v16q0 93 65.5 158.5t158.5 65.5v-64q-66 0 -113 -47q-11 -11 -16 -18q6 1 17 1zM400 224q46 0 79 -33t33 -79t-33 -79t-79 -33t-79 33t-33 79v16q0 93 65.5 158.5t158.5 65.5v-64q-66 0 -113 -47
+q-11 -11 -16 -18q6 1 17 1z" />
   </font>
 </defs></svg>
