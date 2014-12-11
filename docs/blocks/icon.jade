@@ -1,4 +1,10 @@
 +block("Webfont icons", ".icon")
+
+  .wrap: p.milli 
+    | BEMO default icons are taken from the 
+    a(href="https://github.com/google/material-design-icons") Material Design
+    | &nbsp;icon set by Google. Thanks!
+
   +example("Default set")
     p
       each glyph in [ "arrow-down", "arrow-left", "arrow-right", "arrow-up", "check", "checkbox-off", "checkbox-on", "cross", "hamburger", "mail", "quotes", "radio-off", "radio-on" ]
@@ -9,3 +15,4 @@
       .icon-frame: i.icon--cross
       .icon-frame: i.icon--cross.icon--large
       .icon-frame: i.icon--cross.icon--huge
+
