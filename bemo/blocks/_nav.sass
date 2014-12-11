@@ -23,8 +23,13 @@
     content: "\00A0\2022\00A0"
 
 .nav--breadcrumbs
+  letter-spacing: 0.05em
+  text-transform: uppercase
+  font-variant: small-caps
+
   .nav__item:before
-    content: "\00A0\00bb\00A0"
+    content: "\00A0/\00A0"
+    color: $light-body-color
 
 .nav--pagination
   .nav__item.is-current
