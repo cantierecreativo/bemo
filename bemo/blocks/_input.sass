@@ -9,29 +9,20 @@
     z-index: -1
 
     &:focus ~ .input__label:before
-      background-color: $inactive-color
+      color: $base-body-color
 
     &:active ~ .input__label:before
-      background-color: $inactive-color
+      color: $base-body-color
 
     &[disabled] ~ .input__label:before
       opacity: 0.5
 
 .input__label:before
-  content: ""
-  display: inline-block
-  width: .9em
-  height: .9em
-  line-height: .9em
-  background-color: white
-  background-position: center center
-  background-repeat: no-repeat
-  background-size: 75%
   user-select: none
-  box-shadow: 0 0 0 1px white, 0 0 0 2px $base-body-color
-  margin-right: 0.4em
-  text-align: center
-  vertical-align: baseline
+  margin-right: 0.5em
+  font-size: 1.5em
+  color: $base-body-color
+  vertical-align: middle
   +icon-setup
 
 .input--radio
@@ -40,15 +31,18 @@
 .input--checkbox
   @extend .input
 
+  .input__label:before
+    +icon-content(checkbox-off)
+
   input:checked ~ .input__label:before
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDggOCI+PHBhdGggZmlsbD0iIzIzMUYyMCIgZD0iTTYuNCAxbC0uNy43LTIuOCAyLjgtLjgtLjgtLjctLjdMMCA0LjRsLjcuNyAxLjUgMS41LjcuNy43LS43IDMuNS0zLjUuNy0uN0w2LjQgMXoiLz48L3N2Zz4K')
+    +icon-content(checkbox-on)
 
 .input--radio
   @extend .input
 
   .input__label:before
-    border-radius: 50%
+    +icon-content(radio-off)
 
   input:checked ~ .input__label:before
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDgiPjxwYXRoIGZpbGw9IiMyMzFGMjAiIGQ9Ik00IDFDMi4zIDEgMSAyLjMgMSA0czEuMyAzIDMgMyAzLTEuMyAzLTMtMS4zLTMtMy0zeiIvPjwvc3ZnPg==')
+    +icon-content(radio-on)
 
