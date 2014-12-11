@@ -1,13 +1,23 @@
 .flash
-  color: white
   text-align: center
-  +vertical-padding(1)
+  border: 1px solid $border-color
+  +heading-font-family
+  +padding(1)
 
 .flash--notice
   @extend .flash
-  background-color: rgba($notice-color, 0.9)
+  border-color: $notice-color
+  color: $notice-color
+
+  &:before
+    @extend .icon--check:before
+    margin-right: 0.5em
 
 .flash--alert
   @extend .flash
-  background-color: rgba($alert-color, 0.9)
+  border-color: $alert-color
+  color: $alert-color
 
+  &:before
+    @extend .icon--cross:before
+    margin-right: 0.5em
