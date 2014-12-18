@@ -40,7 +40,7 @@ which will contain all the blocks that compose your frontend styling.
 
 ## Demo
 
-A preview of the BEM blocks available with Bemo is available here: http://stefanoverna.github.io/bemo/
+A preview of the BEM blocks available with Bemo is available here: http://cantierecreativo.github.io/bemo/
 
 ## Rails one-liner setup (for the lazy ones)
 
