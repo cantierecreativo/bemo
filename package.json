@@ -1,7 +1,7 @@
 {
   "name": "grunt-bemo",
   "description": "Tasks for the Bemo project starter",
-  "version": "0.1.9",
+  "version": "0.1.11",
   "homepage": "https://github.com/stefanoverna/bemo",
   "author": {
     "name": "Stefano Verna",
