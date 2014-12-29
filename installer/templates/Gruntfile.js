@@ -10,7 +10,8 @@ module.exports = function(grunt) {
       webfonts: {
         src:        "app/assets/fonts/svg",
         fontDest:   "app/assets/fonts",
-        sassDest:   "app/assets/stylesheets/variables/_icon-glyphs.scss"
+        sassDest:   "app/assets/stylesheets/variables/_icon-glyphs.scss",
+        formats:    [ "eot", "woff", "ttf", "svg"]
       },
       sprites: {
         src:        "app/assets/images/sprites",

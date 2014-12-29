@@ -19,6 +19,7 @@ module.exports = function(grunt) {
     var src = utils.requireOption(grunt, 'webfonts.src');
     var fontDest = utils.requireOption(grunt, 'webfonts.fontDest');
     var sassDest = utils.requireOption(grunt, 'webfonts.sassDest');
+    var formats = utils.option(grunt, 'webfonts.formats', ['eot', 'woff', 'ttf', 'svg']);
 
     grunt.config.set('webfont', {
       bemo: {
@@ -31,7 +32,7 @@ module.exports = function(grunt) {
           htmlDemo: false,
           font: 'icons',
           template: path.resolve(__dirname, '../templates/_icon-glyphs.css'),
-          types: ['eot', 'woff', 'ttf', 'svg']
+          types: formats
         }
       }
     });
