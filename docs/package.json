@@ -15,7 +15,7 @@
     "grunt-contrib-watch": "*",
     "grunt-gh-pages": "*",
     "grunt-replace": "^0.8.0",
-    "grunt-sass": "git://github.com/viewone/grunt-sass#59079cd942c631a6f5ad76b7fd757f41d6eca730",
+    "grunt-sass": "*",
     "load-grunt-config": "*",
     "marked": "*"
   },

@@ -41,15 +41,15 @@ module.exports = function(grunt) {
         padding: 6,
         algorithm: 'binary-tree',
         src: path.join(src, '*.png'),
-        destImg: imageDest.replace('{{density}}', '2x'),
-        destCSS: sassDest + ".tmp"
+        dest: imageDest.replace('{{density}}', '2x'),
+        destCss: sassDest + ".tmp"
       },
       bemoNonRetina: {
         padding: 3,
         algorithm: 'binary-tree',
         src: path.join(src, "1x", "*.png"),
-        destImg: imageDest.replace('{{density}}', '1x'),
-        destCSS: sassDest,
+        dest: imageDest.replace('{{density}}', '1x'),
+        destCss: sassDest,
         cssTemplate: function(context) {
           var template = fs.readFileSync(path.resolve(__dirname, '../templates/_sprites.css'), 'utf8');
           return grunt.template.process(template, { data: context });
