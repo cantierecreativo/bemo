@@ -5,7 +5,7 @@ $sprite-size: (
 %>  width:   <%= items[0].px.total_width %>,
   height:  <%= items[0].px.total_height %>
 <% } else {
-%>  width: 0px
+%>  width: 0px,
   height: 0px
 <% } %>);
 
