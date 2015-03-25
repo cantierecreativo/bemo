@@ -1,7 +1,7 @@
-@each $amount in $vertical-space-amounts
+@each $amount in $space-amounts
   @each $rule in bottom top
     .space--#{$rule}-#{$amount}
-      +vertical-space-rule("margin-#{$rule}", $amount)
+      +space-rule("margin-#{$rule}", $amount)
 
   .space--both-#{$amount}
     +margin-top($amount)

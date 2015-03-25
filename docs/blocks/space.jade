@@ -2,8 +2,8 @@
 
   +variables
     pre.
-      $vertical-space-unit: 12px
-      $vertical-space-amounts: ( 1, 2, 3, 5, 8 )
+      $space-unit: 12px
+      $space-amounts: ( 1, 2, 3, 5, 8 )
 
   each label, type in {'top': 'Top spacing', 'bottom': 'Bottom spacing', 'both': 'Both ways'}
     +example(label, ".space--" + type + "-${amount}")
