@@ -156,7 +156,15 @@ Bemo depends on the following Sass libraries:
 
 * [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
 
+## Development
+
+    npm install
+    npm link
+    cd docs && npm link grunt-bemo
+    npm install
+    bower install
+    grunt dev
+
 ## Contributing
 
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
