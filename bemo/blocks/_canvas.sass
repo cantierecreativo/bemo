@@ -6,7 +6,7 @@
     overflow: hidden
 
 .canvas__main
-  transition: transform 0.5s ease-out
+  transition: transform 0.5s $material-ease
 
 .canvas__aside
   z-index: 2
@@ -16,7 +16,7 @@
   box-shadow: 0 0 0 transparent
   top: 0
   bottom: 0
-  transition: transform 0.5s ease-out, box-shadow 0.5s ease-out
+  transition: transform 0.5s $material-ease, box-shadow 0.5s $material-ease
 
   .canvas.is-shifted &
     box-shadow: 3px 0 5px rgba(#000, 0.2)
@@ -25,4 +25,3 @@
 
 +at-breakpoint(lap)
   +canvas-layout(400px)
-
