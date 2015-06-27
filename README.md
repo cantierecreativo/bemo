@@ -47,7 +47,7 @@ A preview of the BEM blocks available with Bemo is available here: http://cantie
 Just type this into you project folder, and it will setup Grunt for you:
 
 ```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/stefanoverna/bemo/master/installer/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/cantierecreativo/bemo/master/installer/install)"
 ```
 
 ## grunt-bemo plugin
