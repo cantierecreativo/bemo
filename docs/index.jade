@@ -8,6 +8,39 @@ html
     link(href='/stylesheets/application.css', rel='stylesheet', type='text/css')
     link(href='/stylesheets/styleguide.css', rel='stylesheet', type='text/css')
     script(src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js")
+    script(src="//lovasoa.github.io/tidy-html5/tidy.js")
+    script.
+      var options = {
+        "indent":               "auto",
+        "indent-spaces":        2,
+        "wrap":                 80,
+        "markup":               true,
+        "output-xml":           false,
+        "numeric-entities":     true,
+        "quote-marks":          true,
+        "quote-nbsp":           false,
+        "show-body-only":       true,
+        "quote-ampersand":      false,
+        "break-before-br":      true,
+        "uppercase-tags":       false,
+        "uppercase-attributes": false,
+        "drop-font-tags":       false,
+        "tidy-mark":            false,
+        "clean":                false,
+        "vertical-space":       true,
+        "drop-empty-elements":  false,
+        "drop-empty-paras":     false
+      };
+
+      document.addEventListener("DOMContentLoaded", function() {
+        var examples = document.querySelectorAll(".example");
+        for (var i = 0; i < examples.length; i++) {
+          var example = examples[i];
+          var demo = example.querySelector(".example__demo");
+          var code = example.querySelector(".example__code");
+          code.textContent = tidy_html5(demo.innerHTML, options);
+        }
+      });
 
   body
     mixin lorem(count)
@@ -37,8 +70,11 @@ html
             p.block__code!= formatClass(cssClass)
           h6.block__subtitle #{title}
 
-        div(class=(dontWrap ? '' : 'wrap'))
-          block
+        .example
+          div(class=(dontWrap ? '' : 'wrap'))
+            .example__demo
+              block
+          .wrap: pre.example__code: code
 
     .hero--primary
       .wrap

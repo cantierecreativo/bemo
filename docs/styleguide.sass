@@ -74,8 +74,12 @@ pre
   +monospaced-font-family
 
   span
-    background-color: $light-bg-color
+    background-color: #ffff94
     padding: 0.2em 0.3em
+    text-transform: uppercase
+
+    &:before
+      content: "$"
 
 .block__part
   padding-top: 60px
@@ -93,3 +97,13 @@ pre
 .block__part__inner
   padding-bottom: 60px
 
+.example__code
+  margin-top: 50px
+
+  &:before
+    content: "Code"
+    text-transform: uppercase
+    color: $light-body-color
+    margin-bottom: 20px
+    display: block
+    +heading-font-family

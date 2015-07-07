@@ -6,13 +6,11 @@
     | &nbsp;icon set by Google. Thanks!
 
   +example("Default set")
-    p
-      each glyph in [ "arrow-down", "arrow-left", "arrow-right", "arrow-up", "check", "checkbox-off", "checkbox-on", "cross", "hamburger", "mail", "quotes", "radio-off", "radio-on" ]
-        .icon-frame: i(class="icon--" + glyph + " icon--large")
+    each glyph in [ "arrow-down", "arrow-left", "arrow-right", "arrow-up", "check", "checkbox-off", "checkbox-on", "cross", "hamburger", "mail", "quotes", "radio-off", "radio-on" ]
+      .icon-frame: i(class="icon--" + glyph + " icon--large")
 
   +example("Different sizes", ".icon--large, .icon--huge")
-    p
-      .icon-frame: i.icon--cross
-      .icon-frame: i.icon--cross.icon--large
-      .icon-frame: i.icon--cross.icon--huge
+    .icon-frame: i.icon--cross
+    .icon-frame: i.icon--cross.icon--large
+    .icon-frame: i.icon--cross.icon--huge
 
