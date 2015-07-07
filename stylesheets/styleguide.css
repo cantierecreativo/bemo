@@ -64,8 +64,11 @@ pre {
   font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
   font-weight: normal; }
   .block__code span {
-    background-color: #f9f9f9;
-    padding: 0.2em 0.3em; }
+    background-color: #ffff94;
+    padding: 0.2em 0.3em;
+    text-transform: uppercase; }
+    .block__code span:before {
+      content: "$"; }
 
 .block__part {
   padding-top: 60px; }
