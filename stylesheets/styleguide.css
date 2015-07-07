@@ -89,3 +89,14 @@ pre {
 
 .block__part__inner {
   padding-bottom: 60px; }
+
+.example__code {
+  margin-top: 50px; }
+  .example__code:before {
+    content: "Code";
+    text-transform: uppercase;
+    color: #636363;
+    margin-bottom: 20px;
+    display: block;
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: 300; }
