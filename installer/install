@@ -57,48 +57,32 @@ end
 
 def add_if_missing(dest, content, options = {})
   lines = File.readlines(dest).map(&:strip)
-  return if lines.include?(content)
+  return if lines.include?(options.fetch(:check, content))
 
-  if options[:after_line]
-    index = lines.index(options[:after_line])
-    if index
-      lines.insert(index + 1, content)
-    else
-      lines << content
-    end
-  else
-    lines << content
-  end
+  lines << content
 
   File.open(dest, 'w') do |f|
     f.puts lines.join("\n")
   end
 end
 
-def remove_if_present(dest, regexp)
-  lines = File.readlines(dest).map(&:strip)
-  lines.delete_if { |line| line =~ regexp }
-
-  File.open(dest, 'w') do |f|
-    f.puts lines.join("\n")
-  end
-end
-
-copy_if_missing 'https://github.com/stefanoverna/bemo/raw/master/installer/templates/Gruntfile.js', 'Gruntfile.js'
 copy_if_missing 'https://github.com/stefanoverna/bemo/raw/master/installer/templates/package.json', 'package.json'
 
 if File.exist?('.gitignore')
   add_if_missing '.gitignore', 'node_modules/*'
-
   puts '✓'.green + ' Edited ' + '.gitignore'.underline
 end
 
 if File.exist?('Gemfile')
-  add_if_missing 'Gemfile', "source 'https://rails-assets.org'", after_line: "source 'https://rubygems.org'"
-  add_if_missing 'Gemfile', "\ngem 'rails-assets-normalize-scss'"
-  add_if_missing 'Gemfile', "\ngem 'sass'"
-  remove_if_present 'Gemfile', /^gem\s+('|")sass-rails('|").*$/
-
+  content = File.read('Gemfile')
+  unless content =~ /rails-assets-normalize-scss/
+    File.open('Gemfile', 'w') do |f|
+      f.puts content
+      f.puts "source 'https://rails-assets.org' do"
+      f.puts "  gem 'rails-assets-normalize-scss'"
+      f.puts "end"
+    end
+  end
   puts '✓'.green + ' Added required gems to ' + 'Gemfile'.underline
 end
 
@@ -108,9 +92,9 @@ puts <<DOCS
 
 1. Run #{'npm install'.underline}
 2. Run #{'bundle install'.underline}
-3. Edit #{'Gruntfile'.underline} config to fit your project needs
-4. Run #{'grunt bemo-scaffold'.underline} to copy bemo assets files over your project
-5. Run #{'grunt bemo'.underline} everytime you need to refresh sprites or SVG
+3. Edit #{'package.json'.underline} scripts to fit your project needs
+4. Run #{'npm run bemo:scaffold'.underline} to copy BEMO skeleton on your project
+5. Run #{'npm run bemo'.underline} everytime you need to refresh sprites or SVG
 
 DOCS
 

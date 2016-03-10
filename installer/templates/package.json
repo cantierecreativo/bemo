@@ -1,9 +1,16 @@
 {
-  "name": "XXX",
+  "name": "my-project",
   "version": "0.0.1",
+  "scripts": {
+    "bemo": "npm run bemo:sprites && npm run bemo:webfonts",
+    "bemo:sprites": "bemo-sprites -s app/assets/images/sprites -i app/assets/images -S app/assets/stylesheets/variables/_sprites.scss",
+    "bemo:webfonts": "bemo-webfonts -s app/assets/fonts/svg -S app/assets/stylesheets/variables/_icon-glyphs.scss -f app/assets/fonts",
+    "bemo:scaffold": "bemo-scaffold -s app/assets/stylesheets"
+  },
   "devDependencies": {
-    "grunt": "*",
-    "grunt-bemo": "*"
+    "bemo-scaffold": "*",
+    "bemo-sprites": "*",
+    "bemo-webfonts": "*"
   }
 }
 
