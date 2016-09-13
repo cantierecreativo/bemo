@@ -10,8 +10,8 @@ and is heavily inspired by the [inuit.css framework](https://github.com/csswizar
 
 Bemo is accompanied by a couple of CLI tools let you easily generate:
 
+1. a basic bemo skeleton
 1. custom icon webfonts starting from a set of SVGs
-2. retina-ready, resizable sprites
 
 ## Structure
 
@@ -21,10 +21,6 @@ A Bemo project will look like this:
 .
 ├── fonts
 │   └── svg
-│ 
-├── images
-│   └── sprites
-│ 
 └── stylesheets
     ├── blocks
     ├── formats
@@ -50,13 +46,12 @@ Just type this into you project folder:
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/cantierecreativo/bemo/master/installer/install)"
 ```
 
-## bemo-webfont, bemo-sprites, bemo-scaffold
+## bemo-webfont, bemo-scaffold
 
 Please take a look at the following repositories if you want to setup 
 build tools manually:
 
 * https://github.com/cantierecreativo/bemo-scaffold
-* https://github.com/cantierecreativo/bemo-sprites
 * https://github.com/cantierecreativo/bemo-webfonts
 
 ## Dependencies
