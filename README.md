@@ -54,12 +54,6 @@ build tools manually:
 * https://github.com/cantierecreativo/bemo-scaffold
 * https://github.com/cantierecreativo/bemo-webfonts
 
-## Dependencies
-
-Bemo depends on the following Sass libraries:
-
-* [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
-
 ## Development
 
     npm install
