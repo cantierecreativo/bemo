@@ -43,22 +43,30 @@
 .grid--right
   @extend .grid
   text-align: right
+  justify-content: flex-end
   > .grid__item
     text-align: left
 
 .grid--center
   @extend .grid
   text-align: center
+  justify-content: center
   > .grid__item
     text-align: left
 
 .grid--middle
   @extend .grid
+  align-items: center
   > .grid__item
     vertical-align: middle
 
+.grid--center--middle, .grid--middle--center
+  @extend .grid--center
+  @extend .grid--middle
+
 .grid--bottom
   @extend .grid
+  align-items: flex-end
   > .grid__item
     vertical-align: bottom
 
