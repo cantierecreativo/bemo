@@ -1,17 +1,22 @@
-@mixin grid
+@mixin grid($flex-grid: true)
   list-style: none
   margin-right: 0
   margin-left: -$grid-gutter
   padding-left: 0
   padding-right: 0
   letter-spacing: -1000em
+  @if $flex-grid
+    display: flex
+    align-content: flex-start
+    flex-direction: row
+    flex-wrap: wrap
 
-@mixin grid-item
+@mixin grid-item($flex-grid: true)
   display: inline-block
   padding-left: $grid-gutter
   vertical-align: top
   width: 100%
+  letter-spacing: 0
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
   box-sizing: border-box
-  letter-spacing: 0
