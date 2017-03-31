@@ -1,28 +1,14 @@
 {
   "name": "bemo-docs",
-  "version": "0.0.1",
-  "devDependencies": {
-    "grunt": "*",
-    "grunt-autoprefixer": "^2.0.0",
-    "grunt-bemo": "file:..",
-    "grunt-bower-task": "*",
-    "grunt-build-control": "*",
-    "grunt-cdnify": "*",
-    "grunt-contrib-clean": "*",
-    "grunt-contrib-connect": "*",
-    "grunt-contrib-copy": "*",
-    "grunt-contrib-jade": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-gh-pages": "*",
-    "grunt-replace": "^0.8.0",
-    "grunt-sass": "*",
-    "load-grunt-config": "*",
-    "marked": "*"
-  },
-  "paths": {
-    "temp": "temp",
-    "build": "build",
-    "templates": "templates",
-    "source": "../bemo"
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "css-loader": "^0.28.0",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
   }
 }

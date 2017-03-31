@@ -1,0 +1,1523 @@
+<html>
+  <head>
+    <title>webpack 2 demo</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script><script src="//lovasoa.github.io/tidy-html5/tidy.js"></script><script>var options = {
+      "indent":               "auto",
+      "indent-spaces":        2,
+      "wrap":                 80,
+      "markup":               true,
+      "output-xml":           false,
+      "numeric-entities":     true,
+      "quote-marks":          true,
+      "quote-nbsp":           false,
+      "show-body-only":       true,
+      "quote-ampersand":      false,
+      "break-before-br":      true,
+      "uppercase-tags":       false,
+      "uppercase-attributes": false,
+      "drop-font-tags":       false,
+      "tidy-mark":            false,
+      "clean":                false,
+      "vertical-space":       true,
+      "drop-empty-elements":  false,
+      "drop-empty-paras":     false
+      };
+      
+      document.addEventListener("DOMContentLoaded", function() {
+      var examples = document.querySelectorAll(".example");
+      for (var i = 0; i < examples.length; i++) {
+        var example = examples[i];
+        var demo = example.querySelector(".example__demo");
+        var code = example.querySelector(".example__code");
+        code.textContent = tidy_html5(demo.innerHTML, options);
+      }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="hero--primary">
+      <div class="wrap">
+        <div class="hero__body">
+          <div class="hero__body__inner">
+            <div class="hero__heading">
+              <div class="bemo-logo">BEMO</div>
+            </div>
+            <div class="hero__text">
+              <p class="gamma">Start your next project with the right foot: a scalable frontend architecture.</p>
+            </div>
+            <p class="hero__actions">
+            <div class="nav">
+              <div class="nav__item"><a href="http://stefanoverna.github.io/bemo/stylesheets/application.css" class="button button--rev button--huge">Download</a></div>
+              <div class="nav__item"><a href="http://github.com/stefanoverna/bemo" class="button button--rev button--huge"> <span>Github</span><i class="icon--arrow-right"></i></a></div>
+            </div>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="space--both-5">
+      <div class="wrap">
+        <div class="intro">
+          <div class="formatted-content">
+            <h1 id="what-is-is-">What is is?</h1>
+            <p>Glad you asked! BEMO is a Sass-based project starter meant to be a starting point and structural
+              guide rather than a full framework. It&#39;s bare enough to not interfere with your 
+              custom styles or scripts, but yet has enough functioning modules to jumpstart 
+              a project in no time.
+            </p>
+            <p>Bemo strictly follows the <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">BEM naming methodology</a>,
+              and is heavily inspired by the <a href="https://github.com/csswizardry/inuit.css/">inuit.css framework</a>.
+            </p>
+            <p>Bemo is accompanied by a Grunt task that easily lets you generate:</p>
+            <ol>
+              <li>Custom icon webfonts starting from a set of SVGs;</li>
+              <li>Retina-ready, resizable sprites.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="blocks">
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.grid</p>
+          <h4 class="block__title">Grid layout</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Options</h6>
+              <pre>0px            480px           1024x           1500px           ∞
+                |               |               |                |              |
+                |               |<-- lap -------------------------------------->|
+                |               |               |<-- desk --------------------->|
+                |               |               |                |<-- wall ---->|
+                |               |               |                |              |
+                |<-- eq-palm -->|               |                |              |
+                |               |<-- eq-lap --->|                |              |
+                |               |               |<-- eq-desk --->|              |
+                |               |               |                |              |
+                |<------------------ lte-lap -->|                |              |
+                |<---------------------------------- lte-desk -->|              |
+                |               |               |                |              |
+                0px            480x           1024px          1500px            ∞
+
+                $breakpoint-widths: ('palm': 0px, 'lap': 480px, 'desk': 1024px, 'wall': 1500px)
+                $grid-gutter: 24px
+                $grid-push: true
+                $grid-pull: true
+                $grid-cols: (12)
+                $grid-breakpoints: (lap desk wall)
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.width-<span>width</span>-<span>tot</span></p>
+              <h6 class="block__subtitle">Simple columns</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="grid">
+                    <div class="grid__item width-2-12">
+                      <div class="blurb">1</div>
+                    </div>
+                    <div class="grid__item width-2-12">
+                      <div class="blurb">2</div>
+                    </div>
+                    <div class="grid__item width-2-12">
+                      <div class="blurb">3</div>
+                    </div>
+                    <div class="grid__item width-2-12">
+                      <div class="blurb">4</div>
+                    </div>
+                    <div class="grid__item width-2-12">
+                      <div class="blurb">5</div>
+                    </div>
+                    <div class="grid__item width-2-12">
+                      <div class="blurb">6</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.<span>breakpoint</span>-<span>width</span>-<span>tot</span></p>
+              <h6 class="block__subtitle">Responsive columns</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="grid">
+                    <div class="grid__item width-4-12 desk-1-12">
+                      <div class="blurb--with-margin">1</div>
+                    </div>
+                    <div class="grid__item width-4-12 desk-1-12">
+                      <div class="blurb--with-margin">2</div>
+                    </div>
+                    <div class="grid__item width-4-12 desk-1-12">
+                      <div class="blurb--with-margin">3</div>
+                    </div>
+                    <div class="grid__item width-4-12 desk-1-12">
+                      <div class="blurb--with-margin">4</div>
+                    </div>
+                    <div class="grid__item width-4-12 desk-1-12">
+                      <div class="blurb--with-margin">5</div>
+                    </div>
+                    <div class="grid__item width-4-12 desk-1-12">
+                      <div class="blurb--with-margin">6</div>
+                    </div>
+                    <div class="grid__item width-4-12 desk-1-12">
+                      <div class="blurb--with-margin">7</div>
+                    </div>
+                    <div class="grid__item width-4-12 desk-1-12">
+                      <div class="blurb--with-margin">8</div>
+                    </div>
+                    <div class="grid__item width-4-12 desk-1-12">
+                      <div class="blurb--with-margin">9</div>
+                    </div>
+                    <div class="grid__item width-4-12 desk-1-12">
+                      <div class="blurb--with-margin">10</div>
+                    </div>
+                    <div class="grid__item width-4-12 desk-1-12">
+                      <div class="blurb--with-margin">11</div>
+                    </div>
+                    <div class="grid__item width-4-12 desk-1-12">
+                      <div class="blurb--with-margin">12</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.push-<span>width</span>-<span>tot</span>, .pull-<span>width</span>-<span>tot</span></p>
+              <h6 class="block__subtitle">Shiftable columns</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="grid">
+                    <div class="grid__item width-3-12 push-3-12">
+                      <div class="blurb">First</div>
+                    </div>
+                    <div class="grid__item width-3-12 pull-3-12">
+                      <div class="blurb">Last</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.<span>breakpoint</span>-push-<span>width</span>-<span>tot</span>, .<span>breakpoint</span>-pull-<span>width</span>-<span>tot</span></p>
+              <h6 class="block__subtitle">Responsive shiftable columns</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="grid">
+                    <div class="grid__item width-3-12 push-3-12 desk-push-0">
+                      <div class="blurb">First</div>
+                    </div>
+                    <div class="grid__item width-3-12 pull-3-12 desk-pull-0">
+                      <div class="blurb">Last</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.grid--rev</p>
+              <h6 class="block__subtitle">Reverse ordering</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="grid--rev">
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">1</div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">2</div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">3</div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">4</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.grid--narrow</p>
+              <h6 class="block__subtitle">Half gutter</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="grid--narrow">
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">1</div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">2</div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">3</div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">4</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.grid--wide</p>
+              <h6 class="block__subtitle">Double gutter</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="grid--wide">
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">1</div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">2</div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">3</div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">4</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.grid--bottom</p>
+              <h6 class="block__subtitle">Aligned to bottom</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="grid--bottom">
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">
+                        <p>1</p>
+                      </div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">
+                        <p>1</p>
+                        <p>2</p>
+                      </div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">
+                        <p>1</p>
+                        <p>2</p>
+                        <p>3</p>
+                      </div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">
+                        <p>1</p>
+                        <p>2</p>
+                        <p>3</p>
+                        <p>4</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.grid--middle</p>
+              <h6 class="block__subtitle">Vertically centered</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="grid--middle">
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">
+                        <p>1</p>
+                      </div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">
+                        <p>1</p>
+                        <p>2</p>
+                      </div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">
+                        <p>1</p>
+                        <p>2</p>
+                        <p>3</p>
+                      </div>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <div class="blurb">
+                        <p>1</p>
+                        <p>2</p>
+                        <p>3</p>
+                        <p>4</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.grid--center</p>
+              <h6 class="block__subtitle">Horizontally centered</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="grid--center">
+                    <div class="grid__item width-3-12">
+                      <p class="blurb">1</p>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <p class="blurb">2</p>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <p class="blurb">3</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.grid--right</p>
+              <h6 class="block__subtitle">Right alignment</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="grid--right">
+                    <div class="grid__item width-3-12">
+                      <p class="blurb">1</p>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <p class="blurb">2</p>
+                    </div>
+                    <div class="grid__item width-3-12">
+                      <p class="blurb">3</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.space</p>
+          <h4 class="block__title">Vertical spacing</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Options</h6>
+              <pre>$space-unit: 12px
+$space-amounts: ( 1, 2, 3, 5, 8 )
+</pre>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.space--top-<span>amount</span></p>
+              <h6 class="block__subtitle">Top spacing</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="blurb">
+                    <div class="space--top-3">
+                      <div class="blurb">Mind the gap!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.space--bottom-<span>amount</span></p>
+              <h6 class="block__subtitle">Bottom spacing</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="blurb">
+                    <div class="space--bottom-3">
+                      <div class="blurb">Mind the gap!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.space--both-<span>amount</span></p>
+              <h6 class="block__subtitle">Both ways</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="blurb">
+                    <div class="space--both-3">
+                      <div class="blurb">Mind the gap!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.visible</p>
+          <h4 class="block__title">Selective visibility</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.visible--on-<span>breakpoint</span></p>
+              <h6 class="block__subtitle">Example</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="blurb--with-margin visible--on-eq-palm">.visible--on-eq-palm</div>
+                  <div class="blurb--with-margin visible--on-eq-lap">.visible--on-eq-lap</div>
+                  <div class="blurb--with-margin visible--on-eq-desk">.visible--on-eq-desk</div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.hidden--on-<span>breakpoint</span></p>
+              <h6 class="block__subtitle">Selective invisibility</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="blurb--with-margin hidden--on-eq-palm">.hidden--on-eq-palm</div>
+                  <div class="blurb--with-margin hidden--on-eq-lap">.hidden--on-eq-lap</div>
+                  <div class="blurb--with-margin hidden--on-eq-desk">.hidden--on-eq-desk</div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.wrap</p>
+          <h4 class="block__title">Maximum layout width</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Example</h6>
+            </div>
+            <div class="example">
+              <div>
+                <div class="example__demo">
+                  <div class="wrap">
+                    <div class="blurb">Hello, sexy.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.wrap--on-$breakpoint</p>
+              <h6 class="block__subtitle">Responsive version</h6>
+            </div>
+            <div class="example">
+              <div>
+                <div class="example__demo">
+                  <div class="wrap--on-eq-palm">
+                    <div class="blurb--with-margin"><code>.wrap--on-eq-palm</code></div>
+                  </div>
+                  <div class="wrap--on-eq-lap">
+                    <div class="blurb--with-margin"><code>.wrap--on-eq-lap</code></div>
+                  </div>
+                  <div class="wrap--on-eq-desk">
+                    <div class="blurb--with-margin"><code>.wrap--on-eq-desk</code></div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.alpha, .beta, .gamma, .smallprint, .milli</p>
+          <h4 class="block__title">Font size helpers</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Options</h6>
+              <pre>$base-font-size: 15px
+$heading-font-sizes: ('alpha': 30px, 'beta': 27px, 'gamma': 22px)
+$smallprint-font-sizes: ('smallprint': 13px, 'milli': 12px)
+</pre>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Example</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="space--bottom-1">
+                    <p class="alpha">An important title</p>
+                  </div>
+                  <div class="space--bottom-1">
+                    <p class="beta">Secondary title</p>
+                  </div>
+                  <div class="space--bottom-3">
+                    <p class="gamma">Tertiary title</p>
+                  </div>
+                  <hr>
+                  <div class="space--top-3">
+                    <p class="smallprint">Lass aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris vitae nisl neque.</p>
+                  </div>
+                  <div class="space--top-1">
+                    <p class="milli">Curabitur vitae odio massa. Etiam porta pretium nunc condimentum pharetra.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.input--checkbox, .input--radio</p>
+          <h4 class="block__title">Radio and checkbox inputs</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Example</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <p class="space--bottom-2"><label class="input--checkbox"><input type="checkbox" checked><span class="input__label">Check me, it's free</span></label></p>
+                  <p><label class="input--radio"><input type="radio"><span class="input__label">Toggle this radio</span></label></p>
+                  <p><label class="input--radio"><input type="radio"><span class="input__label">Or this one</span></label></p>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Disabled state</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <p><label class="input--checkbox"><input type="checkbox" disabled><span class="input__label">Take the red pill</span></label></p>
+                  <p class="space--bottom-2"><label class="input--checkbox"><input type="checkbox" checked disabled><span class="input__label">Take the blue pill</span></label></p>
+                  <p><label class="input--radio"><input type="radio" disabled><span class="input__label">Toggle this radio</span></label></p>
+                  <p><label class="input--radio"><input type="radio" checked disabled><span class="input__label">Or this one</span></label></p>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.form</p>
+          <h4 class="block__title">Formatted forms</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Complete example</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <form class="form">
+                    <fieldset>
+                      <legend>Signup</legend>
+                      <div class="form__field form__field--invalid">
+                        <label class="form__label">Email</label><input placeholder="foo@bar.com" type="email" class="form__input--large">
+                        <div class="form__error">Invalid email</div>
+                      </div>
+                      <div class="form__field">
+                        <label class="form__label">Password</label><input placeholder="Insert your password" type="password">
+                        <div class="form__hint">Password must be at least 6 chars long</div>
+                      </div>
+                      <div class="form__actions"><input type="submit" value="Create Contact" class="button--large"></div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.formatted-content</p>
+          <h4 class="block__title">User generated content formatting</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Complete example</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="formatted-content">
+                    <h1>Ullam quaerat repudiandae cupiditate voluptate</h1>
+                    <p>Consectetur deserunt dolorum aut perspiciatis laudantium aut in dolor vitae quia praesentium dolorum rem iusto. expedita quibusdam minus omnis aut occaecati aliquid. deserunt quasi minima saepe voluptate reprehenderit atque eius accusantium nesciunt repellendus explicabo. consequatur laudantium numquam deserunt</p>
+                    <h2>Et minima sit debitis libero assumenda porro explicabo aut debitis</h2>
+                    <p>Consectetur deserunt dolorum aut perspiciatis laudantium aut in dolor vitae:</p>
+                    <ul>
+                      <li>Ut eius tenetur nulla eligendi repellat omnis deserunt blanditiis amet esse. </li>
+                      <li>Omnis enim magni voluptatem amet aut ut nam facilis voluptatem eligendi reprehenderit ipsum recusandae soluta. </li>
+                    </ul>
+                    <h3>Ut temporibus nihil ex ut</h3>
+                    <p>Consectetur deserunt dolorum aut perspiciatis laudantium aut in dolor vitae:</p>
+                    <blockquote>Consectetur deserunt dolorum aut perspiciatis laudantium aut in dolor vitae quia praesentium dolorum rem iusto. expedita quibusdam minus omnis aut occaecati aliquid. deserunt quasi minima saepe voluptate reprehenderit atque eius accusantium nesciunt repellendus explicabo. consequatur laudantium numquam deserunt</blockquote>
+                    <h2>Et minima sit debitis libero assumenda porro explicabo aut debitis</h2>
+                    <p>Consectetur deserunt dolorum aut perspiciatis laudantium aut in dolor vitae:</p>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Make</th>
+                          <th>Model</th>
+                          <th>Year</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td data-title="#">    1</td>
+                          <td data-title="Make"> Honda</td>
+                          <td data-title="Model">Accord</td>
+                          <td data-title="Year"> 2009</td>
+                        </tr>
+                        <tr>
+                          <td data-title="#">    2</td>
+                          <td data-title="Make"> Toyota</td>
+                          <td data-title="Model">Camry</td>
+                          <td data-title="Year"> 2012</td>
+                        </tr>
+                        <tr>
+                          <td data-title="#">    3</td>
+                          <td data-title="Make"> Hyundai</td>
+                          <td data-title="Model">Elantra</td>
+                          <td data-title="Year"> 2010</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.flash</p>
+          <h4 class="block__title">Flash messages</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.flash--notice</p>
+              <h6 class="block__subtitle">Notice message</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="flash--notice">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod</div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.flash--alert</p>
+              <h6 class="block__subtitle">Alert message</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="flash--alert">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod</div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.hero</p>
+          <h4 class="block__title">Hero</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Example</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="hero">
+                    <div class="hero__sticky">
+                      <p class="blurb">Sticky area</p>
+                    </div>
+                    <div class="hero__body">
+                      <div class="hero__body__inner">
+                        <div class="hero__heading">Aut aut quibusdam autem</div>
+                        <div class="hero__text">
+                          <p>Ipsum autem consequatur eligendi est dolores nihil temporibus iste nam impedit consequatur sit incidunt est dolores fugiat ut saepe sit</p>
+                        </div>
+                        <p class="hero__actions">
+                        <div class="nav">
+                          <div class="nav__item"><a href="#" class="button--huge">First action</a></div>
+                          <div class="nav__item"><a href="#" class="button--huge">Second action</a></div>
+                        </div>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.button</p>
+          <h4 class="block__title">Buttons</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Work on links, buttons and labels</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo"><a href="#" class="button">Link</a>&nbsp;<button class="button">Button</button>&nbsp;<input type="submit" value="Submit" class="button">&nbsp;<label class="button"><input type="file" class="hidden"><span>Upload file...</span></label></div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.button--expand</p>
+              <h6 class="block__subtitle">Fill the entire width</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo"><a href="#" class="button--expand">Button</a></div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.button--small, .button--large, .button--huge</p>
+              <h6 class="block__subtitle">Sizes</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo"><a href="#" class="button--small">Button</a>&nbsp;<a href="#" class="button--large">Button</a>&nbsp;<a href="#" class="button--huge">Button</a></div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.button--primary, .button--notice, .button--alert, .button--rev</p>
+              <h6 class="block__subtitle">Colors</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo"><a href="#" class="button--primary">Button</a>&nbsp;<a href="#" class="button--notice">Button</a>&nbsp;<a href="#" class="button--alert">Button</a>&nbsp;<a href="#" class="button--rev">Button</a></div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Icons</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <p class="space--bottom-2"><a href="#" class="button--notice"><span>Alright</span><i class="icon--check"></i></a></p>
+                  <p><a href="#" class="button--alert"><i class="icon--cross"></i><span>Delete this</span></a></p>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.table</p>
+          <h4 class="block__title">Formatted, responsive tables</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Example</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Make</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                        <th>Owner</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td data-title="#">    1</td>
+                        <td data-title="Make"> Honda</td>
+                        <td data-title="Model">Accord</td>
+                        <td data-title="Year"> 2009</td>
+                        <td data-title="Owner">Paul Roelm</td>
+                      </tr>
+                      <tr>
+                        <td data-title="#">    2</td>
+                        <td data-title="Make"> Toyota</td>
+                        <td data-title="Model">Camry</td>
+                        <td data-title="Year"> 2012</td>
+                        <td data-title="Owner">Jack Born</td>
+                      </tr>
+                      <tr>
+                        <td data-title="#">    3</td>
+                        <td data-title="Make"> Hyundai</td>
+                        <td data-title="Model">Elantra</td>
+                        <td data-title="Year"> 2010</td>
+                        <td data-title="Owner">Mark Fried</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.flag</p>
+          <h4 class="block__title">Flag block</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle"></h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="flag">
+                    <div class="flag__image"><img src="http://placehold.it/100x100"></div>
+                    <div class="flag__body">
+                      <p>Quam at in repellendus voluptas. Aliquid qui consequuntur harum mollitia debitis voluptatem aut est rem sed natus. Quisquam sint voluptatum itaque libero quo et culpa et assumenda aut sunt ratione rerum. Magni maiores occaecati in voluptatem qui a non quidem enim dolore rerum quibusdam facilis fugit.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.flag--top</p>
+              <h6 class="block__subtitle">Aligned at top</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="flag--top">
+                    <div class="flag__image"><img src="http://placehold.it/100x100"></div>
+                    <div class="flag__body">
+                      <p>Quam at in repellendus voluptas. Aliquid qui consequuntur harum mollitia debitis voluptatem aut est rem sed natus. Quisquam sint voluptatum itaque libero quo et culpa et assumenda aut sunt ratione rerum. Magni maiores occaecati in voluptatem qui a non quidem enim dolore rerum quibusdam facilis fugit.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.flag--bottom</p>
+              <h6 class="block__subtitle">Aligned at bottom</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="flag--bottom">
+                    <div class="flag__image"><img src="http://placehold.it/100x100"></div>
+                    <div class="flag__body">
+                      <p>Quam at in repellendus voluptas. Aliquid qui consequuntur harum mollitia debitis voluptatem aut est rem sed natus. Quisquam sint voluptatum itaque libero quo et culpa et assumenda aut sunt ratione rerum. Magni maiores occaecati in voluptatem qui a non quidem enim dolore rerum quibusdam facilis fugit.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.flag--rev</p>
+              <h6 class="block__subtitle">Reversed order</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="flag--rev">
+                    <div class="flag__image"><img src="http://placehold.it/100x100"></div>
+                    <div class="flag__body">
+                      <p>Quam at in repellendus voluptas. Aliquid qui consequuntur harum mollitia debitis voluptatem aut est rem sed natus. Quisquam sint voluptatum itaque libero quo et culpa et assumenda aut sunt ratione rerum. Magni maiores occaecati in voluptatem qui a non quidem enim dolore rerum quibusdam facilis fugit.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.nav</p>
+          <h4 class="block__title">Navigation</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Simple navigation</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <ul class="nav"><a href="#" class="nav__item">Terms of Service</a><a href="#" class="nav__item is-active">Privacy Policy</a><a href="#" class="nav__item">Support</a><a href="#" class="nav__item">About</a></ul>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.nav--dots</p>
+              <h6 class="block__subtitle">Dots separated list</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <ul class="nav--dots"><a href="#" class="nav__item">Terms of Service</a><a href="#" class="nav__item is-active">Privacy Policy</a><a href="#" class="nav__item">Support</a><a href="#" class="nav__item">About</a></ul>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.nav--breadcrumbs</p>
+              <h6 class="block__subtitle">Breadcrumbs</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <ul class="nav--breadcrumbs"><a href="#" class="nav__item">Women</a><a href="#" class="nav__item">Clothing</a><a href="#" class="nav__item is-active">Shirts</a></ul>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.nav--pagination</p>
+              <h6 class="block__subtitle">Pagination</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <nav class="nav--pagination"><a href="#" class="nav__item--first">«</a><a href="#" class="nav__item--prev">‹</a><span class="nav__item--dots">...</span><a href="#" class="nav__item">11</a><a href="#" class="nav__item">12</a><a href="#" class="nav__item is-current">13</a><a href="#" class="nav__item">14</a><a href="#" class="nav__item">15</a><span class="nav__item--dots">...</span><a href="#" class="nav__item--next">›</a><a href="#" class="nav__item--last">»</a></nav>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.nav--expand</p>
+              <h6 class="block__subtitle">Fill the entire width</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <ul class="nav--expand align--center"><a href="#" class="nav__item">Terms of Service</a><a href="#" class="nav__item">Privacy Policy</a><a href="#" class="nav__item">Support</a><a href="#" class="nav__item">About</a></ul>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.icon</p>
+          <h4 class="block__title">Webfont icons</h4>
+        </div>
+        <div class="wrap">
+          <p class="milli"> 
+            BEMO default icons are taken from the <a href="https://github.com/google/material-design-icons">Material Design</a>&nbsp;icon set by Google. Thanks!
+          </p>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle">Default set</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="icon-frame"><i class="icon--arrow-down icon--large"></i></div>
+                  <div class="icon-frame"><i class="icon--arrow-left icon--large"></i></div>
+                  <div class="icon-frame"><i class="icon--arrow-right icon--large"></i></div>
+                  <div class="icon-frame"><i class="icon--arrow-up icon--large"></i></div>
+                  <div class="icon-frame"><i class="icon--check icon--large"></i></div>
+                  <div class="icon-frame"><i class="icon--checkbox-off icon--large"></i></div>
+                  <div class="icon-frame"><i class="icon--checkbox-on icon--large"></i></div>
+                  <div class="icon-frame"><i class="icon--cross icon--large"></i></div>
+                  <div class="icon-frame"><i class="icon--hamburger icon--large"></i></div>
+                  <div class="icon-frame"><i class="icon--mail icon--large"></i></div>
+                  <div class="icon-frame"><i class="icon--quotes icon--large"></i></div>
+                  <div class="icon-frame"><i class="icon--radio-off icon--large"></i></div>
+                  <div class="icon-frame"><i class="icon--radio-on icon--large"></i></div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.icon--large, .icon--huge</p>
+              <h6 class="block__subtitle">Different sizes</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="icon-frame"><i class="icon--cross"></i></div>
+                  <div class="icon-frame"><i class="icon--cross icon--large"></i></div>
+                  <div class="icon-frame"><i class="icon--cross icon--huge"></i></div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.sprite</p>
+          <h4 class="block__title">Retina-ready sprites</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle"></h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="sprite--one"></div>
+                  &nbsp;
+                  <div class="sprite--two"></div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <p class="block__code">.sprite--center</p>
+              <h6 class="block__subtitle">Centered sprite</h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="sprite--one sprite--center is-half-size"></div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.or</p>
+          <h4 class="block__title">Or block</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle"></h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div class="or">
+                    <div class="or__item">
+                      <div class="button">Submit</div>
+                    </div>
+                    <div class="or__item">or maybe</div>
+                    <div class="or__item"><button class="button--alert">Reset form</button></div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.canvas</p>
+          <h4 class="block__title">Off-canvas menu</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle"></h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <div style="position: relative; overflow-x: hidden;">
+                    <div class="canvas">
+                      <div class="canvas__aside">
+                        <div style="padding: 30px;">
+                          <ul>
+                            <li><a href="#">Item 1</a></li>
+                            <li><a href="#">Item 2</a></li>
+                            <li><a href="#">Item 3</a></li>
+                            <li><a href="#">Item 4</a></li>
+                          </ul>
+                          <div class="space--top-2"><a href="#" data-class-toggle="is-shifted" data-element=".canvas" class="button--small">Close menu</a></div>
+                        </div>
+                      </div>
+                      <div class="canvas__main">
+                        <div class="formatted-content">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                          <a href="#" data-class-toggle="is-shifted" data-element=".canvas" class="button">Toggle menu</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="wrap">
+          <p class="block__code">.dialog</p>
+          <h4 class="block__title">Modal dialog</h4>
+        </div>
+        <div class="block__part">
+          <div class="block__part__inner">
+            <div class="wrap">
+              <h6 class="block__subtitle"></h6>
+            </div>
+            <div class="example">
+              <div class="wrap">
+                <div class="example__demo">
+                  <a href="#" data-class-toggle="is-active" data-element=".dialog" class="button">Click to open dialog</a>
+                  <div id="second-dialog" class="dialog">
+                    <div class="dialog__frame">
+                      <a href="#" data-class-toggle="is-active" data-element=".dialog" class="dialog__close">Close</a>
+                      <div class="dialog__body">
+                        <div class="formatted-content">
+                          <h6 class="beta">Placeholder text</h6>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap">
+                <pre class="example__code"><code></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="build/bundle.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function(){
+      var elements = document.querySelectorAll('[data-class-toggle]');
+      
+      Array.prototype.forEach.call(elements, function(el, i) {
+        var classToToggle = el.getAttribute('data-class-toggle');
+        var elToToggle = document.querySelector(el.getAttribute('data-element'));
+      
+        el.addEventListener('click', function(e) {
+          var method = elToToggle.classList.contains(classToToggle) ? 'remove' : 'add';
+          elToToggle.classList[method](classToToggle);
+          e.stopPropagation();
+          e.preventDefault();
+        });
+      });
+      });
+    </script>
+  </body>
+</html>

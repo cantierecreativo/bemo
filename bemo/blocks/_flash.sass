@@ -10,7 +10,7 @@
   color: $notice-color
 
   &:before
-    @extend .icon--check:before
+    +icon(check)
     margin-right: 0.5em
 
 .flash--alert
@@ -19,5 +19,5 @@
   color: $alert-color
 
   &:before
-    @extend .icon--cross:before
+    +icon(cross)
     margin-right: 0.5em
