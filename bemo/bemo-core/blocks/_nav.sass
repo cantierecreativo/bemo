@@ -5,37 +5,10 @@
 .nav__item
   @extend %nav-item
 
-  &:before
-    content: "\00A0"
-    text-decoration: none
-    display: inline-block
-    color: $base-body-color
-
   &:first-child:before
     display: none
 
-  &.is-active
-    text-decoration: none
-    color: $base-body-color
-
-.nav--dots
-  .nav__item:before
-    content: "\00A0\2022\00A0"
-
-.nav--breadcrumbs
-  letter-spacing: 0.05em
-  text-transform: uppercase
-  font-variant: small-caps
-
-  .nav__item:before
-    content: "\00A0/\00A0"
-    color: $light-body-color
-
 .nav--pagination
-  .nav__item.is-current
-    text-decoration: none
-    color: $base-body-color
-
   .nav__item--dots,
   .nav__item--prev,
   .nav__item--next,
