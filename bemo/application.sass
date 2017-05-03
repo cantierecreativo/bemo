@@ -1,43 +1,22 @@
-// FIRST: load core stuff
+// BEMO core
 
-// Functions
-@import 'bemo-core/functions/**/*'
-
-// Variables
-@import 'bemo-core/variables/**/*'
-
-// Mixins
-@import 'bemo-core/mixins/**/*'
-
-// Base
-@import 'bemo-core/normalize'
-@import 'bemo-core/base'
-
-// Blocks
-@import 'bemo-core/blocks/**/*'
+@import 'bemo-core/functions/**/*'   // Functions
+@import 'bemo-core/variables/**/*'   // Variables
+@import 'bemo-core/mixins/**/*'      // Mixins
+@import 'bemo-core/normalize'        // Base
+@import 'bemo-core/base'             // Base
+@import 'bemo-core/blocks/**/*'      // Blocks
 
 
+// BEMO style (or other theme)
+// Warning! Respect the order of import
 
+@import 'bemo-style/functions/**/*'  // Functions
+@import 'bemo-style/variables/**/*'  // Variables
+@import 'bemo-style/mixins/**/*'     // Mixins
+@import 'bemo-style/font-faces'      // Base
+@import 'bemo-style/base'            // Base
+@import 'bemo-style/formats/**/*'    // Formats
+@import 'bemo-style/blocks/**/*'     // Blocks
 
-// SECOND: load visual stuff
-
-// Functions
-@import 'bemo-style/functions/**/*'
-
-// Variables
-@import 'bemo-style/variables/**/*'
-
-// Mixins
-@import 'bemo-style/mixins/**/*'
-
-// Base
-@import 'bemo-style/normalize'
-@import 'bemo-style/font-faces'
-@import 'bemo-style/base'
-
-// Formats
-@import 'bemo-style/formats/**/*'
-
-// Blocks
-@import 'bemo-style/blocks/**/*'
 
