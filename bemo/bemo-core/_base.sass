@@ -1,24 +1,10 @@
 html, body
   height: 100%
 
-html
-  +rem-html-reset(0.9)
-
-  +at-breakpoint(desk)
-    +rem-html-reset(1)
-
 body
-  +body-font-family
-  +font-size(regular)
   -webkit-text-size-adjust: 100%
   height: 100%
-  line-height: 1.5
-  color: $base-body-color
   text-rendering: optimizeLegibility
-
-a
-  color: $base-body-color
-  text-decoration: underline
 
 ul, ol, blockquote
   padding-left: 0
@@ -41,16 +27,8 @@ h1, h2, h3, h4, h5, h6
   display: block
   box-sizing: border-box
   width: 100%
-  padding: 10px
-  border: 1px solid $border-color
   -webkit-appearance: none
-  border-radius: 0
   background-image: none
-  transition: border 0.2s $material-ease
-  +font-size(regular)
-
-  &[disabled]
-    opacity: 0.9
 
 *:focus
   outline: 0
@@ -70,24 +48,9 @@ button, input[type="submit"]
   background-image: none
   border-radius: 0
 
-#{$all-text-inputs-hover}, textarea:hover
-  border-color: darken($border-color, 10%)
-
-#{$all-text-inputs-focus}, textarea:focus
-  border-color: $base-body-color
-
 input[type="checkbox"]
   display: inline-block
   margin-right: 0.4em
-
-pre, code
-  +monospaced-font-family
-
-hr
-  color: $border-color
-  border: none
-  border-bottom-width: 1px
-  border-bottom-style: solid
 
 table
   table-layout: fixed
@@ -97,7 +60,3 @@ th, td
 
 img
   max-width: 100%
-
-legend
-  color: $light-body-color
-  +heading-font-family
