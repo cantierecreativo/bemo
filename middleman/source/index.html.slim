@@ -1,1 +1,31 @@
-h1.alpha Hi there!
+.wrap
+  .nav--breadcrumbs.space--both-2
+    .nav__item: a href="#info" Info
+    .nav__item: a href="#layout" Bemo core layout
+    .nav__item: a href="#style" Bemo Style Visual
+
+  h1.alpha BEMO2 Middleman Test site
+
+  .formatted-content 
+    p This is just a simple middleman environment that live within the ```test/middleman```branch only.
+    p The idea is use this branch everytime we need to test what we do during bemo2 refactoring. Few simple rules:
+    ul
+      li Don't merge this branch in master
+      li Just rebase this branch on the feature branch you want to test
+      li Avoid the editing of files in ```bemo-core``` and ```bemo-style``` in this branch. Do you really want to cherry pick this stuff?
+
+    p This is made with the new bemo2
+
+  a name="layout"
+  h2.beta.space--both-2 Let's do some test on blocks
+
+  h3.gamma Grid
+
+  .grid
+    .grid__item.lap-6-12.desk-4-12
+      .box: pre .lap-6-12, desk-4-12
+    .grid__item.lap-6-12.desk-4-12
+      .box: pre .lap-6-12, desk-4-12
+    .grid__item.lap-6-12.desk-4-12
+      .box: pre .lap-6-12, desk-4-12
+
