@@ -1,0 +1,14 @@
+before_script:
+- source ~/.bashrc
+- bundle install --quiet --path /cache
+- npm install
+
+build:
+  script:
+  - bundle exec middleman build
+  - bundle exec s3_website push
+
+  cache:
+    key: "frontend"
+    paths:
+    - node_modules/

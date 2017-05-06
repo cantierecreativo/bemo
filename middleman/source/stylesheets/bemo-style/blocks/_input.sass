@@ -1,0 +1,48 @@
+.input
+  position: relative
+  display: inline-block
+  cursor: pointer
+
+  input
+    position: absolute
+    opacity: 0
+    z-index: -1
+
+    &:focus ~ .input__label:before
+      color: $base-body-color
+
+    &:active ~ .input__label:before
+      color: $base-body-color
+
+    &[disabled] ~ .input__label:before
+      opacity: 0.5
+
+.input__label:before
+  user-select: none
+  margin-right: 0.5em
+  font-size: 1.5em
+  color: $base-body-color
+  vertical-align: middle
+  +icon-setup
+
+.input--radio
+  @extend .input
+
+.input--checkbox
+  @extend .input
+
+  .input__label:before
+    +icon(checkbox-off)
+
+  input:checked ~ .input__label:before
+    +icon(checkbox-on)
+
+.input--radio
+  @extend .input
+
+  .input__label:before
+    +icon(radio-off)
+
+  input:checked ~ .input__label:before
+    +icon(radio-on)
+

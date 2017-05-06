@@ -1,0 +1,18 @@
+@each $amount in $space-amounts
+  @each $direction in $space-directions
+    .space--#{$direction}-#{$amount}
+      +space-rule("margin-#{$direction}", $amount)
+
+    @each $name in $space-breakpoints
+      .space--#{$direction}-#{$amount}-on-#{$name}
+        +at-breakpoint($name)
+          +space-rule("margin-#{$direction}", $amount)
+
+      .space--both-#{$amount}-on-#{$name}
+        +at-breakpoint($name)
+          +space-rule("margin-top", $amount)
+          +space-rule("margin-bottom", $amount)
+
+  .space--both-#{$amount}
+    +space-rule("margin-top", $amount)
+    +space-rule("margin-bottom", $amount)

@@ -1,0 +1,30 @@
+# i18n-tasks finds and manages missing and unused translations: https://github.com/glebm/i18n-tasks
+
+base_locale: en
+## All available locales are inferred from the data by default. Alternatively, specify them explicitly:
+# locales: [es, fr]
+## Reporting locale, default: en. Available: en, ru.
+# internal_locale: en
+
+# Read and write translations.
+data:
+  adapter: I18n::Tasks::Data::FileSystem
+  read:
+    - locales/%{locale}.yml
+    # - locales/**/*.%{locale}.yml
+  write:
+    - locales/%{locale}.yml
+  yaml:
+    write:
+      # do not wrap lines at 80 characters
+      line_width: -1
+
+# Find translate calls
+search:
+  paths:
+    - source/
+  exclude:
+    - source/images
+    - source/fonts
+    - source/javascripts
+    - source/stylesheets

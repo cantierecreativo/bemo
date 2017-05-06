@@ -1,0 +1,26 @@
+.icon
+  display: inline-block
+
+  &:before
+    +icon-setup
+
+  span
+    display: none
+
+.icon--large
+  @extend .icon
+  font-size: 1.4em
+  line-height: 0.8em
+
+.icon--huge
+  @extend .icon
+  font-size: 2em
+  line-height: 0.5em
+
+@each $name in map-keys($icon-glyphs)
+  .icon--#{$name}
+    @extend .icon
+
+    &:before
+      +icon-content($name)
+

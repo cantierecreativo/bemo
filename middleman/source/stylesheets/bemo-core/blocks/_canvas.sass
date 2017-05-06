@@ -1,0 +1,22 @@
+.canvas
+  position: relative
+
+  &.is-shifted
+    +position(absolute, 0px 0px 0px 0px)
+    overflow: hidden
+
+.canvas__main
+  transition: transform 0.5s $material-ease
+
+.canvas__aside
+  z-index: 2
+  overflow-y: auto
+  position: absolute
+  top: 0
+  bottom: 0
+  transition: transform 0.5s $material-ease, box-shadow 0.5s $material-ease
+
++canvas-layout(290px)
+
++at-breakpoint(lap)
+  +canvas-layout(400px)

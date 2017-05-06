@@ -1,0 +1,56 @@
+.table
+  width: 100%
+  table-layout: fixed
+  background-color: white
+
+  td, th
+    text-align: left
+    +padding(1)
+
+  th
+    +heading-font-family
+    font-variant: small-caps
+    text-transform: uppercase
+    border-bottom: 1px solid $border-color
+
+  tr:nth-child(2n)
+    background-color: $light-bg-color
+
++at-breakpoint(lte-lap)
+  .table
+    display: block
+    border-bottom-width: 0
+
+    thead, tbody, th, td, tr
+      display: block
+
+    thead
+      background-color: transparent
+      border-width: 0
+
+      tr
+        position: absolute
+        top: -9999px
+        left: -9999px
+
+    tr
+      display: block
+      border: 1px solid $border-color
+      +margin-bottom(1)
+
+    td
+      border-bottom: 1px solid $border-color
+      white-space: normal
+      text-align: left
+
+      &:last-child
+        border-bottom-width: 0
+
+      &:before
+        color: $light-body-color
+        +font-size(milli)
+        content: attr(data-title)
+        font-variant: small-caps
+        text-transform: uppercase
+        display: block
+

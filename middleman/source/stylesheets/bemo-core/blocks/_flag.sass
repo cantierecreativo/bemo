@@ -1,0 +1,38 @@
+.flag
+  display: table
+  width: 100%
+
+.flag--rev,
+.flag--top,
+.flag--bottom
+  @extend .flag
+
+.flag--rev
+  direction: rtl
+  text-align: left
+
+.flag__image,
+.flag__body
+  display: table-cell
+  vertical-align: middle
+
+  .flag--top &
+    vertical-align: top
+
+  .flag--bottom &
+    vertical-align: bottom
+
+.flag__image
+  padding-right: $grid-gutter
+
+  > img
+    display: block
+    max-width: none
+
+  .flag--rev &
+    padding-right: 0
+    padding-left: $grid-gutter
+
+.flag__body
+  width: 100%
+

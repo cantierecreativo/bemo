@@ -1,0 +1,11 @@
+$inputs-list: '[type="email"]', '[type="number"]', '[type="password"]', '[type="search"]', '[type="tel"]', '[type="text"]', '[type="url"]', '[type="color"]', '[type="date"]', '[type="datetime"]', '[type="datetime-local"]', '[type="month"]', '[type="time"]', '[type="week"]'
+
+$all-text-inputs: assign-inputs($inputs-list)
+$all-text-inputs-hover: assign-inputs($inputs-list, hover)
+$all-text-inputs-focus: assign-inputs($inputs-list, focus)
+
+$inputs-button-list: 'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]'
+$all-button-inputs: assign-inputs($inputs-button-list)
+$all-button-inputs-hover: assign-inputs($inputs-button-list, hover)
+$all-button-inputs-focus: assign-inputs($inputs-button-list, focus)
+$all-button-inputs-active: assign-inputs($inputs-button-list, active)

@@ -1,0 +1,34 @@
+# S3 credentials
+s3_id:     <%= ENV['S3_ID'] %>
+s3_secret: <%= ENV['S3_SECRET'] %>
+s3_bucket: <%= ENV['S3_BUCKET'] %>
+s3_endpoint: eu-west-1
+# The directory to deploy
+site: build
+
+# HTTP Max-Age configuration
+max_age:
+  "fonts/*":       <%= 60 * 60 * 24 * 30 %>
+  "images/*":      <%= 60 * 60 * 24 * 30 %>
+  "javascripts/*": <%= 60 * 60 * 24 * 30 %>
+  "stylesheets/*": <%= 60 * 60 * 24 * 30 %>
+
+# Files to gzip
+gzip:
+- .html
+- .css
+- .js
+- .svg
+- .eot
+- .ttf
+- .woff
+- .woff2
+
+# Do not upload these files
+
+exclude_from_upload:
+  - ^bin$
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - ^vendor$

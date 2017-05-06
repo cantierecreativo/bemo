@@ -1,0 +1,48 @@
+.hero
+  background-repeat: no-repeat
+  background-position: center center
+  background-color: $light-bg-color
+  background-size: cover
+  position: relative
+
+.hero__body
+  display: table
+  width: 100%
+  text-align: center
+
+.hero__body__inner
+  display: table-cell
+  vertical-align: middle
+  +vertical-padding(4)
+
+.hero__heading
+  +heading-font-family
+  +font-size(alpha)
+  line-height: 1.2
+  margin-left: auto
+  margin-right: auto
+  max-width: 800px
+
+.hero__text
+  +heading-font-family
+  +font-size(gamma)
+  +margin-top(2)
+  max-width: 750px
+  margin-left: auto
+  margin-right: auto
+
+.hero__actions
+  +margin-top(2)
+
+.hero--primary
+  @extend .hero
+  background-color: $primary-color
+  color: white
+
+  .hero__text a
+    color: white
+
++at-breakpoint(desk)
+  .hero__heading
+    +font-size(40px)
+

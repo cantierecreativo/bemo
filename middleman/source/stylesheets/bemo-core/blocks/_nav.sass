@@ -1,0 +1,37 @@
+%nav-item
+  display: inline-block
+  vertical-align: middle
+
+.nav__item
+  @extend %nav-item
+
+  &:first-child:before
+    display: none
+
+.nav--pagination
+  .nav__item--dots,
+  .nav__item--prev,
+  .nav__item--next,
+  .nav__item--first,
+  .nav__item--last
+    @extend %nav-item
+
+  .nav__item,
+  .nav__item--dots,
+  .nav__item--prev,
+  .nav__item--next,
+  .nav__item--first,
+  .nav__item--last
+    padding: 0.4em
+
++at-breakpoint(desk)
+  .nav--expand
+    display: table
+    width: 100%
+    table-layout: fixed
+
+    .nav__item
+      display: table-cell
+      margin: 0
+      white-space: nowrap
+

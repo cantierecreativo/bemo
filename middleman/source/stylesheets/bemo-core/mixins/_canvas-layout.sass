@@ -1,0 +1,10 @@
+@mixin canvas-layout($width, $gutter: $grid-gutter)
+  .canvas__aside
+    left: - $width - $gutter
+    width: $width
+
+  .canvas.is-shifted
+    .canvas__aside,
+    .canvas__main
+      transform: translateX($width + $gutter)
+
