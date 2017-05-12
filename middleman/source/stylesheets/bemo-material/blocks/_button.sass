@@ -1,12 +1,15 @@
+$button-height: 36px
+
 .button
   border: none
   border-radius: 2px
-  height: 36px
+  box-sizing: border-box
+  height: $button-height
+  line-height: $button-height
+  letter-spacing: .5px
   padding: 0 2rem
   text-transform: uppercase
   -webkit-tap-highlight-color: transparent
-  letter-spacing: .5px
-  line-height: 36px
   color: white
   background-color: $primary-color
   transition: .3s ease-out
@@ -18,6 +21,13 @@
   &:hover
     background-color: $lighter-primary-color
     +z-depth(1)
+
+  &:disabled
+    pointer-events: none
+    background-color: $button-disabled-background
+    box-shadow: none
+    color: $button-disabled-color
+    cursor: default
 
 .button--floating
 .button--raised
