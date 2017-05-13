@@ -3,15 +3,19 @@ $button-height: 36px
 .button
   border: none
   border-radius: 2px
+  padding: 0 2rem
   box-sizing: border-box
   height: $button-height
   line-height: $button-height
   letter-spacing: .5px
-  padding: 0 2rem
   text-transform: uppercase
-  -webkit-tap-highlight-color: transparent
-  color: white
+  text-decoration: none
   background-color: $primary-color
+  color: $text-primary-color
+  -webkit-tap-highlight-color: transparent
+  +z-depth(1)
+  margin-bottom: 10px
+
   transition: .3s ease-out
   transition-property: initial
   transition-duration: 0.3s
@@ -19,15 +23,40 @@ $button-height: 36px
   transition-delay: initial
 
   &:hover
-    background-color: $lighter-primary-color
-    +z-depth(1)
+    background-color: $light-primary-color
 
   &:disabled
     pointer-events: none
     background-color: $button-disabled-background
     box-shadow: none
     color: $button-disabled-color
+    color: $text-disabled-color
     cursor: default
 
+  i:first-child
+    margin-right: 0.5em
+
+  i:last-child
+    margin-left: 0.5em
+
+  i:first-child:last-child
+    margin-left: 0
+    margin-right: 
+
+.button--flat
+  @extend .button
+  box-shadow: none
+  background-color: transparent
+  color: $primary-color
+
+  &:hover
+    background-color: $gray-color
+
 .button--floating
+  @extend .button
+
+.button--floating
+
 .button--raised
+  &:hover
+    background-color: $light-primary-color
