@@ -1,4 +1,5 @@
 $button-height: 36px
+$button-big-height: 56px
 
 .button
   border: none
@@ -10,10 +11,11 @@ $button-height: 36px
   letter-spacing: .5px
   text-transform: uppercase
   text-decoration: none
-  background-color: $primary-color
+  background-color: $secondary-color
   color: $text-primary-color
   -webkit-tap-highlight-color: transparent
   +z-depth(1)
+  cursor: pointer
   margin-bottom: 10px
 
   transition: .3s ease-out
@@ -23,7 +25,10 @@ $button-height: 36px
   transition-delay: initial
 
   &:hover
-    background-color: $light-primary-color
+    background-color: $light-secondary-color
+
+  &:active
+    +z-depth(2)
 
   &:disabled
     pointer-events: none
@@ -41,7 +46,9 @@ $button-height: 36px
 
   i:first-child:last-child
     margin-left: 0
-    margin-right: 
+    margin-right: 0
+
+
 
 .button--flat
   @extend .button
@@ -50,13 +57,41 @@ $button-height: 36px
   color: $primary-color
 
   &:hover
-    background-color: $gray-color
+    background-color: $dark-bg-color
+  &:active
+    box-shadow: none
+
+
 
 .button--floating
   @extend .button
+  display: inline-block
+  position: absolute
+  z-index: 1000
+  width: $button-big-height
+  height: $button-big-height
+  line-height: $button-big-height
+  margin: auto 2px
+  padding: 0
+  border-radius: 50%
+  +font-size(26px)
+  >i
+    width: inherit
+    display: inline-block
+    text-align: center
+    line-height: $button-big-height
 
-.button--floating
+.button--big
+  height: $button-big-height
+  line-height: $button-big-height
 
-.button--raised
-  &:hover
-    background-color: $light-primary-color
+.button--small
+  &.button--floating
+    width: $button-height
+    height: $button-height
+    line-height: $button-height
+    +font-size(13px)
+    >i
+      line-height: $button-height
+
+
