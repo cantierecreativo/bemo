@@ -1,5 +1,8 @@
+
+// MATERIAL 500 BASE COLORS
+// reference https://material.io/color
+
 $amber-color                    : #ffc107
-$black-color                    : #000000
 $blue-color                     : #1E88E5
 $blue-gray-color                : #607d8b
 $brown-color                    : #795548
@@ -13,35 +16,57 @@ $light-blue-color               : #03a9f4
 $light-gray-color               : #f9f9f9
 $light-green-color              : #8bc34a
 $lime-color                     : #cddc39
-$material-red-color             : #e51c23
-$material-lighter-red-color     : #e7363c
 $orange-color                   : #ff9800
 $pink-color                     : #e91e63
 $purple-color                   : #9c27b0
-$red-color                      : #F44336
+$red-color                      : #f44336
 $teal-color                     : #009688
-$white-color                    : #ffffff
 $yellow-color                   : #ffeb3b
 
-$base-body-color                : $black-color
-$light-body-color               : $gray-color
-$light-bg-color                 : $light-gray-color
-$border-color                   : $gray-color
-$alert-color                    : $red-color
-$notice-color                   : $orange-color
-$primary-color                  : $material-red-color
+$white-color                    : #ffffff
+$black-color                    : lighten(#000000, 13%)
+
+
+// MATERIAL PALLET
+
+$primary-color                  : $red-color
+$light-primary-color            : lighten($primary-color, 15%)
+$dark-primary-color             : darken($primary-color, 15%)
+
 $secondary-color                : $cyan-color
-$lighter-primary-color          : $material-lighter-red-color
+$light-secondary-color          : lighten($secondary-color, 15%)
+$dark-secondary-color           : darken($secondary-color, 15%)
 
-// Specific components color map
+// TEXT
+$base-body-color                : $black-color
+$text-primary-color             : $black-color
+$text-secondary-color           : $black-color
+$text-disabled-color            : lighten($black-color, 62%)
 
-$badge-color                    : darken($secondary-color, 10%)
-$button-color                   : $cyan-color
+// BUTTONS
+$button-flat-hover-color        : $light-gray-color
 $button-disabled-background     : $light-gray-color
-$button-disabled-color          : darken($light-gray-color, 30%)
-$collections-color              : $material-red-color
+$button-disabled-color          : $text-disabled-color
+
+
+// COMPONENTS
+$badge-color                    : $dark-secondary-color
+$collections-color              : $red-color
 $collections-hover-color        : lighten($gray-color, 30%)
 $collections-text-color         : $white-color
 $input-border-color             : $secondary-color
 $input-success-color            : $green-color
 $input-error-color              : $red-color
+$border-color                   : lighten($black-color, 78%)
+$divider-color                  : $border-color
+
+// BACKGROUNDS
+
+$bg-color                       : $white-color
+$light-bg-color                 : $light-gray-color
+$dark-bg-color                  : $gray-color
+
+// BEMO REQUIRED PALLET
+$alert-color                    : $red-color
+$notice-color                   : $orange-color
+
