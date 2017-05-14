@@ -1,0 +1,30 @@
+.space--both-2
+  h2.gamma Collections
+  p Collections have a base style and just one modifier if you want the first element to be a title with <code>--header</code>. If a <code>.collection__item</code> class is on a <code>&lt;a&gt;</code> tag, the row is shown in a different manner
+
+.grid
+  .grid__item.width-4-12
+    ul.collection
+      li.collection__item House Baratheon
+      li.collection__item House Bolton
+      li.collection__item House Martell
+      li.collection__item House Lannister
+      li.collection__item House Stark
+
+  .grid__item.width-4-12
+    .collection--header
+      .collection__item: h4 GOT Nobles Families
+      p.collection__item House Baratheon
+      p.collection__item House Bolton
+      a.collection__item href="#" House Martell
+      p.collection__item House Lannister
+      p.collection__item House Stark
+
+  .grid__item.width-4-12
+    .collection--header
+      .collection__item Wiki GOT Famiolies
+      a.collection__item href="#" House Baratheon
+      a.collection__item href="#" House Bolton
+      a.collection__item href="#" House Martell
+      a.collection__item href="#" House Lannister
+      a.collection__item href="#" House Stark
