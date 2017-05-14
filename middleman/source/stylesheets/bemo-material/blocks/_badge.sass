@@ -1,0 +1,26 @@
+.badge
+  display: inline
+  min-width: 3rem
+  padding: 2px 6px
+  text-align: center
+  +font-size(milli)
+  line-height: inherit
+  background-color: $badge-color
+  color: $badge-text-color
+  box-sizing: border-box
+  border-radius: 2px
+  font-weight: 300
+
+
+  & + &
+    margin-left: 5px
+
+.badge--alert
+  @extend .badge
+  background-color: $alert-color
+  color: $white-color
+
+.badge--notice
+  @extend .badge
+  background-color: $notice-color
+  color: $white-color
