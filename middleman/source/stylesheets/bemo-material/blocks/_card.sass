@@ -4,17 +4,8 @@ $card-padding: 20px
   overflow: hidden
   box-sizing: border-box
   border-radius: 2px
-  @extend .z-depth-1
-  +set-color($blue-gray-color, $white-color, false)
-
-  a
-    color: $orange-color
-    margin-right: $card-padding
-    +animate(.3s)
-    text-transform: uppercase
-    text-decoration: none
-    &:hover
-      color: lighten($orange-color, 20%)
+  +z-depth(1)
+  +margin-bottom(1)
 
 .card__content
   padding: $card-padding
@@ -29,17 +20,13 @@ $card-padding: 20px
   border-top: 1px solid rgba(160,160,160,.2)
   padding: $card-padding
 
-
 .card__title
-  color: $white-color
-  +font-size(24px)
+  +font-size(beta)
   font-weight: 300
   line-height: 48px
 
 .card--image
   @extend .card
-  +set-color($white-color, $black-color, false)
-
   .card__image
     border-radius: 2px 2px 0 0
     position: relative
@@ -54,8 +41,9 @@ $card-padding: 20px
     bottom: 0
     left: 0
     padding: $card-padding
-    text-shadow: 2px 2px $black-color
     line-height: 25px
+    color: $white-color
+    text-shadow: 2px 2px $black-color
 
 
 .card--reveal

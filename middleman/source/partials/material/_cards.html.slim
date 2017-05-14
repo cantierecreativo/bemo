@@ -3,28 +3,32 @@
 
 .grid
   .grid__item.width-12-12.lap-4-12.desk-push-0
+
     .card
       .card__content
         .card__title Basic Card title
         p I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
       .card__action
-        a href="#" just a link
-        a href="#" just a link
-        .button 
-          i.icon--cross
-          | I'm a button
+        a.button--flat href="#" just a link
+        a.button--flat href="#" just a link
+
+    .card
+      .card__content
+        .card__title Basic Card title
+        p I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+      .card__action
+        a.button--flat href="#" just a link
+        a.button--flat href="#" just a link
 
   .grid__item.width-12-12.lap-4-12.desk-push-0
     .card--image
       .card__image
         img src="http://lorempixel.com/400/200/"
-        .card__title Card image with a quite long title
+        .card__title Card with a long title on the image
       .card__content
-        p I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
-      .card__action
+        p You can align actions on the right just adding a <code>.align--right</code> class on action div.
+      .card__action.align--right
         a.button href="#" just a link
-        button.button disabled="disabled" just a link
-        .button I'm a button
 
   .grid__item.width-12-12.lap-4-12.desk-push-0
     .card--reveal.js-card-reveal
@@ -32,8 +36,10 @@
         img src="http://lorempixel.com/400/300/"
       .card__content
         .card__title.js-card-title
-          | Card title little long
+          | Card reveal by a JS
           i.icon--more-vert.js-card-activator
+        p To be implemented with icon and js
+      .card__action
         a href="#" just a link
 
       .card__reveal.js-card-description

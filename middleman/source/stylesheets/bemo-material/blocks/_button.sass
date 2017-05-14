@@ -1,10 +1,11 @@
 $button-height: 36px
 $button-big-height: 56px
+$button-gap: 10px
 
 .button
   border: none
   border-radius: 2px
-  padding: 0 2rem
+  padding: 0 $button-gap
   box-sizing: border-box
   height: $button-height
   line-height: $button-height
@@ -16,7 +17,7 @@ $button-big-height: 56px
   -webkit-tap-highlight-color: transparent
   +z-depth(1)
   cursor: pointer
-  margin-bottom: 10px
+  margin-bottom: $button-gap
 
   transition: .3s ease-out
   transition-property: initial
@@ -39,10 +40,10 @@ $button-big-height: 56px
     cursor: default
 
   i:first-child
-    margin-right: 0.5em
+    margin-right: $button-gap
 
   i:last-child
-    margin-left: 0.5em
+    margin-left: $button-gap
 
   i:first-child:last-child
     margin-left: 0
