@@ -13,16 +13,18 @@
         a.button--flat href="#" just a link
 
     .card
+      .card__header--primary
+        .card__title Card --primary
       .card__content
-        .card__title Basic Card title
         p I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
       .card__action
         a.button--flat href="#" just a link
         a.button--flat href="#" just a link
 
+
   .grid__item.width-12-12.lap-4-12.desk-push-0
-    .card--image
-      .card__image
+    .card
+      .card__header
         img src="http://lorempixel.com/400/200/"
         .card__title Card with a long title on the image
       .card__content
@@ -30,13 +32,23 @@
       .card__action.align--right
         a.button href="#" just a link
 
+
+    .card
+      .card__header--secondary
+        .card__title Card --secondary
+      .card__content
+        p I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+      .card__action
+        a.button--flat href="#" just a link
+        a.button--flat href="#" just a link
+
   .grid__item.width-12-12.lap-4-12.desk-push-0
     .card--reveal.js-card-reveal
-      .card__image
+      .card__header
         img src="http://lorempixel.com/400/300/"
       .card__content
         .card__title.js-card-title
-          | Card reveal by a JS
+          | Card reveal by a JS with title outside the image
           i.icon--more-vert.js-card-activator
         p To be implemented with icon and js
       .card__action

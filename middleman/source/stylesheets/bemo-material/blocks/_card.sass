@@ -25,16 +25,15 @@ $card-padding: 20px
   font-weight: 300
   line-height: 48px
 
-.card--image
-  @extend .card
-  .card__image
-    border-radius: 2px 2px 0 0
-    position: relative
-    left: 0
-    right: 0
-    top: 0
-    bottom: 0
-    width: 100%
+
+.card__header
+  border-radius: 2px 2px 0 0
+  position: relative
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  width: 100%
 
   .card__title
     position: absolute
@@ -44,6 +43,24 @@ $card-padding: 20px
     line-height: 25px
     color: $white-color
     text-shadow: 2px 2px $black-color
+
+.card__header--primary, .card__header--secondary
+  @extend .card__header
+  min-height: 150px
+  .card__title
+    text-shadow: none
+
+.card__header--primary
+  background-color: $primary-color
+  .card__title
+    color: $text-primary-color
+
+.card__header--secondary
+  @extend .card__header
+  background-color: $secondary-color
+  .card__title
+    color: $text-secondary-color
+
 
 
 .card--reveal
@@ -66,4 +83,10 @@ $card-padding: 20px
     overflow-y: auto
     top: 100%
     z-index: 1
+
+
+
+
+.card--primary
+
 
