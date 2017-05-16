@@ -1,11 +1,11 @@
 // If you're outside a Rails environment, you'll need something similar
 // to these functions!
 
-// @function image-url($path)
-//   @return url('/images/#{$path}')
+@function image-url($path)
+  @return url('/images/#{$path}')
 
-// @function font-url($path)
-//   @return url('/fonts/#{$path}')
+@function font-url($path)
+  @return url('/fonts/#{$path}')
 
 @each $function-name in image-url font-url
   @if not function-exists($function-name)
