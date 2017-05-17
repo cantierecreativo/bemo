@@ -5,7 +5,7 @@
   "description": "Another Middleman website",
   "main": "index.js",
   "scripts": {
-    "webfonts": "bemo-webfonts -s source/fonts/svg -f source/fonts -S source/stylesheets/bemo-styles/variables/_icon-glyphs.scss"
+    "webfonts": "bemo-webfonts -s source/fonts/svg -f source/fonts -S source/stylesheets/bemo-material/variables/_icon-glyphs.scss"
   },
   "author": "Cantiere Creativo s.r.l.",
   "license": "ISC",
