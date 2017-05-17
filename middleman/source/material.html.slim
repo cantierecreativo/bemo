@@ -1,16 +1,28 @@
-.wrap
-  h1 Bemo Material
-  p Inspired by the official  <a href="https://material.io" target="_blank">material.io</a> and the aside project <a href="http://materializecss.com/" target="_blank">materializecss.com</a>
+.content
+  .menu
+    = partial 'partials/material/menu'
+  .content__overflow.toggle-menu.hidden
+  .content__main
+    .navbar
+      .hidden--on-desk.toggle-menu
+        i.icon--hamburger.icon--huge
+      .navbar__text
+        .top-bar__title navbar
+    .content__main__page
+      .wrap
+        h1 Bemo Material
+        p Inspired by the official  <a href="https://material.io" target="_blank">material.io</a> and the aside project <a href="http://materializecss.com/" target="_blank">materializecss.com</a>
 
-  .space--both-2
-    = partial "partials/material/colors"
-  .space--both-2
-    = partial "partials/material/buttons"
-  .space--both-2
-    = partial "partials/material/cards"
-  .space--both-2
-    = partial "partials/material/badges"
-  .space--both-2
-    = partial "partials/material/chips"
-  .space--both-2
-    = partial "partials/material/collections"
+        .space--both-2
+          = partial "partials/material/colors"
+        .space--both-2
+          = partial "partials/material/buttons"
+        .space--both-2
+          = partial "partials/material/cards"
+        .space--both-2
+          = partial "partials/material/badges"
+        .space--both-2
+          = partial "partials/material/chips"
+        .space--both-2
+          = partial "partials/material/collections"
+script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"
