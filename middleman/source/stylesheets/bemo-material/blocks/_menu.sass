@@ -1,12 +1,12 @@
 .menu
-  width: 150px
+  width: 200px
   position: absolute
   top: 0
   left: 0
   height: 100%
   display: flex
-  margin-left: -150px
-  background-color: $primary-color
+  margin-left: -200px
+  background-color: $menu-color
   -webkit-box-orient: vertical
   -webkit-box-direction: normal
   flex-direction: column
@@ -19,11 +19,7 @@
     margin-left: 0
     position: absolute
 
-  +at-breakpoint(desk)
-    position: relative
-    width: 200px
-    margin-left: 0
-    display: flex
+
 
 .menu__close
   position: absolute
@@ -68,3 +64,11 @@
 
     &:hover
       text-decoration: underline
+
+
++at-breakpoint(desk)
+  .menu
+    position: relative
+    width: 200px
+    margin-left: 0
+    display: flex
