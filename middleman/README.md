@@ -1,9 +1,16 @@
 # BEMO2 Middleman Test site
 
-This is just a simple middleman environment that live within the ```test/middleman```branch only.
+Just a middleman env to quickly test bemo.
 
-The idea is use this branch everytime we need to test what we do during bemo2 refactoring. Few simple rules:
+## Install
 
-* Don't merge this branch in master
-* Just rebase this branch on the feature branch you want to test
-* Avoid the editing of files in ```bemo-core``` and ```bemo-style``` in this branch. Do you really want to cherry pick this stuff?
+    $ bundle install
+    $ npm install
+
+# Choose the style to be tested
+
+Within the `source/stylesheet`folder, you will find just a single file `application.sass` that loads bemo files from the root folder of the project.
+
+Set the theme you want to load in middleman and change the second block of the loaders
+
+    @import '../../../bemo/[bemo-style]/variables/**/*'  // Variables
