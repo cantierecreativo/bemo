@@ -1,0 +1,74 @@
+.menu
+  width: 200px
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  display: flex
+  margin-left: -200px
+  background-color: $menu-color
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  flex-direction: column
+  transition: margin .5s $material-ease
+  z-index: 6
+  box-shadow: 2px 0 3px rgba(black, 0.2)
+
+  &.is-visible
+    height: 100%
+    margin-left: 0
+    position: absolute
+
+
+
+.menu__close
+  position: absolute
+  top: 8px
+  right: 0
+  cursor: pointer
+
+.menu__title
+  +vertical-padding(2)
+  +horizontal-padding(2)
+  color: black
+  background-color: white
+
+  img
+    display: block
+    width: 100px
+    margin: 0 auto
+
+.menu__items
+  overflow: auto
+
+  li
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12)
+    a
+      display: block
+      color: white
+      text-decoration: none
+      +vertical-padding(1)
+      +horizontal-padding(2)
+
+    &:hover
+      background-color: rgba($secondary-color, .8)
+
+.menu__user
+  +vertical-padding(2)
+  +horizontal-padding(2)
+  margin-top: auto
+
+  a
+    color: white
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+
+
++at-breakpoint(desk)
+  .menu
+    position: relative
+    width: 200px
+    margin-left: 0
+    display: flex

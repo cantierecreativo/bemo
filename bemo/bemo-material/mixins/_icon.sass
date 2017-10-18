@@ -1,0 +1,14 @@
+@mixin icon-setup
+  font-family: 'icons'
+  font-weight: normal
+  font-style: normal
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+@mixin icon-content($name)
+  content: map-get($icon-glyphs, $name)
+
+@mixin icon($name)
+  +icon-setup
+  +icon-content($name)
+
