@@ -12,10 +12,6 @@ body
   line-height: 1.5
   color: $base-body-color
 
-a
-  color: $base-body-color
-  text-decoration: underline
-
 h1, h2, h3, h4, h5, h6, hgroup,
 ul, ol, dd, p, figure, pre, table,
 fieldset, hr, form
@@ -24,22 +20,6 @@ h1, h2, h3, h4, h5, h6
   font-size: inherit
   font-family: inherit
   font-weight: inherit
-
-#{$all-text-inputs}, textarea
-  padding: 10px
-  border: 1px solid $border-color
-  border-radius: 0
-  transition: border 0.2s $material-ease
-  +font-size(regular)
-
-  &[disabled]
-    opacity: 0.9
-
-#{$all-text-inputs-hover}, textarea:hover
-  border-color: darken($border-color, 10%)
-
-#{$all-text-inputs-focus}, textarea:focus
-  border-color: $base-body-color
 
 pre, code
   +monospaced-font-family
@@ -54,5 +34,5 @@ legend
   color: $light-body-color
   +heading-font-family
 
-img
+#{$all-text-inputs}, textarea
   display: block

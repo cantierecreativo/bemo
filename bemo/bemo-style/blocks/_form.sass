@@ -1,3 +1,19 @@
+#{$all-text-inputs}, textarea
+  padding: 10px
+  border: 1px solid $border-color
+  border-radius: 0
+  transition: border 0.2s $material-ease
+  +font-size(regular)
+
+  &[disabled]
+    opacity: 0.9
+
+#{$all-text-inputs-hover}, textarea:hover
+  border-color: darken($border-color, 10%)
+
+#{$all-text-inputs-focus}, textarea:focus
+  border-color: $base-body-color
+
 .form
   fieldset
     +padding(2)
